@@ -21,7 +21,7 @@
 ]]></content>
   </entry>
   <entry>
-    <title>博客搭建的过程</title>
+    <title>博客搭建的记录</title>
     <url>/posts/739d.html</url>
     <content><![CDATA[<h1 id="从头说起"><a href="#从头说起" class="headerlink" title="从头说起"></a>从头说起</h1><p>前一段时间某一天我在Google上偶然看到了<a href="https://cekavis.github.io/">t老师的blog</a>，于是突发奇想：“要不我也搭一个吧？”于是就有了这Anony’s Blog。</p>
 <h1 id="12月3日"><a href="#12月3日" class="headerlink" title="12月3日"></a>12月3日</h1><p>实际上已经四号了来着，跟着<a href="https://zhuanlan.zhihu.com/p/102592286">知乎</a>和<a href="https://www.bilibili.com/video/BV1mU4y1j72n">Bilibili</a>两位大佬的教程开始搞。<br>结果只完成了安装nodejs和配置npm环境两个步骤，中途疯狂报错“The operation was rejected by your operating system.” Google上找的方法都没用，后来才发现原来就是没权限，于是就解决了。</p>
