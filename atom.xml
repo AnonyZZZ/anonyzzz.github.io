@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Anony的角落</title>
+  <icon>https://anonyzzz.github.io/icon.png</icon>
+  <subtitle>世界上只有一种真正的英雄主义，那就是在认清生活的真相后，依旧热爱生活。</subtitle>
+  <link href="https://anonyzzz.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://anonyzzz.github.io/"/>
+  <updated>2021-12-07T09:02:46.716Z</updated>
+  <id>https://anonyzzz.github.io/</id>
+  
+  <author>
+    <name>AnonyZZZ</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>博客搭建的记录</title>
+    <link href="https://anonyzzz.github.io/posts/739d.html"/>
+    <id>https://anonyzzz.github.io/posts/739d.html</id>
+    <published>2021-12-05T14:28:46.738Z</published>
+    <updated>2021-12-07T09:02:46.716Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;从头说起&quot;&gt;&lt;a href=&quot;#从头说起&quot; class=&quot;headerlink&quot; title=&quot;从头说起&quot;&gt;&lt;/a&gt;从头说起&lt;/h1&gt;&lt;p&gt;前一段时间某一天我在Google上偶然看到了&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="生活馆" scheme="https://anonyzzz.github.io/categories/%E7%94%9F%E6%B4%BB%E9%A6%86/"/>
+    
+    
+    <category term="日记" scheme="https://anonyzzz.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+    <category term="Hexo" scheme="https://anonyzzz.github.io/tags/Hexo/"/>
+    
+    <category term="Blog" scheme="https://anonyzzz.github.io/tags/Blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World——写在最开始的地方</title>
+    <link href="https://anonyzzz.github.io/posts/3eeb.html"/>
+    <id>https://anonyzzz.github.io/posts/3eeb.html</id>
+    <published>2021-12-04T09:57:34.342Z</published>
+    <updated>2021-12-06T16:44:49.499Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;随便写一些置顶吧，实际上也没什么好说的，我会在这个博客里记录一些自己的生活日常，所思所想，以及学习笔记。&lt;br&gt;说实话很久以前就有创建属于自己网站的想法，只是困于技术和财力，迟迟都没动手，现在知道了可以这么做于是就有了这个blog。&lt;br&gt;做的不好，大多还是模板里的内容，不</summary>
+        
+      
+    
+    
+    
+    <category term="生活馆" scheme="https://anonyzzz.github.io/categories/%E7%94%9F%E6%B4%BB%E9%A6%86/"/>
+    
+    <category term="空想家" scheme="https://anonyzzz.github.io/categories/%E7%A9%BA%E6%83%B3%E5%AE%B6/"/>
+    
+    <category term="自习室" scheme="https://anonyzzz.github.io/categories/%E8%87%AA%E4%B9%A0%E5%AE%A4/"/>
+    
+    
+    <category term="Hello world!" scheme="https://anonyzzz.github.io/tags/Hello-world/"/>
+    
+  </entry>
+  
+</feed>
