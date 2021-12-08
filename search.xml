@@ -4,6 +4,7 @@
     <title>Hello World——写在最开始的地方</title>
     <url>/posts/3eeb.html</url>
     <content><![CDATA[<p>随便写一些置顶吧，实际上也没什么好说的，我会在这个博客里记录一些自己的生活日常，所思所想，以及学习笔记。<br>说实话很久以前就有创建属于自己网站的想法，只是困于技术和财力，迟迟都没动手，现在知道了可以这么做于是就有了这个blog。<br>做的不好，大多还是模板里的内容，不太敢改些花里胡哨的，大抵我现在技术力也就这样，恳请各位大佬轻喷。<br>我自己会不定时地来看看，加一些东西或者改一些东西，主要看有没有空余时间了。<br>也欢迎各位路过的看客到评论区留言哦。<span class="github-emoji" alias="wink" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f609.png?v8">&#x1f609;</span></p>
+<span id="more"></span>
 <hr>
 <h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World!"></a>Hello World!</h1><p>随便先改一改Hello World.<br>突然记起来当年在洛谷进去第一题Hello World!我交了三遍才过来着，不过这回就不用看人家机器给不给过了。<br>想了半天底下这一票要不要删，打算先留着了，毕竟不舍得扔东西删东西也是老习惯了。</p>
 <hr>
@@ -43,7 +44,7 @@
 <h1 id="12月7日"><a href="#12月7日" class="headerlink" title="12月7日"></a>12月7日</h1><p>改了一个名字“Anony的角落”，也没什么新意，主要是想了一晚上也没想出一个好点的中文昵称。<br>然后加了一些东西，社交链接，RSS，建站统计，字数，阅读时间统计，阅读进度提示条……<br>然后就是紧张刺激的修bug环节，在第一次上传之后出现了俩bug,一个是原本应该出现在右上角的github banner出现在了左上角，这是我在本地测试从来没碰到过的，我想着我也没有改什么东西，就很奇怪。另一个bug是“Hello World”文章的字数统计和时间统计显示“本文字数： |阅读时长≈NaN:aN”，网页最底下同样，这个问题倒是在本地测试也出现的问题，当时想着反正这统计也只是估算，如果发上去还是不行就把功能删了。然后我先在本地重新测了一遍，再Hexo clean,重新把文件全部传上去，刷新了半天发现banner还是在左上角，心想凉了，干脆把它一起也删了，结果回头瞥见“Hello World”的字数统计反而是好了，当时我人是懵的，在那里花式点击github banner，然后又把页面往下拉，发现代码块的复制也错位了，然后我点了一下，结果莫名其妙的它们就都回去了。于是网站就这么莫名其妙的恢复正常了……后来想来，也许是博客没加载清楚？<br>然后好好编辑了一下footer，把powered移到了最底下，顺便加了一个换行，在footer.swig里面加上</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;span&gt;&lt;br&gt;&lt;/span&gt;</span><br></pre></td></tr></table></figure>
 <p>就能换一行。<br>好啦差不多就这样，基本上已经定型了，摸了摸了。</p>
-<h1 id="12月8日"><a href="#12月8日" class="headerlink" title="12月8日"></a>12月8日</h1><p>试图加入多语言切换，由于技术原因，失败。实在多看了几眼决定还是把底部的字数统计给删了。</p>
+<h1 id="12月8日"><a href="#12月8日" class="headerlink" title="12月8日"></a>12月8日</h1><p>试图加入多语言切换，由于技术问题和准备问题，出来一个没卵用还有bug的功能orz。<br>实在多看了几眼决定还是把底部的字数统计给删了。<br>选了好久的背景图最后发现还是黑白的好看，那还是干净一些吧。</p>
 ]]></content>
       <categories>
         <category>生活馆</category>
