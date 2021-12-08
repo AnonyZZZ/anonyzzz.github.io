@@ -6,7 +6,7 @@
   <link href="https://anonyzzz.github.io/atom.xml" rel="self"/>
   
   <link href="https://anonyzzz.github.io/"/>
-  <updated>2021-12-08T10:45:53.270Z</updated>
+  <updated>2021-12-08T10:57:01.056Z</updated>
   <id>https://anonyzzz.github.io/</id>
   
   <author>
@@ -21,13 +21,14 @@
     <link href="https://anonyzzz.github.io/posts/739d.html"/>
     <id>https://anonyzzz.github.io/posts/739d.html</id>
     <published>2021-12-05T14:28:46.738Z</published>
-    <updated>2021-12-08T10:45:53.270Z</updated>
+    <updated>2021-12-08T10:57:01.056Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;从头说起&quot;&gt;从头说起&lt;/h1&gt;
 &lt;p&gt;前一段时间某一天我在Google上偶然看到了&lt;a href=&quot;https://cekavis.github.io/&quot;&gt;t老师的blog&lt;/a&gt;，于是突发奇想：“要不我也搭一个吧？”于是就有了这Anony&#39;s Blog。&lt;/p&gt;
 &lt;h1 id=&quot;月3日&quot;&gt;12月3日&lt;/h1&gt;
-&lt;p&gt;实际上已经四号了来着，跟着&lt;a href=&quot;https://zhuanlan.zhihu.com/p/102592286&quot;&gt;知乎&lt;/a&gt;和&lt;a href=&quot;https://www.bilibili.com/video/BV1mU4y1j72n&quot;&gt;Bilibili&lt;/a&gt;两位大佬的教程开始搞。&lt;/p&gt;</summary>
+&lt;p&gt;实际上已经四号了来着，跟着&lt;a href=&quot;https://zhuanlan.zhihu.com/p/102592286&quot;&gt;知乎&lt;/a&gt;和&lt;a href=&quot;https://www.bilibili.com/video/BV1mU4y1j72n&quot;&gt;Bilibili&lt;/a&gt;两位大佬的教程开始搞。&lt;/p&gt;
+&lt;p&gt;结果只完成了安装nodejs和配置npm环境两个步骤，中途疯狂报错“The operation was rejected by your operating system.” Google上找的方法都没用，后来才发现原来就是没权限，于是就解决了。</summary>
     
     
     
