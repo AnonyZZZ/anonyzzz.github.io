@@ -6,7 +6,7 @@
   <link href="https://anonyzzz.github.io/atom.xml" rel="self"/>
   
   <link href="https://anonyzzz.github.io/"/>
-  <updated>2022-02-21T08:57:14.845Z</updated>
+  <updated>2022-02-22T09:58:00.238Z</updated>
   <id>https://anonyzzz.github.io/</id>
   
   <author>
@@ -21,10 +21,10 @@
     <link href="https://anonyzzz.github.io/posts/e657.html"/>
     <id>https://anonyzzz.github.io/posts/e657.html</id>
     <published>2022-02-21T08:44:53.000Z</published>
-    <updated>2022-02-21T08:57:14.845Z</updated>
+    <updated>2022-02-22T09:58:00.238Z</updated>
     
     
-    <summary type="html">&lt;p&gt;​ 好啦，不知道为什么Typora出了点bug，在more前面打字会变成奇怪的东西，不管了，大不了剪切上去。这算是我建这个blog以来第一篇文章吧，主要是放假也确实没什么好写的，开学之后大概更的会多一点（如果有空的话）。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;​ 好啦，不知道为什么Typora出了点bug，在more前面打字会变成奇怪的东西，不管了，大不了剪切上去。这算是我建这个blog以来第一篇文章（流水账）吧，主要是放假也确实没什么好写的，开学之后大概更的会多一点（如果有空的话）。&lt;/p&gt;</summary>
     
     
     
@@ -34,6 +34,8 @@
     <category term="日记" scheme="https://anonyzzz.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
     
     <category term="O-week" scheme="https://anonyzzz.github.io/tags/O-week/"/>
+    
+    <category term="流水账" scheme="https://anonyzzz.github.io/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
     
   </entry>
   
