@@ -6,7 +6,7 @@
   <link href="https://anonyzzz.github.io/atom.xml" rel="self"/>
   
   <link href="https://anonyzzz.github.io/"/>
-  <updated>2022-02-26T12:54:28.988Z</updated>
+  <updated>2022-03-07T12:16:10.097Z</updated>
   <id>https://anonyzzz.github.io/</id>
   
   <author>
@@ -15,6 +15,68 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Notes for MATLAB</title>
+    <link href="https://anonyzzz.github.io/posts/ea72.html"/>
+    <id>https://anonyzzz.github.io/posts/ea72.html</id>
+    <published>2022-03-07T06:33:03.000Z</published>
+    <updated>2022-03-07T12:16:10.097Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;看上去MATLAB也要记些东西……&lt;/p&gt;
+&lt;p&gt;好多，一段时间再补……orz&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="自习室" scheme="https://anonyzzz.github.io/categories/%E8%87%AA%E4%B9%A0%E5%AE%A4/"/>
+    
+    
+    <category term="笔记" scheme="https://anonyzzz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="MATLAB" scheme="https://anonyzzz.github.io/tags/MATLAB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Notes for FoC</title>
+    <link href="https://anonyzzz.github.io/posts/e912.html"/>
+    <id>https://anonyzzz.github.io/posts/e912.html</id>
+    <published>2022-03-07T00:00:35.000Z</published>
+    <updated>2022-03-07T12:15:40.950Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Foundation of computing的一些笔记&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="自习室" scheme="https://anonyzzz.github.io/categories/%E8%87%AA%E4%B9%A0%E5%AE%A4/"/>
+    
+    
+    <category term="笔记" scheme="https://anonyzzz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="python" scheme="https://anonyzzz.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>开学后的一些日记</title>
+    <link href="https://anonyzzz.github.io/posts/5eb1.html"/>
+    <id>https://anonyzzz.github.io/posts/5eb1.html</id>
+    <published>2022-03-02T04:53:26.000Z</published>
+    <updated>2022-03-07T12:15:58.024Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;一些短篇故事的连载，不定期更新，前提是有空+有故事。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="生活馆" scheme="https://anonyzzz.github.io/categories/%E7%94%9F%E6%B4%BB%E9%A6%86/"/>
+    
+    
+    <category term="-- 日记" scheme="https://anonyzzz.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>记墨大2022 O-week</title>
