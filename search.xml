@@ -37,6 +37,142 @@
       </tags>
   </entry>
   <entry>
+    <title>Notes for MATLAB</title>
+    <url>/posts/ea72.html</url>
+    <content><![CDATA[<p>看上去MATLAB也要记些东西……</p>
+<p>好多，一段时间再补……orz</p>
+<span id="more"></span>
+<h2 id="矩阵">矩阵</h2>
+<p>最基础的<code>A=[a b;c d]</code></p>
+<p>空格也可以用<code>,</code>，暂时没找出区别</p>
+<p><code>A'</code>用于求转置（transpose）</p>
+<p><code>.*</code>把矩阵内元素对应相乘，或者说<strong>行矩阵<code>.*</code>列矩阵</strong>可以构造一个类似乘法表的东西</p>
+<p><code>A+constant</code> 可以在A的每一个元素的基础上加上一个常数</p>
+<p><code>A(m,n)=a</code>可以把矩阵第m行n列的数改成a</p>
+<p>单独<code>:</code>可以代替全列，例如<code>v=B(:,2)</code>会将v定义为B第二列的列向量</p>
+<p>此外，<code>:</code>可以指代数列，句式为<code>a:s:b</code>，其中a为初项，s为步长，b为末项（更准确的说是最后一项不超过b），s可被省略，默认是1</p>
+<p><code>eye(n)</code>用以构造n阶单位矩阵（Identity matrix）</p>
+<p><code>diag(v)</code>用以构造以v为对角线的对角形矩阵</p>
+<p><code>ones(n,m)</code>构造n行m列的元素全是1的矩阵</p>
+<p><code>zeros(n,m)</code>构造n行m列元素全是0的矩阵</p>
+<p>分块矩阵亦可用<code>M=[A B;C D]</code>的形式来获得</p>
+<p>习题：</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">A=[<span class="number">4</span> <span class="number">8</span> <span class="number">8</span> <span class="number">11</span> <span class="number">1</span>]</span><br><span class="line">B=[<span class="built_in">diag</span>(A) <span class="number">7</span>*<span class="built_in">ones</span>(<span class="number">5</span>,<span class="number">7</span>);<span class="number">12</span>*<span class="built_in">ones</span>(<span class="number">7</span>,<span class="number">5</span>) <span class="number">7</span><span class="number">-6</span>*<span class="built_in">eye</span>(<span class="number">7</span>)]</span><br><span class="line">B(<span class="number">1</span>,<span class="number">4</span>)=<span class="number">6</span></span><br></pre></td></tr></table></figure>
+<h2 id="matlab-for-physics">MATLAB for physics</h2>
+<p>科学计数法用e来表示，例如<code>3e8</code>。</p>
+<p><code>log()</code>表示自然对数</p>
+<p><code>log10()</code>表示以10为底的对数</p>
+<p>在矩阵中有运算<code>.^</code>区别于单独<code>^</code>（矩阵和自己相乘）可将矩阵里的每个元素单独乘方</p>
+<p>可在函数中用数表（矩阵）作为自变量，输出结果为同形矩阵</p>
+<p>此时用<code>plot(x,y)</code>可以直接作图</p>
+<p>同时<code>plot(x,y,'.')</code>表示将每组数据呈现为点，同样地，可以将<code>'.'</code>改为<code>‘o’</code> (circles), <code>‘x’</code> (crosses), <code>‘+’</code> (plus signs), <code>‘*’</code> (asterisks), <code>‘s’</code> (squares)来进行绘图</p>
+<p>使用<code>errorbar(x, y, ybars, ’.’)</code> 可以在图上加上误差线，其中<code>x</code>,<code>y</code>,<code>ybars</code>为同维数组</p>
+<p>如果希望在同一幅图上绘制多种对应关系，可以使用<code>figure</code>（添加空白绘图窗口）和<code>hold on</code>指令，而若要取消<code>hold on</code>指令，只需键入<code>hold off</code>（<code>hold on</code>,<code>hold off</code>是状态切换指令，也就是说一旦<code>hold on</code>, 就会一直在同一幅图上添加内容，直到<code>hold off</code>）</p>
+<p>也可以使用<code>plot (x1, y1, x2, y2, ’.’)</code>的句式，其中代表数据点样式的符号跟在相应因变量后面，如上面的例子中，<code>x1</code>,<code>y1</code>应用了default样式：连线，<code>x2</code>,<code>y2</code>应用点号作为每个数据点的样式</p>
+<p>而curve fitting功能可以在APP-Curve Fitting来实现（需要下载）</p>
+]]></content>
+      <categories>
+        <category>自习室</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>MATLAB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Notes for FoC</title>
+    <url>/posts/e912.html</url>
+    <content><![CDATA[<p>Foundation of computing的一些笔记</p>
+<span id="more"></span>
+<h2 id="worksheet-3">Worksheet 3</h2>
+<p><code>bool()</code> will convert the "default" value to <code>False</code>.</p>
+<p>For example,</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">bool</span>(<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">bool</span>(<span class="number">0.0</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">bool</span>(<span class="string">&quot;&quot;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">bool</span>(<span class="literal">False</span>))</span><br></pre></td></tr></table></figure>
+<p>will get the output of <code>false</code>.</p>
+<p>Otherwise, <code>bool()</code> will provide us with a <code>true</code>.</p>
+<p>字符串比较大小：从左比到右，比较字符ASCII码大小，即小写字母&gt;大写字母&gt;空格&gt;无字符。</p>
+<p><code>ord()</code>可输出字符的ASCII码</p>
+<p><code>in</code>可判断某字符串是否是另一个的子字符串（substring）</p>
+<p>逻辑运算 <code>and</code>, <code>or</code>, <code>not</code>逻辑与或非略</p>
+]]></content>
+      <categories>
+        <category>自习室</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>开学后的一些日记</title>
+    <url>/posts/5eb1.html</url>
+    <content><![CDATA[<p>一些短篇故事的连载，不定期更新，前提是有空+有故事。</p>
+<span id="more"></span>
+<p>3月2日</p>
+<p>​ 今天South Lawn有社团招新活动。人很多也很热，最后也就在CSSA驻足，短暂的听了听他们介绍打算加入一下看看，然后扫它们微信小程序注册，先是显示密码太简单，试了好几次，哦，原来隐藏要求要大小写字母，特殊符号，数字都要有，然后再提交，显示不是有效邮箱，工作人员说排队等前面信息部的来帮忙操作一下，哦。于是乎排了好久的队，排到了说你不如到官网上去注册，然后叫我扫码把会费交了……不是我连注册都没成，你就叫我交会费吗，然后我就走了……本来加这种也没啥意义吧，5刀买点礼品，就当没来过算了。</p>
+<p>3月4日</p>
+<p>​ 今天发生的事挺多的，早上出门有点晚，结果在Melbourne Central被Luna看到了，不过我没注意到。然后Foc结束跟Uri逛Peter Hall（他们Calc2 lecture变到Peter Hall了），结果又迎面碰到Hannah。后来我跟Uri走到MUMS club room, Quang很热情得接待了我们，然后还看到房间里有一本中文封面，英文版的《数学分析原理》，Quang说这在他们这里已经成Meme了，谁也不知道这本书是哪来的。</p>
+<p>​ 以及最后图书馆5点就关门了，原本打算去Victoria Market把Compulsory的discussion顺便做了，结果……坐错电车了（去VM要从Campus西边上电车，结果我习惯性去东面的电车站），直接回家orz，这compulsory就乱摸了吧……</p>
+<p>3月7日</p>
+<p>​ 今天去学校结果触摸鼠标失灵了，下午才好，然后发现左右键反了……最后回到家才给它搞正常。</p>
+<p>​ 然后下午有AM1的Practical 1，挺愉快的，有一个组员挺强，然后我们成功地提前把worksheet做完了，就是说剩下一个人看上去没太跟得上（（（</p>
+<p>​ 还有，今天莫名其妙物理发通知说上周二lecture有人positive，要求我们自测，讲道理挺紧张的，不过最后测出来negative挺好。</p>
+<p>3月8日</p>
+<p>​ 早上物理实验课，组里有个大佬，excel用到飞起。然后还有一个组员韩国人，长得贼像济南屁王，笑死……最后实验结果很准确，就是说中间绕了弯路，然后下课留在实验室好久才把log book写完。</p>
+<p>​ 然后就是今天的午饭……实验课结束后就只剩十几分钟，买完披萨就往包里一放直接去上课了，一直到两点钟下课才吃……饿死了。</p>
+<p>​ 然后是peer mentor时间，随便摸了一会儿，讲了一些链接和学习经验，然后就放我们走了，然后到图书馆呆了一会儿结果发现peer mentor就坐在对面桌orz。做了物理的assignment，第一题就卡了，结果最后发现少乘一个π，最后有惊无险还是过了。中间有一题小学奥数，笑死，一只鸟在两辆火车中间飞来飞去，简直了……</p>
+<p>​ 下午回家，Melbourne Central还有游行，把电车路给堵了，无语……</p>
+]]></content>
+      <categories>
+        <category>生活馆</category>
+      </categories>
+      <tags>
+        <tag>-- 日记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>记墨大2022 O-week</title>
+    <url>/posts/e657.html</url>
+    <content><![CDATA[<p>​ 好啦，不知道为什么Typora出了点bug，在more前面打字会变成奇怪的东西，不管了，大不了剪切上去。这算是我建这个blog以来第一篇文章（流水账）吧，主要是放假也确实没什么好写的，开学之后大概更的会多一点（如果有空的话）。</p>
+<span id="more"></span>
+<p>2月21日</p>
+<p>​ 今天实际上跟我没什么关系，差不多就是待在家里，继续摸摸鱼。学校有一个欢迎视频，没兴趣，就不看了。大概主要还是星期三星期四去学校看看有什么好玩的吧。</p>
+<p>2月22日</p>
+<p>​ 2022.2.22 正月廿二星期二纪念</p>
+<p>​ 今天参加了俩线上getting started的活动，差不多也都是之前就知道的反复炒冷饭罢了（明天subject expo也差不多大概）。唯一还不错的点是作息稍微正常了些orz。看明天啦。</p>
+<p>2月23日</p>
+<p>​ 大概今天的关键词就是挤和热吧，到学校十点二十几分，结果Uri跑到the Spot去回来晚了些，然后在学校稍微走了走才发现Glyn Davis门口已经排了巨长的队，大概welcome presentation开始已经差不多11：20了（原本说是11：00）……</p>
+<p>​ 然后结束后就是出去Subject Expo以及吃午饭，实际上差不多就是自由活动了，和Uri去找Engineering B，问Subject Expo这边的一个工作人员，结果他说他也不知道，就很蠢……后来是问了Union House的人他告诉我们在哪。去逛了逛校园，走了点小路，妄想走捷径结果绕了远路也是够sb……</p>
+<p>​ 回来吃午饭，吃的Pasta，挺不错。然后……就没有然后了。</p>
+<p>​ 基本上学校里人都挤在露天，外面很热，室内有空调就舒服。而且室内也没多少人就很不错。</p>
+<p>2月24日</p>
+<p>​ 本来看着昨天那么热决定少穿一点，结果看天气预报说要下雨人傻了……不过好在最后并没有下雨，只是天气阴阴的也不热，就比昨天好。今天主要就是个Peer Mentor Group，两个mentor都是华人（一个是上海来的，还有一个大概是本地华人）都挺不错的。认识了Daniel，从北京来的，才刚到墨尔本。在MCC里面人挤的要死，到处都是排队，去领了衣服，吃了点冰激凌（salted caramel味的，比想象中要咸一点orz），然后就溜了。跟Daniel逛了逛校园，然后没了……</p>
+<p>​ 比想象中要无聊一些，不过大概也就是这样吧……</p>
+<p>​ 下个星期就开学了，加油吧……</p>
+]]></content>
+      <categories>
+        <category>生活馆</category>
+      </categories>
+      <tags>
+        <tag>日记</tag>
+        <tag>O-week</tag>
+        <tag>流水账</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Happy New Year！</title>
+    <url>/posts/defb.html</url>
+    <content><![CDATA[<h1 id="新年快乐">新年快乐！</h1>
+<h2 id="加油吖">2022加油吖！</h2>
+]]></content>
+      <categories>
+        <category>生活馆</category>
+      </categories>
+      <tags>
+        <tag>2022</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>博客搭建的记录</title>
     <url>/posts/739d.html</url>
     <content><![CDATA[<h1 id="从头说起">从头说起</h1>
@@ -83,142 +219,6 @@
         <tag>日记</tag>
         <tag>Hexo</tag>
         <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Happy New Year！</title>
-    <url>/posts/defb.html</url>
-    <content><![CDATA[<h1 id="新年快乐">新年快乐！</h1>
-<h2 id="加油吖">2022加油吖！</h2>
-]]></content>
-      <categories>
-        <category>生活馆</category>
-      </categories>
-      <tags>
-        <tag>2022</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>记墨大2022 O-week</title>
-    <url>/posts/e657.html</url>
-    <content><![CDATA[<p>​ 好啦，不知道为什么Typora出了点bug，在more前面打字会变成奇怪的东西，不管了，大不了剪切上去。这算是我建这个blog以来第一篇文章（流水账）吧，主要是放假也确实没什么好写的，开学之后大概更的会多一点（如果有空的话）。</p>
-<span id="more"></span>
-<p>2月21日</p>
-<p>​ 今天实际上跟我没什么关系，差不多就是待在家里，继续摸摸鱼。学校有一个欢迎视频，没兴趣，就不看了。大概主要还是星期三星期四去学校看看有什么好玩的吧。</p>
-<p>2月22日</p>
-<p>​ 2022.2.22 正月廿二星期二纪念</p>
-<p>​ 今天参加了俩线上getting started的活动，差不多也都是之前就知道的反复炒冷饭罢了（明天subject expo也差不多大概）。唯一还不错的点是作息稍微正常了些orz。看明天啦。</p>
-<p>2月23日</p>
-<p>​ 大概今天的关键词就是挤和热吧，到学校十点二十几分，结果Uri跑到the Spot去回来晚了些，然后在学校稍微走了走才发现Glyn Davis门口已经排了巨长的队，大概welcome presentation开始已经差不多11：20了（原本说是11：00）……</p>
-<p>​ 然后结束后就是出去Subject Expo以及吃午饭，实际上差不多就是自由活动了，和Uri去找Engineering B，问Subject Expo这边的一个工作人员，结果他说他也不知道，就很蠢……后来是问了Union House的人他告诉我们在哪。去逛了逛校园，走了点小路，妄想走捷径结果绕了远路也是够sb……</p>
-<p>​ 回来吃午饭，吃的Pasta，挺不错。然后……就没有然后了。</p>
-<p>​ 基本上学校里人都挤在露天，外面很热，室内有空调就舒服。而且室内也没多少人就很不错。</p>
-<p>2月24日</p>
-<p>​ 本来看着昨天那么热决定少穿一点，结果看天气预报说要下雨人傻了……不过好在最后并没有下雨，只是天气阴阴的也不热，就比昨天好。今天主要就是个Peer Mentor Group，两个mentor都是华人（一个是上海来的，还有一个大概是本地华人）都挺不错的。认识了Daniel，从北京来的，才刚到墨尔本。在MCC里面人挤的要死，到处都是排队，去领了衣服，吃了点冰激凌（salted caramel味的，比想象中要咸一点orz），然后就溜了。跟Daniel逛了逛校园，然后没了……</p>
-<p>​ 比想象中要无聊一些，不过大概也就是这样吧……</p>
-<p>​ 下个星期就开学了，加油吧……</p>
-]]></content>
-      <categories>
-        <category>生活馆</category>
-      </categories>
-      <tags>
-        <tag>日记</tag>
-        <tag>O-week</tag>
-        <tag>流水账</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Notes for FoC</title>
-    <url>/posts/e912.html</url>
-    <content><![CDATA[<p>Foundation of computing的一些笔记</p>
-<span id="more"></span>
-<h2 id="worksheet-3">Worksheet 3</h2>
-<p><code>bool()</code> will convert the "default" value to <code>False</code>.</p>
-<p>For example,</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">bool</span>(<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">bool</span>(<span class="number">0.0</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">bool</span>(<span class="string">&quot;&quot;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">bool</span>(<span class="literal">False</span>))</span><br></pre></td></tr></table></figure>
-<p>will get the output of <code>false</code>.</p>
-<p>Otherwise, <code>bool()</code> will provide us with a <code>true</code>.</p>
-<p>字符串比较大小：从左比到右，比较字符ASCII码大小，即小写字母&gt;大写字母&gt;空格&gt;无字符。</p>
-<p><code>ord()</code>可输出字符的ASCII码</p>
-<p><code>in</code>可判断某字符串是否是另一个的子字符串（substring）</p>
-<p>逻辑运算 <code>and</code>, <code>or</code>, <code>not</code>逻辑与或非略</p>
-]]></content>
-      <categories>
-        <category>自习室</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Notes for MATLAB</title>
-    <url>/posts/ea72.html</url>
-    <content><![CDATA[<p>看上去MATLAB也要记些东西……</p>
-<p>好多，一段时间再补……orz</p>
-<span id="more"></span>
-<h2 id="矩阵">矩阵</h2>
-<p>最基础的<code>A=[a b;c d]</code></p>
-<p>空格也可以用<code>,</code>，暂时没找出区别</p>
-<p><code>A'</code>用于求转置（transpose）</p>
-<p><code>.*</code>把矩阵内元素对应相乘，或者说<strong>行矩阵<code>.*</code>列矩阵</strong>可以构造一个类似乘法表的东西</p>
-<p><code>A+constant</code> 可以在A的每一个元素的基础上加上一个常数</p>
-<p><code>A(m,n)=a</code>可以把矩阵第m行n列的数改成a</p>
-<p>单独<code>:</code>可以代替全列，例如<code>v=B(:,2)</code>会将v定义为B第二列的列向量</p>
-<p>此外，<code>:</code>可以指代数列，句式为<code>a:s:b</code>，其中a为初项，s为步长，b为末项（更准确的说是最后一项不超过b），s可被省略，默认是1</p>
-<p><code>eye(n)</code>用以构造n阶单位矩阵（Identity matrix）</p>
-<p><code>diag(v)</code>用以构造以v为对角线的对角形矩阵</p>
-<p><code>ones(n,m)</code>构造n行m列的元素全是1的矩阵</p>
-<p><code>zeros(n,m)</code>构造n行m列元素全是0的矩阵</p>
-<p>分块矩阵亦可用<code>M=[A B;C D]</code>的形式来获得</p>
-<p>习题：</p>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">A=[<span class="number">4</span> <span class="number">8</span> <span class="number">8</span> <span class="number">11</span> <span class="number">1</span>]</span><br><span class="line">B=[<span class="built_in">diag</span>(A) <span class="number">7</span>*<span class="built_in">ones</span>(<span class="number">5</span>,<span class="number">7</span>);<span class="number">12</span>*<span class="built_in">ones</span>(<span class="number">7</span>,<span class="number">5</span>) <span class="number">7</span><span class="number">-6</span>*<span class="built_in">eye</span>(<span class="number">7</span>)]</span><br><span class="line">B(<span class="number">1</span>,<span class="number">4</span>)=<span class="number">6</span></span><br></pre></td></tr></table></figure>
-<h2 id="matlab-for-physics">MATLAB for physics</h2>
-<p>科学计数法用e来表示，例如<code>3e8</code>。</p>
-<p><code>log()</code>表示自然对数</p>
-<p><code>log10()</code>表示以10为底的对数</p>
-<p>在矩阵中有运算<code>.^</code>区别于单独<code>^</code>（矩阵和自己相乘）可将矩阵里的每个元素单独乘方</p>
-<p>可在函数中用数表（矩阵）作为自变量，输出结果为同形矩阵</p>
-<p>此时用<code>plot(x,y)</code>可以直接作图</p>
-<p>同时<code>plot(x,y,'.')</code>表示将每组数据呈现为点，同样地，可以将<code>'.'</code>改为<code>‘o’</code> (circles), <code>‘x’</code> (crosses), <code>‘+’</code> (plus signs), <code>‘*’</code> (asterisks), <code>‘s’</code> (squares)来进行绘图</p>
-<p>使用<code>errorbar(x, y, ybars, ’.’)</code> 可以在图上加上误差线，其中<code>x</code>,<code>y</code>,<code>ybars</code>为同维数组</p>
-<p>如果希望在同一幅图上绘制多种对应关系，可以使用<code>figure</code>（添加空白绘图窗口）和<code>hold on</code>指令，而若要取消<code>hold on</code>指令，只需键入<code>hold off</code>（<code>hold on</code>,<code>hold off</code>是状态切换指令，也就是说一旦<code>hold on</code>, 就会一直在同一幅图上添加内容，直到<code>hold off</code>）</p>
-<p>也可以使用<code>plot (x1, y1, x2, y2, ’.’)</code>的句式，其中代表数据点样式的符号跟在相应因变量后面，如上面的例子中，<code>x1</code>,<code>y1</code>应用了default样式：连线，<code>x2</code>,<code>y2</code>应用点号作为每个数据点的样式</p>
-<p>而curve fitting功能可以在APP-Curve Fitting来实现（需要下载）</p>
-]]></content>
-      <categories>
-        <category>自习室</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>MATLAB</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>开学后的一些日记</title>
-    <url>/posts/5eb1.html</url>
-    <content><![CDATA[<p>一些短篇故事的连载，不定期更新，前提是有空+有故事。</p>
-<span id="more"></span>
-<p>3月2日</p>
-<p>​ 今天South Lawn有社团招新活动。人很多也很热，最后也就在CSSA驻足，短暂的听了听他们介绍打算加入一下看看，然后扫它们微信小程序注册，先是显示密码太简单，试了好几次，哦，原来隐藏要求要大小写字母，特殊符号，数字都要有，然后再提交，显示不是有效邮箱，工作人员说排队等前面信息部的来帮忙操作一下，哦。于是乎排了好久的队，排到了说你不如到官网上去注册，然后叫我扫码把会费交了……不是我连注册都没成，你就叫我交会费吗，然后我就走了……本来加这种也没啥意义吧，5刀买点礼品，就当没来过算了。</p>
-<p>3月4日</p>
-<p>​ 今天发生的事挺多的，早上出门有点晚，结果在Melbourne Central被Luna看到了，不过我没注意到。然后Foc结束跟Uri逛Peter Hall（他们Calc2 lecture变到Peter Hall了），结果又迎面碰到Hannah。后来我跟Uri走到MUMS club room, Quang很热情得接待了我们，然后还看到房间里有一本中文封面，英文版的《数学分析原理》，Quang说这在他们这里已经成Meme了，谁也不知道这本书是哪来的。</p>
-<p>​ 以及最后图书馆5点就关门了，原本打算去Victoria Market把Compulsory的discussion顺便做了，结果……坐错电车了（去VM要从Campus西边上电车，结果我习惯性去东面的电车站），直接回家orz，这compulsory就乱摸了吧……</p>
-<p>3月7日</p>
-<p>​ 今天去学校结果触摸鼠标失灵了，下午才好，然后发现左右键反了……最后回到家才给它搞正常。</p>
-<p>​ 然后下午有AM1的Practical 1，挺愉快的，有一个组员挺强，然后我们成功地提前把worksheet做完了，就是说剩下一个人看上去没太跟得上（（（</p>
-<p>​ 还有，今天莫名其妙物理发通知说上周二lecture有人positive，要求我们自测，讲道理挺紧张的，不过最后测出来negative挺好。</p>
-<p>3月8日</p>
-<p>​ 早上物理实验课，组里有个大佬，excel用到飞起。最后结果也是很准确，就是说中间绕了弯路，然后下课留在实验室好久才把log book写完。</p>
-<p>​ 然后就是今天的午饭……实验课结束后就只剩十几分钟，买完披萨就往包里一放直接去上课了，一直到两点钟下课才吃……饿死了。</p>
-<p>​ 然后是peer mentor时间，随便摸了一会儿，讲了一些链接和学习经验，然后就放我们走了，然后到图书馆呆了一会儿结果发现peer mentor就坐在对面桌orz。做了物理的assignment，第一题就卡了，结果最后发现少乘一个π，最后有惊无险还是过了。中间有一题小学奥数，笑死，一只鸟在两辆火车中间飞来飞去，简直了……</p>
-<p>​ 下午回家，Melbourne Central还有游行，把电车路给堵了，无语……</p>
-]]></content>
-      <categories>
-        <category>生活馆</category>
-      </categories>
-      <tags>
-        <tag>-- 日记</tag>
       </tags>
   </entry>
 </search>
