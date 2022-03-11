@@ -154,7 +154,17 @@
 <p>​ 其它倒也没啥。</p>
 <p>3月11日</p>
 <p>​ 下午最后一节AM1的Computer Lab，结果机房里电脑卡的要死，只能用自己的……然后我星期一把worksheet都做完了……于是只能在课上写assignment。</p>
-<p>​ Computer lab前去了MUMS room，Quang在白板上写了一道题目，让我们做orz。放学之后回到那里，原本打算把assignment做完，然后稍微再想想白板上的题目，结果跟一个都Master of Physics的学长下了两盘象棋，挺好玩，但是结束已经七点了……</p>
+<p>​ Computer lab前去了MUMS room，Quang在白板上写了一道题目，让我们做orz。正好给它打了出来：</p>
+<pre><code>    there’s infinite lines labeled from 1 to n.
+    (1) none of them are parallel
+    (2) no three lines intersect at the same place
+    (3) none of them are vertical.
+
+    We define f(k):
+    You start from x=-∞ on line k, and changing lines (to the right hand side) every time you arrive at an intersection, by the time you reach x=∞, define the value of f(k) as the label of the line you end up on.
+
+    Show that f(f(k))=k.</code></pre>
+<p>​ 放学之后回到那里，原本打算把assignment做完，然后稍微再想想白板上的题目，结果跟一个都Master of Physics的学长下了两盘象棋，挺好玩，但是结束已经七点了……</p>
 ]]></content>
       <categories>
         <category>生活馆</category>
