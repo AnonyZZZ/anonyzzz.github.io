@@ -58,6 +58,8 @@
 <p>分块矩阵亦可用<code>M=[A B;C D]</code>的形式来获得</p>
 <p>习题：</p>
 <figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">A=[<span class="number">4</span> <span class="number">8</span> <span class="number">8</span> <span class="number">11</span> <span class="number">1</span>]</span><br><span class="line">B=[<span class="built_in">diag</span>(A) <span class="number">7</span>*<span class="built_in">ones</span>(<span class="number">5</span>,<span class="number">7</span>);<span class="number">12</span>*<span class="built_in">ones</span>(<span class="number">7</span>,<span class="number">5</span>) <span class="number">7</span><span class="number">-6</span>*<span class="built_in">eye</span>(<span class="number">7</span>)]</span><br><span class="line">B(<span class="number">1</span>,<span class="number">4</span>)=<span class="number">6</span></span><br></pre></td></tr></table></figure>
+<p>优化(64)：</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">A=<span class="built_in">ones</span>(<span class="number">5</span>,<span class="number">7</span>)</span><br><span class="line">Q=[<span class="built_in">diag</span>([<span class="number">4</span> <span class="number">8</span> <span class="number">8</span> <span class="number">11</span> <span class="number">1</span>]) <span class="number">7</span>*A;<span class="number">12</span>*A&#x27; <span class="number">7</span><span class="number">-6</span>*<span class="built_in">eye</span>(<span class="number">7</span>)]</span><br><span class="line">Q(<span class="number">1</span>,<span class="number">4</span>)=<span class="number">6</span></span><br></pre></td></tr></table></figure>
 <h2 id="matlab-for-physics">MATLAB for physics</h2>
 <p>科学计数法用e来表示，例如<code>3e8</code>。</p>
 <p><code>log()</code>表示自然对数</p>
@@ -150,6 +152,9 @@
 <p>​ 然后上了Foc的workshop，大概是无聊透了，一节课就是在填一张bingo表，大概就是找到班上具有对应属性的人，然后填上名字……我是一开始就放弃了，到后面这活动就演变成了一个个人问“Are you…………”，是真的无语了。</p>
 <p>​ 下午物理PSC，有点无聊，tutor只讲了两道题目，然后就没了，讲了好多解题的方法，讲道理感觉这课上的压力有点大。然后课后坐我边上那个人说我看着眼熟，我说我也一样，回去研究了一下大概是星期二实验课见到的吧。</p>
 <p>​ 其它倒也没啥。</p>
+<p>3月11日</p>
+<p>​ 下午最后一节AM1的Computer Lab，结果机房里电脑卡的要死，只能用自己的……然后我星期一把worksheet都做完了……于是只能在课上写assignment。</p>
+<p>​ Computer lab前去了MUMS room，Quang在白板上写了一道题目，让我们做orz。放学之后回到那里，原本打算把assignment做完，然后稍微再想想白板上的题目，结果跟一个都Master of Physics的学长下了两盘象棋，挺好玩，但是结束已经七点了……</p>
 ]]></content>
       <categories>
         <category>生活馆</category>
