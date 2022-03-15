@@ -60,6 +60,21 @@
 <figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">A=[<span class="number">4</span> <span class="number">8</span> <span class="number">8</span> <span class="number">11</span> <span class="number">1</span>]</span><br><span class="line">B=[<span class="built_in">diag</span>(A) <span class="number">7</span>*<span class="built_in">ones</span>(<span class="number">5</span>,<span class="number">7</span>);<span class="number">12</span>*<span class="built_in">ones</span>(<span class="number">7</span>,<span class="number">5</span>) <span class="number">7</span><span class="number">-6</span>*<span class="built_in">eye</span>(<span class="number">7</span>)]</span><br><span class="line">B(<span class="number">1</span>,<span class="number">4</span>)=<span class="number">6</span></span><br></pre></td></tr></table></figure>
 <p>优化(64)：</p>
 <figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">A=<span class="built_in">ones</span>(<span class="number">5</span>,<span class="number">7</span>)</span><br><span class="line">Q=[<span class="built_in">diag</span>([<span class="number">4</span> <span class="number">8</span> <span class="number">8</span> <span class="number">11</span> <span class="number">1</span>]) <span class="number">7</span>*A;<span class="number">12</span>*A&#x27; <span class="number">7</span><span class="number">-6</span>*<span class="built_in">eye</span>(<span class="number">7</span>)]</span><br><span class="line">Q(<span class="number">1</span>,<span class="number">4</span>)=<span class="number">6</span></span><br></pre></td></tr></table></figure>
+<p><code>R=rref(A)</code>直接求A的reduced row echelon form</p>
+<p>我这里matlab默认是输出为小数形式，使用<code>format (style)</code>来修改输出格式，format处可以填<code>short</code>（默认，小数点后四位）, <code>long</code>（小数点后15位）, <code>shortE/longE</code>（科学计数法）, <code>shortG/longG</code>（科学计数法/普通小数，取决于哪种更紧凑）, <code>shortEng/longEng</code>（Engineering notation: 类似科学计数法，但是指数必定为三的倍数）, <code>+</code>（只显示+/-，0则不显示）, <code>bank</code>（货币格式，小数点后二位）, <code>hex</code>（十六进制表达？）, <code>rational</code>（分数，可以缩写rat）等，以及显示格式<code>compact</code>和<code>loose</code>（默认），<code>fmt=format</code>查看当前设置，<code>format default</code>返回初始设置。</p>
+<p><a href="https://au.mathworks.com/help/matlab/ref/format.html">reference</a></p>
+<p>上面似乎有点长（主要不是worksheet上的，自己查来的</p>
+<p><code>det()</code>和<code>inv()</code>分别求矩阵的逆和行列式</p>
+<p>然后做exercise 2的时候发现点问题，下面这个矩阵行列式为零，不可逆，但是拿det和inv计算出来行列式是-1/1050839913053116<span class="github-emoji" data-alias="laughing" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8">😆</span></p>
+<p><span class="math display">\[\begin{bmatrix} 1&amp;2&amp;3\\ 4&amp;5&amp;6\\ 7&amp;8&amp;9\\ \end{bmatrix}\]</span></p>
+<p>而且他求不可逆矩阵出来结果是</p>
+<p><span class="math display">\[\begin{bmatrix} 1/0&amp;1/0&amp;1/0\\ 1/0&amp;1/0&amp;1/0\\ 1/0&amp;1/0&amp;1/0\\ \end{bmatrix}\]</span></p>
+<p>提示是：</p>
+<blockquote>
+<p>警告: 矩阵为奇异工作精度。</p>
+</blockquote>
+<p>format设置为<code>rational</code>时，答案可能给出<code>*</code>代表非常小的数字，可能是一些奇怪的误差，类似上面矩阵给出的结果</p>
+<p>然后是几个写好的函数：<code>[B,E] = rowswap(A,i,j)</code>，<code>[B,E] = rowmul(A,c,i)</code>，<code>[B,E] = rowadd(A,c,i,j)</code>其中B是完成行变换的输出矩阵，E是行变换对应的基本矩阵，A是输入矩阵，c是倍数，i，j是操作的行数（把i行加到j行上）</p>
 <h2 id="matlab-for-physics">MATLAB for physics</h2>
 <p>科学计数法用e来表示，例如<code>3e8</code>。</p>
 <p><code>log()</code>表示自然对数</p>
@@ -85,6 +100,8 @@
     <title>Notes for FoC</title>
     <url>/posts/e912.html</url>
     <content><![CDATA[<p>Foundation of computing的一些笔记</p>
+<p>有点多，慢慢更，应该还是挺详细了，整合到最后再做。</p>
+<p>以及前三张worksheet内容不太多，暂时先放着，后面有空再补。</p>
 <span id="more"></span>
 <h2 id="worksheet-3">Worksheet 3</h2>
 <p><code>bool()</code> will convert the "default" value to <code>False</code>.</p>
@@ -115,6 +132,22 @@
 <p>尝试读取字符串长度之外的字符时会报错，空字符串长度为0，也就是说空字符串即使读取index 0的字符也不行</p>
 <p>可以使用<code>len(string)</code>来获取字符串长度</p>
 <p>使用负数作为index可以从字符串后端开始检索</p>
+<p>index number可使用<code>[a&lt;span class="github-emoji" alias="b" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f171.png?v8"&gt;&amp;#x1f171;&lt;/span&gt;c]</code>来输出一段字符，代表index从a到b（包含a但不包含b）步长c的数列，a留空代表index 0，b留空则是到字符串最后一位（包含），c留空则是default步长，为1</p>
+<p><code>.lower()</code>可输出字母的小写</p>
+<p><strong>列表（lists）</strong>：</p>
+<p>用<code>[]</code>和<code>,</code>作为限定符</p>
+<p>用于储存多个不同的对象（可以是不同数据类型），例如<code>my_jumble = [('jumbly', 4), 'wumbly', ('number', 5)]</code></p>
+<p>空列表<code>empty = []</code></p>
+<p>与字符串很多方面和字符串相同，例如超出列表范围indexerror报错，负数index从末端检索……下面就记一些区别</p>
+<p>一个是用<code>:</code>来slice列表时，返回的数据一定是列表，而普通index返回的是index的对象（数字，字符串……），列表和对象不同。</p>
+<p><strong>tuples</strong>用括号作为限定符，特征是immutable（一旦创建就不可改变）</p>
+<p>列表和tuple无法相加</p>
+<p><code>+</code>（如果是同种类型）,<code>*</code>,<code>len()</code>,<code>in</code>同样可以应用于列表和tuples</p>
+<p><code>max()</code>,<code>min()</code>可用于查找最大值最小值</p>
+<p>同样有空tuple：<code>tuple=()</code></p>
+<p><strong>nested list</strong>: 多个sequence互相嵌套</p>
+<p><a href="https://docs.python.org/3/library/stdtypes.html">这里是更多sequence的操作和性质</a></p>
+<h2 id="worksheet-5">worksheet 5</h2>
 ]]></content>
       <categories>
         <category>自习室</category>
@@ -165,6 +198,14 @@
 
     Show that f(f(k))=k.</code></pre>
 <p>​ 放学之后回到那里，原本打算把assignment做完，然后稍微再想想白板上的题目，结果跟一个都Master of Physics的学长下了两盘象棋，挺好玩，但是结束已经七点了……</p>
+<p>3月14日</p>
+<p>​ 很难绷得住，今天原本是公共假期，但大学还要上课，结果就是早上跑到火车站发现时间表都不一样了……匆匆忙忙幻视一辆火车终点站是Flinders Street然后坐上去，结果到了Nunawading才意识到坐错火车了。于是下车，它那显示的时间还是错的，一边急的要死，一边已经躺平了，最后到学校已经40分了，过去他们也没在干什么，就是后来有个辩论，有点尬住。然后有个同学吐槽hurdle requirement的quiz，三次机会要求80%，然后fail了，笑死。</p>
+<p>​ 吃午饭的时候碰到Uri然后一块去上了AM1，结果讲的都是高中的向量内容，他表示很不理解。然后后面是tutorial，课前lms上没发题目，然后就上课直接做，就最后一题有点挑战，构造矩阵和列变换之后稍微卡了一下，结果半个多小时就把题目做完了，然后跟一个小组的两个同学分享上个星期在MUMS room看到的那道题，然后后来别的组陆续做完也都围了过来。</p>
+<p>​ 哦突然发现，今天是博客第一百天，yeah！</p>
+<p>3月15日</p>
+<p>​ t老师生日快乐<span class="github-emoji" data-alias="birthday" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f382.png?v8">🎂</span></p>
+<p>​ 然后早上物理实验单摆，到后面队友就疯狂编数据赶进度。然后第一部分找周期和初始角度的关系，然后我们一开始做的都是小角度，老师过来叫我们大角度也要做，于是就做得很狼狈。第二部分利用周期求g，结果求出来14.9，后来发现别的组也都一样，算是系统误差……</p>
+<p>​ 然后下午发现AM的tutorial sheet和computer lab sheet上传到了lms上，然后就做了matlab的活，感觉有点多。</p>
 ]]></content>
       <categories>
         <category>生活馆</category>
