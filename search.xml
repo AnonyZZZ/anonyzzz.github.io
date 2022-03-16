@@ -148,6 +148,27 @@
 <p><strong>nested list</strong>: 多个sequence互相嵌套</p>
 <p><a href="https://docs.python.org/3/library/stdtypes.html">这里是更多sequence的操作和性质</a></p>
 <h2 id="worksheet-5">worksheet 5</h2>
+<p><strong>functions 函数</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">name_of_function</span>(<span class="params">var1, var2...</span>):</span></span><br><span class="line">    <span class="comment">#body</span></span><br><span class="line">    <span class="keyword">return</span> value <span class="comment">#return也相当于退出函数，不会进行后面的语句</span></span><br></pre></td></tr></table></figure>
+<p><code>var1</code> <code>var2</code>被叫做parameters（形参），而当调用（call）函数时输入的具体变量被称为argument（实参）</p>
+<p>可以在调用函数时使用<code>var1=a,var2=b</code>为特定形参赋值，此时两句话被视作函数中的赋值语句，顺序可调换</p>
+<p><code>len()</code>,<code>print()</code>,<code>input()</code>等都是函数，特点是函数后一定带有括号</p>
+<p>如果函数没有设定return，其return值将是<code>'None'</code></p>
+<p>注意给变量赋值时赋的是返回值，例如以下代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a=<span class="built_in">print</span>(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
+<p>会输出</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a</span><br><span class="line">None</span><br></pre></td></tr></table></figure>
+<p>第一个<code>a</code>是在执行<code>a=print('a')</code>时输出的，这个语句同时给a赋予了<code>print('a')</code>的返回值，也就是None，于是在下一行输出的就是a的值<code>None</code></p>
+<p>定义函数时函数名要求：以字母或下划线（_）作为第一个字符，剩下可以由字母，数字和下划线任意组合，但是不能与保留字（reserved word）重合</p>
+<p>注意缩进</p>
+<p>函数定义要出现在函数调用之前</p>
+<p><code>return</code>后不一定要跟返回值，可以单挂（用来quit），也可以省略（没有quit效果，适合不用返回值的函数），返回值默认为<code>None</code></p>
+<p>在定义函数形参过程中可以为参数设定默认值（optional argument），调用时可以省略该默认值，也可以在调用时修改</p>
+<p><code>print()</code>函数包含几个optional argument：<code>sep</code>和<code>end</code>，前者代表多个输出间的间隔，默认为空格（<code>' '</code>），而后者代表输出结尾，默认换行符（<code>'\n'</code>）</p>
+<p><strong>method</strong>（<code>.upper()</code> for example）</p>
+<p><code>dir()</code>可以查看与对象相关联的methods</p>
+<p><code>help()</code>可以查看各method的用法</p>
+<p><code>string.split()</code>可以把字符串按照<code>sep</code>（默认为空白字符，包括空格符，制表符，换行符）分成列表，分出来空字符串会被删除</p>
 ]]></content>
       <categories>
         <category>自习室</category>
@@ -206,6 +227,9 @@
 <p>​ t老师生日快乐<span class="github-emoji" data-alias="birthday" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f382.png?v8">🎂</span></p>
 <p>​ 然后早上物理实验单摆，到后面队友就疯狂编数据赶进度。然后第一部分找周期和初始角度的关系，然后我们一开始做的都是小角度，老师过来叫我们大角度也要做，于是就做得很狼狈。第二部分利用周期求g，结果求出来14.9，后来发现别的组也都一样，算是系统误差……</p>
 <p>​ 然后下午发现AM的tutorial sheet和computer lab sheet上传到了lms上，然后就做了matlab的活，感觉有点多。</p>
+<p>3月16日</p>
+<p>​ 早上睡了懒觉，下午把物理assignment给做了，结果58.2/60，成功损失了0.045的总分（，就是说中间有一道题，76.9kg，结果我算的时候用的是76，结果就错了，第二遍发现受力分析有问题，然后又错了，最后一遍结果又用成76了<span class="github-emoji" data-alias="sweat" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f613.png?v8">😓</span>。然后后面有一题算空气阻力的，计算贼烦，把wolfram敲死了（可能是网速问题？），还是geogebra好用。</p>
+<p>​ 剩下都挺无聊的……</p>
 ]]></content>
       <categories>
         <category>生活馆</category>
