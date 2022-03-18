@@ -61,7 +61,9 @@
 <p>优化(64)：</p>
 <figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">A=<span class="built_in">ones</span>(<span class="number">5</span>,<span class="number">7</span>)</span><br><span class="line">Q=[<span class="built_in">diag</span>([<span class="number">4</span> <span class="number">8</span> <span class="number">8</span> <span class="number">11</span> <span class="number">1</span>]) <span class="number">7</span>*A;<span class="number">12</span>*A&#x27; <span class="number">7</span><span class="number">-6</span>*<span class="built_in">eye</span>(<span class="number">7</span>)]</span><br><span class="line">Q(<span class="number">1</span>,<span class="number">4</span>)=<span class="number">6</span></span><br></pre></td></tr></table></figure>
 <p><code>R=rref(A)</code>直接求A的reduced row echelon form</p>
-<p>我这里matlab默认是输出为小数形式，使用<code>format (style)</code>来修改输出格式，format处可以填<code>short</code>（默认，小数点后四位）, <code>long</code>（小数点后15位）, <code>shortE/longE</code>（科学计数法）, <code>shortG/longG</code>（科学计数法/普通小数，取决于哪种更紧凑）, <code>shortEng/longEng</code>（Engineering notation: 类似科学计数法，但是指数必定为三的倍数）, <code>+</code>（只显示+/-，0则不显示）, <code>bank</code>（货币格式，小数点后二位）, <code>hex</code>（十六进制表达？）, <code>rational</code>（分数，可以缩写rat）等，以及显示格式<code>compact</code>和<code>loose</code>（默认），<code>fmt=format</code>查看当前设置，<code>format default</code>返回初始设置。</p>
+<p>我这里matlab默认是输出为小数形式，使用<code>format (style)</code>来修改输出格式，format处可以填<code>short</code>（默认，小数点后四位）, <code>long</code>（小数点后15位）, <code>shortE/longE</code>（科学计数法）, <code>shortG/longG</code>（科学计数法/普通小数，取决于哪种更紧凑）, <code>shortEng/longEng</code>（Engineering notation: 类似科学计数法，但是指数必定为三的倍数）, <code>+</code>（只显示+/-，0则不显示）, <code>bank</code>（货币格式，小数点后二位）, <code>hex</code>（十六进制表达？）, <code>rational</code>（分数，可以缩写rat，但是输出的分数并不是精确值，而是估计）等，以及显示格式<code>compact</code>和<code>loose</code>（默认），<code>fmt=format</code>查看当前设置，<code>format default</code>返回初始设置。</p>
+<p><code>rat(a)</code>可以输出分数形式（估计值），算法是利用</p>
+<p><span class="math display">\[\frac{N}{D}=D_1+\frac{1}{D_2+\frac{1}{...+\frac{1}{D_k}}}\]</span></p>
 <p><a href="https://au.mathworks.com/help/matlab/ref/format.html">reference</a></p>
 <p>上面似乎有点长（主要不是worksheet上的，自己查来的</p>
 <p><code>det()</code>和<code>inv()</code>分别求矩阵的逆和行列式</p>
@@ -75,6 +77,8 @@
 </blockquote>
 <p>format设置为<code>rational</code>时，答案可能给出<code>*</code>代表非常小的数字，可能是一些奇怪的误差，类似上面矩阵给出的结果</p>
 <p>然后是几个写好的函数：<code>[B,E] = rowswap(A,i,j)</code>，<code>[B,E] = rowmul(A,c,i)</code>，<code>[B,E] = rowadd(A,c,i,j)</code>其中B是完成行变换的输出矩阵，E是行变换对应的基本矩阵，A是输入矩阵，c是倍数，i，j是操作的行数（把i行加到j行上）</p>
+<p><code>size(A)</code>用来查询矩阵A的大小，输出结果记作<code>[dim1, dim2, ...]</code>，可以用<code>size(A,n)</code>用来输出矩阵A第n维度的大小（例如1是行，2是列）</p>
+<p>然后所以习题里面的<code>size(A,1)</code>要改成<code>size(A,2)</code>之前都没发现orz</p>
 <h2 id="matlab-for-physics">MATLAB for physics</h2>
 <p>科学计数法用e来表示，例如<code>3e8</code>。</p>
 <p><code>log()</code>表示自然对数</p>
@@ -229,7 +233,16 @@
 <p>​ 然后下午发现AM的tutorial sheet和computer lab sheet上传到了lms上，然后就做了matlab的活，感觉有点多。</p>
 <p>3月16日</p>
 <p>​ 早上睡了懒觉，下午把物理assignment给做了，结果58.2/60，成功损失了0.045的总分（，就是说中间有一道题，76.9kg，结果我算的时候用的是76，结果就错了，第二遍发现受力分析有问题，然后又错了，最后一遍结果又用成76了<span class="github-emoji" data-alias="sweat" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f613.png?v8">😓</span>。然后后面有一题算空气阻力的，计算贼烦，把wolfram敲死了（可能是网速问题？），还是geogebra好用。</p>
-<p>​ 剩下都挺无聊的……</p>
+<p>​ 然后做了foc一个worksheet，挺无聊的……</p>
+<p>3月17日</p>
+<p>​ 早上foc的workshop，一如既往的无聊，worksheet甚至只是老师在屏幕上投影出来，然后做了个Kahoot，然后就没了……</p>
+<p>​ AM1说是明天第一部分（矩阵&amp;向量）就结束了，比想象中快一些？</p>
+<p>​ 物理表示参考系这东西我有点搞不懂，不过感觉别的人似乎比我更懵orz ，下课后听Luyee跟老师探讨简谐运动公式的推导，然后又和他多聊了一会儿，至少这一节PSC还算不错，然后后来一直到六点才离开，然后在图书馆待到七点差不多是啥都没干。</p>
+<p>​ 哦，今天最搞笑的还是要数郑干在b站上发了一个<a href="https://www.bilibili.com/video/BV1jS4y1u7ZR?share_source=copy_web">“求偶视频”</a>，结果就火了笑死<span class="github-emoji" data-alias="laughing" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8">😆</span> ……</p>
+<p>3月18日</p>
+<p>​ 物理课讲了momentum，然后演示实验教授坐到一个小车里然后通过往前扔东西/吹风试图向后退，结果小车纹丝不动笑死。然后去上了foc的lecture，结果听lecturer又从“what is programing”开始讲了一遍，人傻掉了……</p>
+<p>​ 数学上完在MUMS room和Uri下了局chess，到computer lab才发现自己和Dougal 数学和物理的选课居然是完全重合了orz。</p>
+<p>​ 后来去参加了MUMS的Games Night，还是很好玩的，和几个同学一起玩Monopoly，结果我指哪去哪，一下子就破产了……然后就看别人玩，后面有桌打牌的，打了一半问我们要了一叠代币去，哦还有一个人，脸上一直挤眉弄眼的，贼滑稽。最后到八点半才回家<span class="github-emoji" data-alias="man_facepalming" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f926-2642.png?v8">🤦️‍♂</span>。</p>
 ]]></content>
       <categories>
         <category>生活馆</category>
