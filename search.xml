@@ -174,6 +174,24 @@
 <p><code>dir()</code>可以查看与对象相关联的methods</p>
 <p><code>help()</code>可以查看各method的用法</p>
 <p><code>string.split()</code>可以把字符串按照<code>sep</code>（默认为空白字符，包括空格符，制表符，换行符）分成列表，分出来空字符串会被删除</p>
+<h2 id="worksheet-6">Worksheet 6</h2>
+<p><strong>String formating</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;The quotient of &quot;</span> + <span class="built_in">str</span>(num1) + <span class="string">&quot; and &quot;</span> + <span class="built_in">str</span>(num2) + <span class="string">&quot; is &quot;</span> + <span class="built_in">str</span>(num1/num2))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;The quotient of&quot;</span>, num1, <span class="string">&quot;and&quot;</span>, num2, <span class="string">&quot;is&quot;</span>, num1/num2)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;The quotient of <span class="subst">&#123;num1&#125;</span> and <span class="subst">&#123;num2&#125;</span> is <span class="subst">&#123;num1/num2&#125;</span>&quot;</span>)    <span class="comment">#f-string格式，使用&#123;num1/num2:.2f&#125;可以保留两位小数</span></span><br></pre></td></tr></table></figure>
+<p>三种格式会输出相同的结果</p>
+<p><strong>f-string</strong> 格式是<strong><code>print(f"something")</code></strong>，引号内可以用<code>&#123;val&#125;</code>来输出某个值（变量等）</p>
+<p>单引号（<code>''</code>）和双引号（<code>""</code>）可以随意互相替换，但要注意字符串内的标点，避免字符串“断掉”，如果句内包括了引号，有三种解决方案，一是利用另一种引号作为限定符，二是在句中引号前使用<code>\</code>会得到正常的引号输出，三是使用三重引号</p>
+<p><strong>三重引号</strong>提供了多行输出的功能，区别于普通引号换行会出现编译错误，三重引号中的换行会在输出中显示出来，并得到正常输出。（单双引号也可以随意替换，任意组合）</p>
+<p>在f-string中，使用<strong><code>&#123;float:n.mf&#125;</code></strong>（其中n和m为指定常量）右端在第n个字符位置对齐（如果数字长度小于这个数字的话，数字长度大的会一直往右把数输出完，<em>或者说会在数字左边加上<code>max&#123;0,n-len(val:.fm)&#125;</code>个空格</em>）同时保留m位小数，如果在n前面加上0，则用0来取代前面所提的空格。</p>
+<p>同样的，对于字符串，我们可以用s来代替f，也就是<strong><code>&#123;string:n.ms&#125;</code></strong>，区别是字符串默认左端对齐，而浮点数默认右端对齐，同时字符串没有把空格改成0的操作（<em>如果要用某字符替代空格，可以在n前加上字符+对齐符号，类似<code>:a&lt;n</code>，此时空格可被替代，浮点数也可以用同样的方式输出（替位符不一定要是数字/字母）</em>）</p>
+<p><em>对于s，目前测试下来是可省略的，而f若省略功能则变成保留有效数字，若将点号后面省略则是单独的格式修改（不会改变初始值），冒号后整体被称作format specifier，点号后的数字叫做Precision，最后的字母叫做format code</em></p>
+<p>在n前输入<code>&lt;</code>或<code>^</code>或<code>&gt;</code>可以分别对输出进行居左，居中，居右对齐的设置</p>
+<p><code>:g</code>表示general format，会根据数字自动调整数据类型，例如<code>2/2:g</code>会输出1，<code>:d</code>输出为普通十进制整型，<code>:c</code>会输出字符，可以输出一个整数在Unicode中对应的符号。</p>
+<p>在前面提到的n和m处如果要使用变量，需要在表达式外额外再添加一层大括号。</p>
+<p>我自己的总结大概是对于<code>&#123;something:a&lt;n.ms&#125;</code>其中最后一个字母设置format code，主要用来辨识数据类型（例如c,d,f,g,s），<code>.m</code>针对该数据类型进行截取（f：保留小数点后位数，s：保留字符串字符数，省略则根据原始数据类型，但对于float是保留有效数字），<code>n</code>代表对齐格式的右端位置，<code>&lt;</code>,<code>^</code>,<code>&gt;</code>三种对齐格式，<code>a</code>位置则是空格替换（在float类型下可以直接带0，其他情况一定要在没有进行precision，同时有对齐格式的基础上添加，但是可以替换任意字符（至少包括字母数字和$））</p>
+<p>还有一堆乱七八糟的但是全写下来太复杂了就摸了，而且这些也只是我尝试出来的结果，不一定完全正确。</p>
+<p><a href="https://www.w3schools.com/python/ref_string_format.asp">有关format更多的功能可以看这里</a></p>
+<p><a href="https://www.python.org/dev/peps/pep-0498/">关于f-string看这里</a></p>
+<h2 id="worksheet-7">Worksheet 7</h2>
 ]]></content>
       <categories>
         <category>自习室</category>
@@ -242,13 +260,18 @@
 <p>​ 哦，今天最搞笑的还是要数郑干在b站上发了一个<a href="https://www.bilibili.com/video/BV1jS4y1u7ZR?share_source=copy_web">“求偶视频”</a>，结果就火了笑死<span class="github-emoji" data-alias="laughing" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8">😆</span> ……</p>
 <p>3月18日</p>
 <p>​ 物理课讲了momentum，然后演示实验教授坐到一个小车里然后通过往前扔东西/吹风试图向后退，结果小车纹丝不动笑死。然后去上了foc的lecture，结果听lecturer又从“what is programing”开始讲了一遍，人傻掉了……</p>
-<p>​ 数学上完在MUMS room和Uri下了局chess，到computer lab才发现自己和Dougal 数学和物理的选课居然是完全重合了orz。</p>
+<p>​ 数学上完在MUMS room和Uri下了局chess，到computer lab才发现自己和Dougal 数学和物理的选课居然是完全重合的orz。</p>
 <p>​ 后来去参加了MUMS的Games Night，还是很好玩的，和几个同学一起玩Monopoly，结果我指哪去哪，一下子就破产了……然后就看别人玩，后面有桌打牌的，打了一半问我们要了一叠代币去，哦还有一个人，脸上一直挤眉弄眼的，贼滑稽。最后到八点半才回家<span class="github-emoji" data-alias="man_facepalming" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f926-2642.png?v8">🤦️‍♂</span>。</p>
-<p>3月19日</p>
+<p>3月21日</p>
 <p>​ 早上睡过头了，旷了一节science的workshop……</p>
 <p>​ 然后下午数学practical也是半个多小时把题目给干完了，然后Dougal给我们讲模逆元，讲得我们都是半懂不懂的，然后我们两个一块到图书馆下面自习了会儿，他在那里继续捣鼓模逆元（<a href="https://en.wikipedia.org/wiki/Modular_multiplicative_inverse">Modular multiplicative inverse</a>，可以用来给分数求模），他说想要证当a,n互质时，a的模逆元存在。查了几下大概是看懂了，然后他给我介绍了<a href="https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm">扩展欧几里得算法</a>，然后又聊到特征值法求数列通项公式，他提到用矩阵来求通项公式，突然就理解了为什么当时要叫做“特征值法”了。然后又research了一下，似乎二阶常系数齐次线性微分方程也类似？</p>
 <p>​ 然后又想了一下数学tutorial的第三题，当时<span class="math inline">\((\vec{u}·\vec{v})·\vec{w}\neq(\vec{w}·\vec{v})·\vec{u}\)</span>只考虑了<span class="math inline">\(\vec{w}\)</span>和<span class="math inline">\(\vec{u}\)</span>共线没有考虑系数为0的情况，所以原题等号成立的条件应该为①<span class="math inline">\(\vec{w}\)</span>和<span class="math inline">\(\vec{u}\)</span>共线或者②<span class="math inline">\(\vec{v}\)</span>同时和<span class="math inline">\(\vec{u}\)</span>以及<span class="math inline">\(\vec{w}\)</span>垂直。</p>
 <p>​ 晚上听说下个星期Box Hill到Camberwell要bus replace train，有点绷不住。</p>
+<p>3月22日</p>
+<p>​ 今天好冷的说，还有点下雨<span class="github-emoji" data-alias="sob" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f62d.png?v8">😭</span>早上在Box Hill Central买了四个饼，量巨多，四个饼吃了三餐orz……</p>
+<p>​ 物理做了关于转动惯量的实验，倒还挺好玩，就是说内容是下个星期的lecture让我们今天做实验是不是有点怪。写了巨多的Data and Analysis，然后它们提供的轮子轮辐还不是均匀的，导致传感器画出来的图就是很厚实的一块不过最后结果还算不错吧，虽然不知道实际应该是怎么样的，但和估计的差不多。然后后来想想，似乎自己计算做错了，当时赶得匆忙把两条思路搞混了，寄。</p>
+<p>​ 然后物理lecture主要讲火箭发射的运算，我们教授疯狂diss隔壁chemistry，说化学反应产能效率太低，相比较而言核物理的产能要高很多，笑死了。</p>
+<p>​ MPMP今天不知道咋回事只来了六个人，然后也还是就是随便聊聊天，没啥特别。</p>
 ]]></content>
       <categories>
         <category>生活馆</category>
