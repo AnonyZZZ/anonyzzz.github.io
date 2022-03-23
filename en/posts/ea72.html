@@ -21,15 +21,15 @@
     var CONFIG = {"hostname":"anonyzzz.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="看上去MATLAB也要记些东西…… 好多，一段时间再补……orz">
+  <meta name="description" content="看上去MATLAB也要记些东西…… 斜体表示出现的内容是课程提供的function">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Notes for MATLAB">
 <meta property="og:url" content="https://anonyzzz.github.io/en/posts/ea72.html">
 <meta property="og:site_name" content="Anony的角落">
-<meta property="og:description" content="看上去MATLAB也要记些东西…… 好多，一段时间再补……orz">
+<meta property="og:description" content="看上去MATLAB也要记些东西…… 斜体表示出现的内容是课程提供的function">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-03-07T06:33:03.000Z">
-<meta property="article:modified_time" content="2022-03-21T06:13:09.856Z">
+<meta property="article:modified_time" content="2022-03-23T11:35:24.162Z">
 <meta property="article:author" content="AnonyZZZ">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="MATLAB">
@@ -238,7 +238,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-03-21 17:13:09" itemprop="dateModified" datetime="2022-03-21T17:13:09+11:00">2022-03-21</time>
+                <time title="Modified: 2022-03-23 22:35:24" itemprop="dateModified" datetime="2022-03-23T22:35:24+11:00">2022-03-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -277,14 +277,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2.3k</span>
+              <span>2.8k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>4 mins.</span>
+              <span>5 mins.</span>
             </span>
 
         </div>
@@ -297,9 +297,10 @@
 
       
         <p>看上去MATLAB也要记些东西……</p>
-<p>好多，一段时间再补……orz</p>
+<p><em>斜体</em>表示出现的内容是课程提供的function</p>
 <span id="more"></span>
 <h2 id="矩阵">矩阵</h2>
+<h4 id="lab2">lab2</h4>
 <p>最基础的<code>A=[a b;c d]</code></p>
 <p>空格也可以用<code>,</code>，暂时没找出区别</p>
 <p><code>A'</code>用于求转置（transpose）</p>
@@ -317,6 +318,7 @@
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A=[<span class="number">4</span> <span class="number">8</span> <span class="number">8</span> <span class="number">11</span> <span class="number">1</span>]</span><br><span class="line">B=[<span class="built_in">diag</span>(A) <span class="number">7</span>*<span class="built_in">ones</span>(<span class="number">5</span>,<span class="number">7</span>);<span class="number">12</span>*<span class="built_in">ones</span>(<span class="number">7</span>,<span class="number">5</span>) <span class="number">7</span><span class="number">-6</span>*<span class="built_in">eye</span>(<span class="number">7</span>)]</span><br><span class="line">B(<span class="number">1</span>,<span class="number">4</span>)=<span class="number">6</span></span><br></pre></td></tr></table></figure>
 <p>优化(64)：</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A=<span class="built_in">ones</span>(<span class="number">5</span>,<span class="number">7</span>)</span><br><span class="line">Q=[<span class="built_in">diag</span>([<span class="number">4</span> <span class="number">8</span> <span class="number">8</span> <span class="number">11</span> <span class="number">1</span>]) <span class="number">7</span>*A;<span class="number">12</span>*A&#x27; <span class="number">7</span><span class="number">-6</span>*<span class="built_in">eye</span>(<span class="number">7</span>)]</span><br><span class="line">Q(<span class="number">1</span>,<span class="number">4</span>)=<span class="number">6</span></span><br></pre></td></tr></table></figure>
+<h4 id="lab3">lab3</h4>
 <p><code>R=rref(A)</code>直接求A的reduced row echelon form</p>
 <p>我这里matlab默认是输出为小数形式，使用<code>format (style)</code>来修改输出格式，format处可以填<code>short</code>（默认，小数点后四位）, <code>long</code>（小数点后15位）, <code>shortE/longE</code>（科学计数法）, <code>shortG/longG</code>（科学计数法/普通小数，取决于哪种更紧凑）, <code>shortEng/longEng</code>（Engineering notation: 类似科学计数法，但是指数必定为三的倍数）, <code>+</code>（只显示+/-，0则不显示）, <code>bank</code>（货币格式，小数点后二位）, <code>hex</code>（十六进制表达？）, <code>rational</code>（分数，可以缩写rat，但是输出的分数并不是精确值，而是估计）等，以及显示格式<code>compact</code>和<code>loose</code>（默认），<code>fmt=format</code>查看当前设置，<code>format default</code>返回初始设置。</p>
 <p><code>rat(a)</code>可以输出分数形式（估计值），算法是利用</p>
@@ -333,9 +335,27 @@
 <p>警告: 矩阵为奇异工作精度。</p>
 </blockquote>
 <p>format设置为<code>rational</code>时，答案可能给出<code>*</code>代表非常小的数字，可能是一些奇怪的误差，类似上面矩阵给出的结果</p>
-<p>然后是几个写好的函数：<code>[B,E] = rowswap(A,i,j)</code>，<code>[B,E] = rowmul(A,c,i)</code>，<code>[B,E] = rowadd(A,c,i,j)</code>其中B是完成行变换的输出矩阵，E是行变换对应的基本矩阵，A是输入矩阵，c是倍数，i，j是操作的行数（把i行加到j行上）</p>
+<p><em>然后是几个写好的函数：<code>[B,E] = rowswap(A,i,j)</code>，<code>[B,E] = rowmul(A,c,i)</code>，<code>[B,E] = rowadd(A,c,i,j)</code>其中B是完成行变换的输出矩阵，E是行变换对应的基本矩阵，A是输入矩阵，c是倍数，i，j是操作的行数（把i行加到j行上）</em></p>
 <p><code>size(A)</code>用来查询矩阵A的大小，输出结果记作<code>[dim1, dim2, ...]</code>，可以用<code>size(A,n)</code>用来输出矩阵A第n维度的大小（例如1是行，2是列）</p>
 <p>然后所以习题里面的<code>size(A,1)</code>要改成<code>size(A,2)</code>之前都没发现orz</p>
+<h4 id="lab4">lab4</h4>
+<p><code>det()</code>求行列式（上节课就有了）</p>
+<p><code>dot()</code>求dot product</p>
+<p><code>cross()</code>求cross product</p>
+<p><em><code>pgram1(B)</code>绘制由两行向量组成的平行四边形（应该只能做二维的，输入一定要是2*2的矩阵）</em></p>
+<p><em><code>pgram2(B,C)</code>绘制两个平行四边形</em></p>
+<p><code>Hold on</code>，<code>Hold off</code>可以切换是否在一个figure窗口中绘制多个图</p>
+<p><code>Figure(n)</code>可以新建第n个Figure窗口</p>
+<p>Home- Clear workspace 可以清除所有变量</p>
+<p><code>syms</code>需要安装Symbolic Maths Toolbox</p>
+<p><code>syms</code>是类似声明变量（符号）的一个指令，内容……非常多，挑了一部分记 <a target="_blank" rel="noopener" href="https://au.mathworks.com/help/symbolic/syms.html?searchHighlight=syms&amp;s_tid=srchtitle_syms_1">这里是官方网站的链接</a></p>
+<p><code>syms</code>可以用来声明普通符号，矩阵（用方括号声明大小，例如<code>syms a [1 4]</code>），函数（带小括号及自变量）</p>
+<p>声明符号的最后可以指定这个符号的取值范围，例如<code>real</code>,<code>integer</code>,<code>positive</code>,<code>rational</code>,<code>matrix</code>等</p>
+<p><code>assumptions</code>可以用来查询目前已声明的变量及他们的取值</p>
+<p><code>assume([x y z],'clear')</code>可以用来清除已声明的变量</p>
+<p><code>abs()</code>计算绝对值</p>
+<p><code>sqrt()</code>计算平方根</p>
+<p><code>simplify()</code>化简带符号的表达式</p>
 <h2 id="matlab-for-physics">MATLAB for physics</h2>
 <p>用小括号来截取数组中的一部分，index从1开始，最后一个可以用<code>end</code>，使用<code>end-n</code>来指代倒数第n+1个数字</p>
 <p>科学计数法用e来表示，例如<code>3e8</code>。</p>
@@ -432,7 +452,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5"><span class="nav-number">1.</span> <span class="nav-text">矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#matlab-for-physics"><span class="nav-number">2.</span> <span class="nav-text">MATLAB for physics</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5"><span class="nav-number">1.</span> <span class="nav-text">矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#lab2"><span class="nav-number">1.0.1.</span> <span class="nav-text">lab2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lab3"><span class="nav-number">1.0.2.</span> <span class="nav-text">lab3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lab4"><span class="nav-number">1.0.3.</span> <span class="nav-text">lab4</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#matlab-for-physics"><span class="nav-number">2.</span> <span class="nav-text">MATLAB for physics</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
