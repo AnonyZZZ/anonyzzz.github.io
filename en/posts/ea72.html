@@ -29,7 +29,7 @@
 <meta property="og:description" content="看上去MATLAB也要记些东西…… 斜体表示出现的内容是课程提供的function">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-03-07T06:33:03.000Z">
-<meta property="article:modified_time" content="2022-03-23T11:35:24.162Z">
+<meta property="article:modified_time" content="2022-03-25T06:16:13.133Z">
 <meta property="article:author" content="AnonyZZZ">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="MATLAB">
@@ -238,7 +238,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-03-23 22:35:24" itemprop="dateModified" datetime="2022-03-23T22:35:24+11:00">2022-03-23</time>
+                <time title="Modified: 2022-03-25 17:16:13" itemprop="dateModified" datetime="2022-03-25T17:16:13+11:00">2022-03-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -277,7 +277,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2.8k</span>
+              <span>2.9k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -356,6 +356,8 @@
 <p><code>abs()</code>计算绝对值</p>
 <p><code>sqrt()</code>计算平方根</p>
 <p><code>simplify()</code>化简带符号的表达式</p>
+<p>MATLAB似乎没有专门指令求向量长度，所以要用<code>sqrt(dot(x,x))</code>来求向量x的长度</p>
+<p>然后如果没有上节课提供的函数，自己做row operation可以直接类似这样：<code>A(row1,:)=A(row1,:)+k*A(row2,:)</code></p>
 <h2 id="matlab-for-physics">MATLAB for physics</h2>
 <p>用小括号来截取数组中的一部分，index从1开始，最后一个可以用<code>end</code>，使用<code>end-n</code>来指代倒数第n+1个数字</p>
 <p>科学计数法用e来表示，例如<code>3e8</code>。</p>

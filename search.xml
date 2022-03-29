@@ -99,6 +99,8 @@
 <p><code>abs()</code>计算绝对值</p>
 <p><code>sqrt()</code>计算平方根</p>
 <p><code>simplify()</code>化简带符号的表达式</p>
+<p>MATLAB似乎没有专门指令求向量长度，所以要用<code>sqrt(dot(x,x))</code>来求向量x的长度</p>
+<p>然后如果没有上节课提供的函数，自己做row operation可以直接类似这样：<code>A(row1,:)=A(row1,:)+k*A(row2,:)</code></p>
 <h2 id="matlab-for-physics">MATLAB for physics</h2>
 <p>用小括号来截取数组中的一部分，index从1开始，最后一个可以用<code>end</code>，使用<code>end-n</code>来指代倒数第n+1个数字</p>
 <p>科学计数法用e来表示，例如<code>3e8</code>。</p>
@@ -127,6 +129,7 @@
     <content><![CDATA[<p>Foundation of computing的一些笔记</p>
 <p>有点多，慢慢更，应该还是挺详细了，整合到最后再做。</p>
 <p>以及前三张worksheet内容不太多，暂时先放着，后面有空再补。</p>
+<p><a href="http://www.pythontutor.com/visualize.html#mode=edit">pythontutor</a></p>
 <span id="more"></span>
 <h2 id="worksheet-3">Worksheet 3</h2>
 <p><code>bool()</code> will convert the "default" value to <code>False</code>.</p>
@@ -150,6 +153,7 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> &lt;condition1&gt;:</span><br><span class="line">    &lt;block <span class="number">1</span> of statements&gt;</span><br><span class="line"><span class="keyword">elif</span> &lt;condition2&gt;:</span><br><span class="line">    &lt;block <span class="number">2</span> of statements&gt;</span><br><span class="line"><span class="keyword">elif</span> &lt;condition3&gt;:</span><br><span class="line">    &lt;block <span class="number">3</span> of statements&gt;</span><br><span class="line"><span class="comment">#...</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    &lt;block n of statements&gt;</span><br></pre></td></tr></table></figure>
 <p>注意有且仅有一个（最上方满足条件的）statement可被执行</p>
 <p>检测prefixes或suffixes可以在字符串前后加上特殊字符再检测是否包含带有特殊字符的字符串</p>
+<p>使用<code>something in 'something'</code>可以更方便判别某字符是不是某几个特定当中的一个</p>
 <h2 id="worksheet-4">Worksheet 4</h2>
 <p><strong>sequence</strong>包括strings（字符串），lists（列表），tuples（多元组）</p>
 <p>index starts from 0 (for the first character) (zero offset)</p>
@@ -165,7 +169,10 @@
 <p>空列表<code>empty = []</code></p>
 <p>与字符串很多方面和字符串相同，例如超出列表范围indexerror报错，负数index从末端检索……下面就记一些区别</p>
 <p>一个是用<code>:</code>来slice列表时，返回的数据一定是列表，而普通index返回的是index的对象（数字，字符串……），列表和对象不同。</p>
-<p><strong>tuples</strong>用括号作为限定符，特征是immutable（一旦创建就不可改变）</p>
+<p><code>list.append()</code>可以向列表内添加单个项目，而<code>list.extend()</code>可以添加多个项目</p>
+<p><code>list.pop()</code>返回并删去列表最后一项</p>
+<p><code>list.sort()</code>排序，</p>
+<p><strong>tuples</strong>用括号作为限定符，特征是immutable（一旦创建就不可改变，<strong>但里面储存的列表可以被改变</strong>）</p>
 <p>列表和tuple无法相加</p>
 <p><code>+</code>（如果是同种类型）,<code>*</code>,<code>len()</code>,<code>in</code>同样可以应用于列表和tuples</p>
 <p><code>max()</code>,<code>min()</code>可用于查找最大值最小值</p>
@@ -217,7 +224,8 @@
 <p><code>type(object)</code>输出括号内内容的数据类型（包括types或者buildin functions）,例如：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">str</span>))  <span class="comment"># &lt;class &#x27;type&#x27;&gt;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">print</span>))  <span class="comment"># &lt;class &#x27;builtin_function_or_method&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
 <p>但如果在print后面加上括号，返回的就是return对象，也就是<code>NoneType</code></p>
-<p><code>id(object)</code>输出对象在内存中的位置</p>
+<p><code>id(object)</code>输出对象在内存中的位置，关系运算符<code>is</code>判断两个object是否有相同的id，类似<code>a=b</code>的statement会给两个变量赋予同一个id，如果储存的是数字，单独赋值也会给它同样的id，但如果是列表，单独创建会创建不同的id</p>
+<p><code>del object</code>将对象从内存中删除</p>
 <p>Boolean也可以进行算术运算，此时False被看作0，True被看作1</p>
 <p><strong>表达式：</strong></p>
 <p><strong>Expression</strong>: some code which generates an object. This could be a literal or a previously-assigned identifier. It could be an operation, or a function/method call. It could be an index or slice of a sequence. A function call can be thought of as an expression which evaluates to its return value.</p>
@@ -227,7 +235,27 @@
 <p><strong>Statement</strong>: Anything which is a valid line of Python code. This includes all expressions, but also lines with <code>def</code>, <code>return</code>, <code>if</code>, <code>elif</code>, <code>else</code>. It also includes assignment operations (<code>=</code>).</p>
 <p>都是些定义</p>
 <h2 id="worksheet-8">Worksheet 8</h2>
-<p>循环，一看就知道长得要死</p>
+<p><strong>循环（iteration）</strong></p>
+<ol type="1">
+<li><p><strong>while</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> &lt;condition&gt;:</span><br><span class="line">    &lt;block of statements&gt;</span><br></pre></td></tr></table></figure>
+<p>当condition为True时循环运行statement</p>
+<p>注意避免死循环</p>
+<p>运算符号+等于号相当于运算并赋值，例如<code>+=</code>,<code>-=</code>,<code>*=</code>,<code>/=</code>,<code>//=</code>,<code>%=</code>,<code>**=</code></p>
+<p><code>break</code>也可以用于退出循环</p></li>
+<li><p><strong>For</strong></p>
+<p>用于可循环对象（<strong>iterable</strong> object），例如字符串，列表</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> &lt;loop variable&gt; <span class="keyword">in</span> &lt;iterable&gt;:</span><br><span class="line">    &lt;block of statements&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>iterable</strong>可以是字符串，列表等，也可以是<code>range(a,b,s)</code>，a表示初值，b表示末值，s表示步长（类比切片时的<code>a&lt;span class="github-emoji" alias="b" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f171.png?v8"&gt;&amp;#x1f171;&lt;/span&gt;s</code>），当括号里只有一个值时表示<code>0:n</code>，起到写几就循环几次的作用。</p></li>
+</ol>
+<p>然后后面就是一些for loop 和while loop的转换，应该没啥好说的……</p>
+<p>for转while注意要初始化变量，while也可以用<code>while list:</code>然后每个循环把列表里内容删一项</p>
+<p>变量名用大写代表常量</p>
+<p><code>list.append()</code>可以向列表内添加项目</p>
+<h2 id="worksheet-9">Worksheet 9</h2>
+<p><strong>Mutability</strong></p>
+<p>Lists, dictionaries and sets are <strong>mutable</strong>.</p>
+<p>Everything else is <strong>immutable</strong> — strings, tuples and numbers (including ints, floats and booleans).</p>
 ]]></content>
       <categories>
         <category>自习室</category>
@@ -316,6 +344,18 @@
 <p>3月24日</p>
 <p>​ 今天好开心，早上foc workshop还是做Kahoot，不过拿了第一，那就是好workshop（做的时候好紧张，心脏狂跳，然后结束后就在那发抖……</p>
 <p>​ 下午上完物理PSC赶去参加Competition Maths Catchup，到那边有个同学，叫Jason，叫我一起做题，然后就一起在白板上做题，了解之后才知道他是去年IMO澳大利亚国家队的orz，不过我发挥还算不错吧:happy:。然后又认识了昨天那个在MUMS room碰到的那位，今天他直接穿了IMO的T恤，叫Andres，19~21年IMO Team的，去年是金牌……总之就是很开心。</p>
+<p>3月25日</p>
+<p>​ 物理课教授讲了一大堆奇怪的内容，反而Foc倒还不错orz</p>
+<p>​ AM上玩去MUMS room， Quang邀请我们一起吃饭，想着也多熟悉熟悉别的人，于是就一起去了，吃了个鸡排，还挺好吃，就是说有点远，吃到4点10分，最后跑着回去上课orz，上完computer lab，Dougal要去一个编程比赛，我就跟着去看看，也没法参加，要赶着坐火车回家，那边有免费pizza，但是太饱了……原本是6点开始的，结果6点40才开始，然后他们开始比赛我就溜了。</p>
+<p>3月26日</p>
+<p>​ 早上起的有点早，留了太多提前量结果8点多一点就到了，早上在Box Hill火车站还发了饼干，公交车到Camberwell刚好看见热气球升空，到学校就去MUMS坐了一会儿，吃了一块早上坐车送的饼干，一言难尽。然后workshop做一些Telstra Creator Space的Training，很烦……</p>
+<p>​ 下午数学practical中间induction顿了一会儿，最后几分钟硬赶赶完了，然后下课就又发现错了，倒是老师没看出来，说是方法很妙，实际上就是个错误答案orz，打出来给大伙乐乐: <span class="math display">\[
+8^{n+1}-3·8^n+2=(8^n-2)(8-1)\equiv0\pmod 7
+\]</span> ​ 笑死有人天天做错题目我不说是谁<span class="github-emoji" data-alias="laughing" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8">😆</span>。</p>
+<p>3月27日</p>
+<p>​ 早上物理实验差点没笑死过去，一开始实验Matlab崩了，然后换了台电脑，实验是两个求g的值，第一个利用圆周运动的critical speed，critical state属于是非常难判断了，第一遍做下来出来17点几，然后画图的时候发现要换半径再做实验，结果出来我们的g和r成正比，笑死，然后不停换r，不停改数据最后放弃了，算出来个21点几的g，然后另一个实验就没时间做了，就是草草的测了几回，是测量轨迹圆形的物体的周期来求g，这个倒是出来10点几，只是没空分析什么了……</p>
+<p>​ 物理lecture在已经把rotation的几个实验全部做完之后总算开始讲rotation了，也挺离谱的，而且讲的贼快orz</p>
+<p>​ 然后下午还去了Telstra Creator Space参加Training，里面确实挺帅，不过做完training最大的感想就是我不想学engineering了，我属于是离了钻床就不会给金属钻孔了。然后Luca也参加同一个training，他人真好。</p>
 ]]></content>
       <categories>
         <category>生活馆</category>
