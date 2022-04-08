@@ -123,6 +123,7 @@
 <p>Exploration一开始被a迷惑了，然后发现<span class="math inline">\(E_3^2\)</span>就不满足条件（大于0，但<span class="math inline">\(E_3^2\)</span>有0元素）</p>
 <p>b的话按照题目是叫我们找规律，大概上下两元素间的比值是<span class="math inline">\(\frac{(n-1)^2}{n}\)</span></p>
 <h4 id="lab-6">lab 6</h4>
+<p>前面一半是用matlab验证一些简单的结论，没啥东西</p>
 <h2 id="matlab-for-physics">MATLAB for physics</h2>
 <p>用小括号来截取数组中的一部分，index从1开始，最后一个可以用<code>end</code>，使用<code>end-n</code>来指代倒数第n+1个数字</p>
 <p>科学计数法用e来表示，例如<code>3e8</code>。</p>
@@ -278,11 +279,34 @@
 <p><strong>Mutability</strong></p>
 <p>Lists, dictionaries and sets are <strong>mutable</strong>.</p>
 <p>Everything else is <strong>immutable</strong> — strings, tuples and numbers (including ints, floats and booleans).</p>
+<p>意思是对lists，dictionaries，sets进行某些操作，他们的id不变，也就是还是同一个对象</p>
+<p>而对于剩下的，你要改变他们的值，只能重新赋值，此时id也就会变</p>
 <p>list.pop() 括号里index，内容</p>
 <p>list.remove() 括号里index</p>
 <p>list.extand() 可以进行列表+列表操作</p>
 <p>list.clear() 清空</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">list_a=[1,2,3,4,5]</span><br><span class="line">for i in list_a:</span><br><span class="line">if i in [2,3]:</span><br><span class="line">list_a.remove(i)</span><br><span class="line">print(list_a)</span><br></pre></td></tr></table></figure>
+<p>list.sort() 对原list进行排序</p>
+<p>sorted() 是一个函数，返回值为排序后的列表，原列表不变</p>
+<p>.copy()创建列表的复制</p>
+<p>.count()返回某元素出现的次数</p>
+<p>.index(something,(n))括号内‘内容，出现次数’，就是返回第n个something的index</p>
+<p>.reverse()把list倒过来排序</p>
+<p>FIFO：from collections import deque</p>
+<p>.popleft()</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list_a=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> list_a:</span><br><span class="line">	<span class="keyword">if</span> i <span class="keyword">in</span> [<span class="number">2</span>,<span class="number">3</span>]:</span><br><span class="line">		list_a.remove(i)</span><br><span class="line"><span class="built_in">print</span>(list_a)</span><br></pre></td></tr></table></figure>
+<p>dict.pop()括号里要包含key</p>
+<p>dict.popitem()会自动找到最后一项</p>
+<p>.items返回一个列表，包含dictionary所包含的tuples</p>
+<p>del dict[key]删除某一项目</p>
+<p>集合</p>
+<p>set(iterable) 只包含唯一值，位置随机（unreliable order）</p>
+<p>set|set (.union())</p>
+<p>set&amp;set (.intersection())</p>
+<p>set-set (.difference())</p>
+<p>import &lt;&gt;</p>
+<p>from &lt;&gt; import &lt;&gt;</p>
+<p>import &lt;&gt; as &lt;&gt;</p>
+<p>counter().most_common()</p>
 ]]></content>
       <categories>
         <category>自习室</category>
@@ -399,6 +423,13 @@
 <p>​ 物理又开始跑题了，然后MPMP也没发生什么……补一下上个星期Matlab……</p>
 <p>4月6日</p>
 <p>​ Alex回头把上节课跳过的例题给补完了，还是没讲到Basis……</p>
+<p>​ 今天好困啊，早点溜了算了……</p>
+<p>4月7日</p>
+<p>​ 早上有点困，Foc workshop结束去MUMS room睡了一觉，然后AM1今天讲了几个显然又有点不好证明的结论，之后在图书馆和Uri聊了会儿天结果就没时间做物理PSC，就比较尴尬……</p>
+<p>​ 晚上去了Competition Maths Catchup，拉了Dougal一块去，也还是很快乐，中间有道题，我们一开始枚举法误入歧途，Dougal说他想编个程序来算，然后没带电脑就用手机写，后来程序写是写出来了，写了好长一段，然而就是说输出不了东西orz，8点左右隔壁传来钢琴的声音，然后集体跑去观摩，笑死……然后后来一直到八点半多才走，出来之后Dougal跟我说，今天在这里三个小时，一道题都没做出来，噗哧。</p>
+<p>4月8日</p>
+<p>​ 还是有点困，于是物理lecture就拿来睡觉了，上完AM的lecture去MUMS room碰到几个人在下chess，有个是中国人，问我学啥，然后一直在那里重复‘Young man’……然后后来computer lab他还跑到我们课上，不知道干啥。computer lab内容没多少，做完之后Dougal就用matlab给我演示那些变换，画<a href="https://en.wikipedia.org/wiki/Butterworth_filter">Butterworth filter</a>（巴特沃斯滤波器/最大平坦滤波器）有关的函数，然后又延申到别的滤波器，看到chebyshev filter之后我给他讲Chebyshev不等式，他给我讲Chebyshev polynomial的近似。</p>
+<p>​ 晚上把新出来的AM1 Assignment给做了，最后一题差点翻车，吓死……</p>
 ]]></content>
       <categories>
         <category>生活馆</category>
