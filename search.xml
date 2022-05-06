@@ -124,6 +124,14 @@
 <p>b的话按照题目是叫我们找规律，大概上下两元素间的比值是<span class="math inline">\(\frac{(n-1)^2}{n}\)</span></p>
 <h4 id="lab-6">lab 6</h4>
 <p>前面一半是用matlab验证一些简单的结论，没啥东西</p>
+<h4 id="lab-9">lab 9</h4>
+<p>好久没动这儿了，上课有时间就写点</p>
+<p><code>[P,D]=eig(A)</code>求矩阵A的特征值和特征向量，输出P和D满足<span class="math inline">\(P^{-1}AP = D\)</span>，即P是特征向量（<span class="math inline">\([v1 \space v2 \space v3]\)</span>），D是对应特征值（<span class="math inline">\(diag(\lambda_1,\lambda_2,\lambda_3)\)</span>）</p>
+<p>其中特征向量automatically normalised，也就是长度化成1了，所以会有一堆小数（</p>
+<p>Markov chains(马尔可夫链) 我的观察是和邻接矩阵差不太多，就是说每个元素成了概率，于是每一列的和为1所以又和之前Closed Input-Output的矩阵一样了。</p>
+<p>这样的矩阵拥有以下性质：</p>
+<p>P1. 具有特征值1</p>
+<p>P2. 当特征值为1时，具有</p>
 <h2 id="matlab-for-physics">MATLAB for physics</h2>
 <p>用小括号来截取数组中的一部分，index从1开始，最后一个可以用<code>end</code>，使用<code>end-n</code>来指代倒数第n+1个数字</p>
 <p>科学计数法用e来表示，例如<code>3e8</code>。</p>
@@ -372,6 +380,39 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">my_func = <span class="keyword">lambda</span> item: item[::-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
 <p>两段语句作用相同</p>
 <p><code>lambda &lt;parameters&gt;: &lt;return value&gt;</code> parameter可以有零个或多个，用逗号隔开，return value不需要写return</p>
+<h2 id="worksheet-14">Worksheet 14</h2>
+<p>File manipulation is often called "file input/output" or <strong>file IO</strong>. To process the data in a file, you have to perform the following steps:</p>
+<ol type="1">
+<li>Open the file;</li>
+<li>Read data from a file or write data to a file;</li>
+<li>Close the file.</li>
+</ol>
+<p><strong>Open Files</strong></p>
+<p><code>file_object = open("file-name.txt", "模式")</code>，模式默认只读（'r'），还有<strong>w</strong>rite（若无文件则创建文件，有文件则覆盖）和<strong>a</strong>ppend（不管文件内容，从最后加）</p>
+<p><strong>With Statement</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;myfile.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> fp: <span class="comment"># fp refers to file pointer</span></span><br><span class="line">    <span class="comment"># File is open: read/write here</span></span><br><span class="line"><span class="comment"># File is closed: no .close() needed!</span></span><br></pre></td></tr></table></figure>
+<p><strong>Close Files</strong></p>
+<p>用单独open打开文件记得关闭：<code>file_object.close()</code></p>
+<p><strong>读写文件</strong></p>
+<p><code>.read()</code>读取全部内容</p>
+<p><code>.readlines()</code>读取一行内容，或者可以直接<code>for line in fp:</code>，file也是iterable</p>
+<p><code>.write(text)</code>写入内容（string）（有return，return len(text)）</p>
+<p><code>.writelines(text)</code>写入内容（可以写入列表，就是把列表里的东西一股脑儿全部塞后面）</p>
+<p><strong>CSV</strong> (The Comma-Separated Values)</p>
+<p>每行一组数据，数值之间用逗号分隔，如果数据自带逗号，用引号来区别</p>
+<p><strong>读取CSV</strong>：<code>csv.reader(&lt;file_object&gt;)</code></p>
+<p><strong>要<code>import csv</code></strong>!</p>
+<p>返回是一个_csv.reader object，可以iterate输出为列表s或者<code>list()</code>直接转化成列表</p>
+<p>用<code>next(&lt;_csv.reader object&gt;)</code>可以输出第一行（header）为列表</p>
+<p><code>csv.DictReader()</code>输出为csv.DictReader object，表现形式是把每一行转化为dictionary，key为对应header</p>
+<p><strong>写入CSV</strong>：</p>
+<p><code>csv.writer(file_object)</code>（需要w模式），创建writer</p>
+<p>然后<code>writer.writerows((nested)list)</code>可以把list转化成csv</p>
+<p>list comprehension: list = [i for j in k (if C)]</p>
+<p>repr()将对象转化为供解释器读取的形式</p>
+<p>syntax error 不执行</p>
+<p>runtime error会执行</p>
+<p><code>\n</code>等被看作一个字符</p>
 ]]></content>
       <categories>
         <category>自习室</category>
@@ -506,6 +547,17 @@
 <p>​ 下午物理PSC结束跟Dougal一块去参加UMCPC的比赛，到那边看见Andres也在，于是过去拉他一起……然后……然后就拿了第一名，Andres是真的强。我大概是约等于啥都没干，做的第一题推土机提交了两次都timeout，看看积分板这道题一排跳红笑死，后来才知道就是说推到最后一堆可以直接用等差数列求和，不用一堆一堆再往后推……然后还尝试了constellation的题目，自然也是错了……然后后来发奖品，衣服不知道哪里出错了，只有XL和XXL，然后我随便拿了一件XXL的，自然也是巨大。</p>
 <p>4月26日</p>
 <p>​ 放假结束好耶<span class="github-emoji" data-alias="tada" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png?v8">🎉</span>，今天就一节Peer Mentor，所以一点才出门，然后我们mentor去Domino买了三盒披萨来，结果到最后剩了一大半orz</p>
+<p>5月2日</p>
+<p>​ 身体不太好所以鸽了几天（虽说也没什么好转的迹象，吃东西很痛苦就是了）23：56赶完的assgnment（没想到computing worksheet卡住了），吓死……就是说身体不咋样也没多少心思学习了。上个星期三开始生的病，测了几次不是新冠，最开始是喉咙痛+发烧，烧了一天多，然后就喉咙痛，现在是平常情况下和没事一样，但一旦吃东西（咽口水也一样）喉咙就巨痛，然后现在带着耳朵也痛，最离谱的是喝口水如果幅度大一点，会感觉到口腔右后上方大概接近鼻子耳朵的地方感觉会掉下来一块东西，我也不知道。</p>
+<p>​ 上个星期三跟Andres等一共四个人在MUMS room玩Love Letters，意外地一局几乎两三分钟就够了，Andres还带我们走了从MUMS room到Elisabeth Murdoch的shortcut，惊了。就是说下午不舒服就早早回家了</p>
+<p>​ 星期四下午有Competition Catchup，还是很开心的，早上Computing workshop的kahoot也赢了，不过一天下来也算是萎靡没办法……星期三computing Mst的成绩下来，36.5，然后星期四又改到39.3，然后申诉了一下成功变成了40</p>
+<p>5月3日</p>
+<p>​ 就一个物理实验，内容巨多，然后也是成功地做不完……</p>
+<p>5月5日</p>
+<p>​ 昨天去了趟医院配了消炎药，今天就好多了，感觉是光是赶AM assignment了，大概要寄，第三题好麻烦，说不清楚……</p>
+<p>5月6日</p>
+<p>​ 今天AM lecture只来了三十几个人笑死，大概都在赶assignment……上课讲的内容挺好的，很开心，最后老师说下个星期一大概能把线性代数部分讲完，底下同学开始欢呼，然后老师说别那么激动，应该要失落一点因为他知道之后要讲什么，然后底下同学们叫得更欢了，笑死。</p>
+<p>​ 晚上去参加MUMSxSIG的puzzle活动，就是说不会做……和Andres一队，另一个队友吃完pizza就跑了，然后我们卡了大半个小时到最后才决定用hint然后做出了三题，题目……就挺无语的……</p>
 ]]></content>
       <categories>
         <category>生活馆</category>

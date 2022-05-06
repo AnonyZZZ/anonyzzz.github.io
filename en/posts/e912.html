@@ -29,7 +29,7 @@
 <meta property="og:description" content="Foundation of computing的一些笔记 有点多，慢慢更，应该还是挺详细了，整合到最后再做。 以及前三张worksheet内容不太多，暂时先放着，后面有空再补。 pythontutor">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-03-07T00:00:35.000Z">
-<meta property="article:modified_time" content="2022-04-25T13:28:18.545Z">
+<meta property="article:modified_time" content="2022-05-05T01:26:36.496Z">
 <meta property="article:author" content="AnonyZZZ">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="python">
@@ -238,7 +238,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-04-25 23:28:18" itemprop="dateModified" datetime="2022-04-25T23:28:18+10:00">2022-04-25</time>
+                <time title="Modified: 2022-05-05 11:26:36" itemprop="dateModified" datetime="2022-05-05T11:26:36+10:00">2022-05-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -277,14 +277,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>11k</span>
+              <span>12k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>18 mins.</span>
+              <span>20 mins.</span>
             </span>
 
         </div>
@@ -519,6 +519,39 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">my_func = <span class="keyword">lambda</span> item: item[::-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
 <p>两段语句作用相同</p>
 <p><code>lambda &lt;parameters&gt;: &lt;return value&gt;</code> parameter可以有零个或多个，用逗号隔开，return value不需要写return</p>
+<h2 id="worksheet-14">Worksheet 14</h2>
+<p>File manipulation is often called "file input/output" or <strong>file IO</strong>. To process the data in a file, you have to perform the following steps:</p>
+<ol type="1">
+<li>Open the file;</li>
+<li>Read data from a file or write data to a file;</li>
+<li>Close the file.</li>
+</ol>
+<p><strong>Open Files</strong></p>
+<p><code>file_object = open("file-name.txt", "模式")</code>，模式默认只读（'r'），还有<strong>w</strong>rite（若无文件则创建文件，有文件则覆盖）和<strong>a</strong>ppend（不管文件内容，从最后加）</p>
+<p><strong>With Statement</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;myfile.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> fp: <span class="comment"># fp refers to file pointer</span></span><br><span class="line">    <span class="comment"># File is open: read/write here</span></span><br><span class="line"><span class="comment"># File is closed: no .close() needed!</span></span><br></pre></td></tr></table></figure>
+<p><strong>Close Files</strong></p>
+<p>用单独open打开文件记得关闭：<code>file_object.close()</code></p>
+<p><strong>读写文件</strong></p>
+<p><code>.read()</code>读取全部内容</p>
+<p><code>.readlines()</code>读取一行内容，或者可以直接<code>for line in fp:</code>，file也是iterable</p>
+<p><code>.write(text)</code>写入内容（string）（有return，return len(text)）</p>
+<p><code>.writelines(text)</code>写入内容（可以写入列表，就是把列表里的东西一股脑儿全部塞后面）</p>
+<p><strong>CSV</strong> (The Comma-Separated Values)</p>
+<p>每行一组数据，数值之间用逗号分隔，如果数据自带逗号，用引号来区别</p>
+<p><strong>读取CSV</strong>：<code>csv.reader(&lt;file_object&gt;)</code></p>
+<p><strong>要<code>import csv</code></strong>!</p>
+<p>返回是一个_csv.reader object，可以iterate输出为列表s或者<code>list()</code>直接转化成列表</p>
+<p>用<code>next(&lt;_csv.reader object&gt;)</code>可以输出第一行（header）为列表</p>
+<p><code>csv.DictReader()</code>输出为csv.DictReader object，表现形式是把每一行转化为dictionary，key为对应header</p>
+<p><strong>写入CSV</strong>：</p>
+<p><code>csv.writer(file_object)</code>（需要w模式），创建writer</p>
+<p>然后<code>writer.writerows((nested)list)</code>可以把list转化成csv</p>
+<p>list comprehension: list = [i for j in k (if C)]</p>
+<p>repr()将对象转化为供解释器读取的形式</p>
+<p>syntax error 不执行</p>
+<p>runtime error会执行</p>
+<p><code>\n</code>等被看作一个字符</p>
 
     </div>
 
@@ -605,7 +638,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-1"><span class="nav-number">1.</span> <span class="nav-text">Worksheet 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-3"><span class="nav-number">2.</span> <span class="nav-text">Worksheet 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-4"><span class="nav-number">3.</span> <span class="nav-text">Worksheet 4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-5"><span class="nav-number">4.</span> <span class="nav-text">worksheet 5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-6"><span class="nav-number">5.</span> <span class="nav-text">Worksheet 6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-7"><span class="nav-number">6.</span> <span class="nav-text">Worksheet 7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-8"><span class="nav-number">7.</span> <span class="nav-text">Worksheet 8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-9"><span class="nav-number">8.</span> <span class="nav-text">Worksheet 9</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-12"><span class="nav-number">9.</span> <span class="nav-text">Worksheet 12</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-1"><span class="nav-number">1.</span> <span class="nav-text">Worksheet 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-3"><span class="nav-number">2.</span> <span class="nav-text">Worksheet 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-4"><span class="nav-number">3.</span> <span class="nav-text">Worksheet 4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-5"><span class="nav-number">4.</span> <span class="nav-text">worksheet 5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-6"><span class="nav-number">5.</span> <span class="nav-text">Worksheet 6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-7"><span class="nav-number">6.</span> <span class="nav-text">Worksheet 7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-8"><span class="nav-number">7.</span> <span class="nav-text">Worksheet 8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-9"><span class="nav-number">8.</span> <span class="nav-text">Worksheet 9</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-12"><span class="nav-number">9.</span> <span class="nav-text">Worksheet 12</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-14"><span class="nav-number">10.</span> <span class="nav-text">Worksheet 14</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
