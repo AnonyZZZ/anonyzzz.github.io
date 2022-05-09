@@ -395,7 +395,7 @@
 <p>用单独open打开文件记得关闭：<code>file_object.close()</code></p>
 <p><strong>读写文件</strong></p>
 <p><code>.read()</code>读取全部内容</p>
-<p><code>.readlines()</code>读取一行内容，或者可以直接<code>for line in fp:</code>，file也是iterable</p>
+<p><code>.readlines()</code>读取一行内容，或者可以直接<code>for line in fp:</code>，file.readlines()也是iterable</p>
 <p><code>.write(text)</code>写入内容（string）（有return，return len(text)）</p>
 <p><code>.writelines(text)</code>写入内容（可以写入列表，就是把列表里的东西一股脑儿全部塞后面）</p>
 <p><strong>CSV</strong> (The Comma-Separated Values)</p>
@@ -413,6 +413,37 @@
 <p>syntax error 不执行</p>
 <p>runtime error会执行</p>
 <p><code>\n</code>等被看作一个字符</p>
+<h2 id="worksheet-15">Worksheet 15</h2>
+<p><strong>List comprehensions</strong> are a really nice shortcut to construct lists in one line. 例如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">lst = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">8</span>, <span class="number">10</span>, <span class="number">9</span>]</span><br><span class="line">lst2 = [y ** <span class="number">2</span> <span class="keyword">for</span> y <span class="keyword">in</span> lst <span class="keyword">if</span> y % <span class="number">3</span> == <span class="number">0</span>]</span><br><span class="line"><span class="built_in">print</span>(lst2)		<span class="comment"># [9,81]</span></span><br></pre></td></tr></table></figure>
+<p>语法是</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">[&lt;expr&gt; <span class="keyword">for</span> var <span class="keyword">in</span> old_list &lt;optional condition&gt;]</span><br></pre></td></tr></table></figure>
+<p>它和</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">list</span> = []</span><br><span class="line"><span class="keyword">for</span> var <span class="keyword">in</span> old_list:</span><br><span class="line">	<span class="keyword">if</span> &lt;optional condition&gt;:</span><br><span class="line">		<span class="built_in">list</span>.append(&lt;expr&gt;)</span><br></pre></td></tr></table></figure>
+<p>是等价的</p>
+<p>dictionary（<code>my_dict = &#123;letter: i for i, letter in enumerate(my_word)&#125;</code>）和set可以用相同的方式进行声明</p>
+<p><code>enumerate()</code> function generates a tuple with each element's index.</p>
+<p><strong>iterators</strong>: an object for iterating over other objects 类似指针(？</p>
+<p>可以用<code>iter()</code>来创建iterator，使用<code>next()</code>来调用iterator的下一项</p>
+<p><code>for in</code>就是靠创建iterator来实现的</p>
+<p>注意iterator只会一直往后走，不会反过来，到结尾了就没了</p>
+<p><code>dict.keys()``dict.values()``dict.items()</code>会创建iterator但不是list所以不能indexing，需要转换成list，特别的<code>.keys()</code>很多情况下是多余的，因为iterate through dictionary自动会iterate through keys</p>
+<p><code>cycle(iterable)</code>（需要<code>from itertools import cycle</code>）创建会自动循环的iterator，可以基于这个创建基于for的无限循环</p>
+<p><strong>permutations</strong>：排列</p>
+<p>需要<code>from itertools import permutations</code></p>
+<p><code>permutations(iterable, r)</code>返回一个iterator包含了长度为r的所有排列(tuple)</p>
+<p><strong>unpacking</strong>：<code>for var1, var2 ... varn in tuples</code>: 如果tuples都是包含n个元素，这个for循环可以把每一个tuple拆开，然后再iterate</p>
+<p><strong>combination</strong>：组合</p>
+<p>需要<code>from itertools import combinations</code></p>
+<p><code>combinations(iterable, r)</code>返回iterator包含长度为r的组合（tuple）iterable可以包含重复的元素，在计算时会被当做不同元素</p>
+<p><strong>product()</strong>求积，类似求两个集合的积，实际操作和nested for loop几乎一样</p>
+<p>需要<code>from itertools import product</code></p>
+<p>给function设置参数时在名字前加上*，说明可以接受多个该参数，例如</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(*objects, sep=<span class="string">&#x27; &#x27;</span>, end=<span class="string">&#x27;\n&#x27;</span>, file=sys.stdout, flush=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>groupby()</strong></p>
+<p>需要<code>from itertools import groupby</code></p>
+<p>括号里是（iterator, key），效果是会根据key来分组，生成iterator包含二元tuple（key_value, list）</p>
+<p>然后前提是list需要预先sort过，总之就是挺废的……</p>
 ]]></content>
       <categories>
         <category>自习室</category>
@@ -558,6 +589,14 @@
 <p>5月6日</p>
 <p>​ 今天AM lecture只来了三十几个人笑死，大概都在赶assignment……上课讲的内容挺好的，很开心，最后老师说下个星期一大概能把线性代数部分讲完，底下同学开始欢呼，然后老师说别那么激动，应该要失落一点因为他知道之后要讲什么，然后底下同学们叫得更欢了，笑死。</p>
 <p>​ 晚上去参加MUMSxSIG的puzzle活动，就是说不会做……和Andres一队，另一个队友吃完pizza就跑了，然后我们卡了大半个小时到最后才决定用hint然后做出了三题，题目……就挺无语的……</p>
+<p>5月9日</p>
+<p>​ 早上开始investigation 2，然后开始看paper，有些无聊，不过上了一个小时tutor就放我们走了还挺好。</p>
+<p>​ AM lecture alex叫我们随便选一个大于一的数，一开始说是2，然后有人报了个<span class="math inline">\(e\)</span>之后就怪了起来，Alex开玩笑的写了个<span class="math inline">\(\frac{e^\pi}{\sqrt[17]{2\ln_{}{10}}}\)</span>什么的，最后还是用了<span class="math inline">\(e\)</span></p>
+<p>​ tutorial的第三题巨“有趣”，做的时候快笑死：Let <span class="math inline">\(C[0,\pi]\)</span> be the vector space of real valued functions that are continuous on the interval <span class="math inline">\([0,\pi]\)</span> with the inner product <span class="math display">\[
+\langle f,g \rangle =\int_{0}^{\pi}f(x)g(x)dx.
+\]</span> ​ Obtain an orthonormal basis for the span of ${1,x,x} $ using the Gram-Schmidt process.</p>
+<p>​ 然后今天tutorial只有四题，于是成功地在3点还没到的时候就把题目都给做完了，挺好。</p>
+<p>​ 我服了图书馆坐我后面这桌两个人好tm吵啊<span class="github-emoji" data-alias="anger" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a2.png?v8">💢</span>……</p>
 ]]></content>
       <categories>
         <category>生活馆</category>

@@ -29,7 +29,7 @@
 <meta property="og:description" content="Foundation of computing的一些笔记 有点多，慢慢更，应该还是挺详细了，整合到最后再做。 以及前三张worksheet内容不太多，暂时先放着，后面有空再补。 pythontutor">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-07T00:00:35.000Z">
-<meta property="article:modified_time" content="2022-05-05T01:26:36.496Z">
+<meta property="article:modified_time" content="2022-05-09T09:04:17.093Z">
 <meta property="article:author" content="AnonyZZZ">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="python">
@@ -238,7 +238,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-05 11:26:36" itemprop="dateModified" datetime="2022-05-05T11:26:36+10:00">2022-05-05</time>
+                <time title="修改时间：2022-05-09 19:04:17" itemprop="dateModified" datetime="2022-05-09T19:04:17+10:00">2022-05-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -277,14 +277,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>12k</span>
+              <span>13k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>20 分钟</span>
+              <span>22 分钟</span>
             </span>
 
         </div>
@@ -534,7 +534,7 @@
 <p>用单独open打开文件记得关闭：<code>file_object.close()</code></p>
 <p><strong>读写文件</strong></p>
 <p><code>.read()</code>读取全部内容</p>
-<p><code>.readlines()</code>读取一行内容，或者可以直接<code>for line in fp:</code>，file也是iterable</p>
+<p><code>.readlines()</code>读取一行内容，或者可以直接<code>for line in fp:</code>，file.readlines()也是iterable</p>
 <p><code>.write(text)</code>写入内容（string）（有return，return len(text)）</p>
 <p><code>.writelines(text)</code>写入内容（可以写入列表，就是把列表里的东西一股脑儿全部塞后面）</p>
 <p><strong>CSV</strong> (The Comma-Separated Values)</p>
@@ -552,6 +552,37 @@
 <p>syntax error 不执行</p>
 <p>runtime error会执行</p>
 <p><code>\n</code>等被看作一个字符</p>
+<h2 id="worksheet-15">Worksheet 15</h2>
+<p><strong>List comprehensions</strong> are a really nice shortcut to construct lists in one line. 例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lst = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">8</span>, <span class="number">10</span>, <span class="number">9</span>]</span><br><span class="line">lst2 = [y ** <span class="number">2</span> <span class="keyword">for</span> y <span class="keyword">in</span> lst <span class="keyword">if</span> y % <span class="number">3</span> == <span class="number">0</span>]</span><br><span class="line"><span class="built_in">print</span>(lst2)		<span class="comment"># [9,81]</span></span><br></pre></td></tr></table></figure>
+<p>语法是</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&lt;expr&gt; <span class="keyword">for</span> var <span class="keyword">in</span> old_list &lt;optional condition&gt;]</span><br></pre></td></tr></table></figure>
+<p>它和</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span> = []</span><br><span class="line"><span class="keyword">for</span> var <span class="keyword">in</span> old_list:</span><br><span class="line">	<span class="keyword">if</span> &lt;optional condition&gt;:</span><br><span class="line">		<span class="built_in">list</span>.append(&lt;expr&gt;)</span><br></pre></td></tr></table></figure>
+<p>是等价的</p>
+<p>dictionary（<code>my_dict = &#123;letter: i for i, letter in enumerate(my_word)&#125;</code>）和set可以用相同的方式进行声明</p>
+<p><code>enumerate()</code> function generates a tuple with each element's index.</p>
+<p><strong>iterators</strong>: an object for iterating over other objects 类似指针(？</p>
+<p>可以用<code>iter()</code>来创建iterator，使用<code>next()</code>来调用iterator的下一项</p>
+<p><code>for in</code>就是靠创建iterator来实现的</p>
+<p>注意iterator只会一直往后走，不会反过来，到结尾了就没了</p>
+<p><code>dict.keys()``dict.values()``dict.items()</code>会创建iterator但不是list所以不能indexing，需要转换成list，特别的<code>.keys()</code>很多情况下是多余的，因为iterate through dictionary自动会iterate through keys</p>
+<p><code>cycle(iterable)</code>（需要<code>from itertools import cycle</code>）创建会自动循环的iterator，可以基于这个创建基于for的无限循环</p>
+<p><strong>permutations</strong>：排列</p>
+<p>需要<code>from itertools import permutations</code></p>
+<p><code>permutations(iterable, r)</code>返回一个iterator包含了长度为r的所有排列(tuple)</p>
+<p><strong>unpacking</strong>：<code>for var1, var2 ... varn in tuples</code>: 如果tuples都是包含n个元素，这个for循环可以把每一个tuple拆开，然后再iterate</p>
+<p><strong>combination</strong>：组合</p>
+<p>需要<code>from itertools import combinations</code></p>
+<p><code>combinations(iterable, r)</code>返回iterator包含长度为r的组合（tuple）iterable可以包含重复的元素，在计算时会被当做不同元素</p>
+<p><strong>product()</strong>求积，类似求两个集合的积，实际操作和nested for loop几乎一样</p>
+<p>需要<code>from itertools import product</code></p>
+<p>给function设置参数时在名字前加上*，说明可以接受多个该参数，例如</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(*objects, sep=<span class="string">&#x27; &#x27;</span>, end=<span class="string">&#x27;\n&#x27;</span>, file=sys.stdout, flush=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>groupby()</strong></p>
+<p>需要<code>from itertools import groupby</code></p>
+<p>括号里是（iterator, key），效果是会根据key来分组，生成iterator包含二元tuple（key_value, list）</p>
+<p>然后前提是list需要预先sort过，总之就是挺废的……</p>
 
     </div>
 
@@ -638,7 +669,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-1"><span class="nav-number">1.</span> <span class="nav-text">Worksheet 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-3"><span class="nav-number">2.</span> <span class="nav-text">Worksheet 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-4"><span class="nav-number">3.</span> <span class="nav-text">Worksheet 4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-5"><span class="nav-number">4.</span> <span class="nav-text">worksheet 5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-6"><span class="nav-number">5.</span> <span class="nav-text">Worksheet 6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-7"><span class="nav-number">6.</span> <span class="nav-text">Worksheet 7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-8"><span class="nav-number">7.</span> <span class="nav-text">Worksheet 8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-9"><span class="nav-number">8.</span> <span class="nav-text">Worksheet 9</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-12"><span class="nav-number">9.</span> <span class="nav-text">Worksheet 12</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-14"><span class="nav-number">10.</span> <span class="nav-text">Worksheet 14</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-1"><span class="nav-number">1.</span> <span class="nav-text">Worksheet 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-3"><span class="nav-number">2.</span> <span class="nav-text">Worksheet 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-4"><span class="nav-number">3.</span> <span class="nav-text">Worksheet 4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-5"><span class="nav-number">4.</span> <span class="nav-text">worksheet 5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-6"><span class="nav-number">5.</span> <span class="nav-text">Worksheet 6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-7"><span class="nav-number">6.</span> <span class="nav-text">Worksheet 7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-8"><span class="nav-number">7.</span> <span class="nav-text">Worksheet 8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-9"><span class="nav-number">8.</span> <span class="nav-text">Worksheet 9</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-12"><span class="nav-number">9.</span> <span class="nav-text">Worksheet 12</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-14"><span class="nav-number">10.</span> <span class="nav-text">Worksheet 14</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#worksheet-15"><span class="nav-number">11.</span> <span class="nav-text">Worksheet 15</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
