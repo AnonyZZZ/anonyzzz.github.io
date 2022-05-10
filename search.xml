@@ -37,121 +37,94 @@
       </tags>
   </entry>
   <entry>
-    <title>Notes for MATLAB</title>
-    <url>/posts/ea72.html</url>
-    <content><![CDATA[<p>看上去MATLAB也要记些东西……</p>
-<p><em>斜体</em>表示出现的内容是课程提供的function</p>
-<span id="more"></span>
-<h2 id="矩阵">矩阵</h2>
-<h4 id="lab2">lab2</h4>
-<p>最基础的<code>A=[a b;c d]</code></p>
-<p>空格也可以用<code>,</code>，暂时没找出区别</p>
-<p><code>A'</code>用于求转置（transpose）</p>
-<p><code>.*</code>把矩阵内元素对应相乘，或者说<strong>行矩阵<code>.*</code>列矩阵</strong>可以构造一个类似乘法表的东西</p>
-<p><code>A+constant</code> 可以在A的每一个元素的基础上加上一个常数</p>
-<p><code>A(m,n)=a</code>可以把矩阵第m行n列的数改成a</p>
-<p>单独<code>:</code>可以代替全列，例如<code>v=B(:,2)</code>会将v定义为B第二列的列向量</p>
-<p>此外，<code>:</code>可以指代数列，句式为<code>a:s:b</code>，其中a为初项，s为步长，b为末项（更准确的说是最后一项不超过b），s可被省略，默认是1</p>
-<p><code>eye(n)</code>用以构造n阶单位矩阵（Identity matrix）</p>
-<p><code>diag(v)</code>用以构造以v为对角线的对角形矩阵</p>
-<p><code>ones(n,m)</code>构造n行m列的元素全是1的矩阵</p>
-<p><code>zeros(n,m)</code>构造n行m列元素全是0的矩阵</p>
-<p>分块矩阵亦可用<code>M=[A B;C D]</code>的形式来获得</p>
-<p>习题：</p>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">A=[<span class="number">4</span> <span class="number">8</span> <span class="number">8</span> <span class="number">11</span> <span class="number">1</span>]</span><br><span class="line">B=[<span class="built_in">diag</span>(A) <span class="number">7</span>*<span class="built_in">ones</span>(<span class="number">5</span>,<span class="number">7</span>);<span class="number">12</span>*<span class="built_in">ones</span>(<span class="number">7</span>,<span class="number">5</span>) <span class="number">7</span><span class="number">-6</span>*<span class="built_in">eye</span>(<span class="number">7</span>)]</span><br><span class="line">B(<span class="number">1</span>,<span class="number">4</span>)=<span class="number">6</span></span><br></pre></td></tr></table></figure>
-<p>优化(64)：</p>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">A=<span class="built_in">ones</span>(<span class="number">5</span>,<span class="number">7</span>)</span><br><span class="line">Q=[<span class="built_in">diag</span>([<span class="number">4</span> <span class="number">8</span> <span class="number">8</span> <span class="number">11</span> <span class="number">1</span>]) <span class="number">7</span>*A;<span class="number">12</span>*A&#x27; <span class="number">7</span><span class="number">-6</span>*<span class="built_in">eye</span>(<span class="number">7</span>)]</span><br><span class="line">Q(<span class="number">1</span>,<span class="number">4</span>)=<span class="number">6</span></span><br></pre></td></tr></table></figure>
-<h4 id="lab3">lab3</h4>
-<p><code>R=rref(A)</code>直接求A的reduced row echelon form</p>
-<p>我这里matlab默认是输出为小数形式，使用<code>format (style)</code>来修改输出格式，format处可以填<code>short</code>（默认，小数点后四位）, <code>long</code>（小数点后15位）, <code>shortE/longE</code>（科学计数法）, <code>shortG/longG</code>（科学计数法/普通小数，取决于哪种更紧凑）, <code>shortEng/longEng</code>（Engineering notation: 类似科学计数法，但是指数必定为三的倍数）, <code>+</code>（只显示+/-，0则不显示）, <code>bank</code>（货币格式，小数点后二位）, <code>hex</code>（十六进制表达？）, <code>rational</code>（分数，可以缩写rat，但是输出的分数并不是精确值，而是估计）等，以及显示格式<code>compact</code>和<code>loose</code>（默认），<code>fmt=format</code>查看当前设置，<code>format default</code>返回初始设置。</p>
-<p><code>rat(a)</code>可以输出分数形式（估计值），算法是利用</p>
-<p><span class="math display">\[\frac{N}{D}=D_1+\frac{1}{D_2+\frac{1}{...+\frac{1}{D_k}}}\]</span></p>
-<p><a href="https://au.mathworks.com/help/matlab/ref/format.html">reference</a></p>
-<p>上面似乎有点长（主要不是worksheet上的，自己查来的</p>
-<p><code>det()</code>和<code>inv()</code>分别求矩阵的逆和行列式</p>
-<p>然后做exercise 2的时候发现点问题，下面这个矩阵行列式为零，不可逆，但是拿det和inv计算出来行列式是-1/1050839913053116<span class="github-emoji" data-alias="laughing" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8">😆</span></p>
-<p><span class="math display">\[\begin{bmatrix} 1&amp;2&amp;3\\ 4&amp;5&amp;6\\ 7&amp;8&amp;9\\ \end{bmatrix}\]</span></p>
-<p>而且他求不可逆矩阵出来结果是</p>
-<p><span class="math display">\[\begin{bmatrix} 1/0&amp;1/0&amp;1/0\\ 1/0&amp;1/0&amp;1/0\\ 1/0&amp;1/0&amp;1/0\\ \end{bmatrix}\]</span></p>
-<p>提示是：</p>
-<blockquote>
-<p>警告: 矩阵为奇异工作精度。</p>
-</blockquote>
-<p>format设置为<code>rational</code>时，答案可能给出<code>*</code>代表非常小的数字，可能是一些奇怪的误差，类似上面矩阵给出的结果</p>
-<p><em>然后是几个写好的函数：<code>[B,E] = rowswap(A,i,j)</code>，<code>[B,E] = rowmul(A,c,i)</code>，<code>[B,E] = rowadd(A,c,i,j)</code>其中B是完成行变换的输出矩阵，E是行变换对应的基本矩阵，A是输入矩阵，c是倍数，i，j是操作的行数（把i行加到j行上）</em></p>
-<p><code>size(A)</code>用来查询矩阵A的大小，输出结果记作<code>[dim1, dim2, ...]</code>，可以用<code>size(A,n)</code>用来输出矩阵A第n维度的大小（例如1是行，2是列）</p>
-<p>然后所以习题里面的<code>size(A,1)</code>要改成<code>size(A,2)</code>之前都没发现orz</p>
-<h4 id="lab4">lab4</h4>
-<p><code>det()</code>求行列式（上节课就有了）</p>
-<p><code>dot()</code>求dot product</p>
-<p><code>cross()</code>求cross product</p>
-<p><em><code>pgram1(B)</code>绘制由两行向量组成的平行四边形（应该只能做二维的，输入一定要是2*2的矩阵）</em></p>
-<p><em><code>pgram2(B,C)</code>绘制两个平行四边形</em></p>
-<p><code>Hold on</code>，<code>Hold off</code>可以切换是否在一个figure窗口中绘制多个图</p>
-<p><code>Figure(n)</code>可以新建第n个Figure窗口</p>
-<p>Home- Clear workspace 可以清除所有变量</p>
-<p><code>syms</code>需要安装Symbolic Maths Toolbox</p>
-<p><code>syms</code>是类似声明变量（符号）的一个指令，内容……非常多，挑了一部分记 <a href="https://au.mathworks.com/help/symbolic/syms.html?searchHighlight=syms&amp;s_tid=srchtitle_syms_1">这里是官方网站的链接</a></p>
-<p><code>syms</code>可以用来声明普通符号，矩阵（用方括号声明大小，例如<code>syms a [1 4]</code>），函数（带小括号及自变量）</p>
-<p>声明符号的最后可以指定这个符号的取值范围，例如<code>real</code>,<code>integer</code>,<code>positive</code>,<code>rational</code>,<code>matrix</code>等</p>
-<p><code>assumptions</code>可以用来查询目前已声明的变量及他们的取值</p>
-<p><code>assume([x y z],'clear')</code>可以用来清除已声明的变量</p>
-<p><code>abs()</code>计算绝对值</p>
-<p><code>sqrt()</code>计算平方根</p>
-<p><code>simplify()</code>化简带符号的表达式</p>
-<p>MATLAB似乎没有专门指令求向量长度，所以要用<code>sqrt(dot(x,x))</code>来求向量x的长度</p>
-<p>然后如果没有上节课提供的函数，自己做row operation可以直接类似这样：<code>A(row1,:)=A(row1,:)+k*A(row2,:)</code></p>
-<h4 id="lab5">lab5</h4>
-<p><strong>Closed Input-Output (Leontief) Model</strong></p>
-<p>构建矩阵E，行和列分别表示不同的产品，列表示原材料，行表示作为产品，<span class="math inline">\(e_{i,j}\)</span>表示生产i产品需求j材料的比例</p>
-<p>由于需求不可能是负值，所以矩阵中所有元素都大于等于0，即<span class="math inline">\(e_{i,j}\ge 0\)</span> for <span class="math inline">\(1\le i, j\le k\)</span></p>
-<p>由于研究的是closed model，无商品进出口，每年使用的总比例一定为1，即每列的和为1，也即<span class="math inline">\(\sum_{i=1}^{k}e_{i,j}=1\)</span> for <span class="math inline">\(1\le j\le k\)</span></p>
-<p><code>sum()</code>求和，输入向量（数组？）求所有元素的和，输入矩阵则求每一列的和，输出为行向量，基于此<code>sum(sum(A))</code>用以求A矩阵中所有元素之和</p>
-<p><code>max()</code>求最大值，输入为向量时输出最大值，输入为矩阵则输出每列的最大值的行向量，<code>max(max(A))</code>求矩阵A中的最大元素</p>
-<p><code>min()</code>求最小值，同理略</p>
-<p><code>isequal(A,B)</code>判断A，B（可以是数字，矩阵，表达式）是否相等，True则输出1，False输出0。</p>
-<p>注意Matlab有精度误差，例如<code>isequal(1,0.99999999999999999)</code>会返回1</p>
-<p><code>==</code>也可以用于比较大小，但是如果等号两边是矩阵，它会返回一个矩阵，分别比较每个元素的大小</p>
-<p><code>~=</code>不等于，<code>and (&amp;)</code> 与，<code>or (|)</code>或</p>
-<p><code>%</code>后面跟注释</p>
-<p><strong>if condition</strong>:</p>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> &lt;condition&gt;</span><br><span class="line">	&lt;statement&gt;</span><br><span class="line"><span class="keyword">elseif</span> &lt;condition&gt;</span><br><span class="line">	&lt;statement&gt;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	&lt;statement&gt;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p><strong>函数声明</strong></p>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> &lt;<span class="title">output</span><span class="params">(输出，若要多个输出则用[]包括所有输出项)</span>&gt; = &lt;<span class="title">function_name</span>&gt;<span class="params">(&lt;input(同理)</span>&gt;)</span></span><br><span class="line">	&lt;statement(不同表达式之间用分号区分)&gt; </span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>Exercise 3：</p>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">B</span>=<span class="title">mysolve</span><span class="params">(E)</span></span></span><br><span class="line">[m,n]=<span class="built_in">size</span>(E);</span><br><span class="line"><span class="keyword">if</span> m~=n</span><br><span class="line">    <span class="string">&#x27;E is not square.&#x27;</span></span><br><span class="line"><span class="keyword">elseif</span> <span class="built_in">min</span>(<span class="built_in">min</span>(E))&lt;<span class="number">0</span></span><br><span class="line">    <span class="string">&#x27;Not all the entries are greater or equal to 0&#x27;</span></span><br><span class="line"><span class="keyword">elseif</span> <span class="built_in">min</span>(sum(E))==<span class="number">1</span> &amp; <span class="built_in">max</span>(sum(E))==<span class="number">1</span></span><br><span class="line">    B = rref(E-<span class="built_in">eye</span>(n))</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="string">&#x27;The sum of each column is not 1&#x27;</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>Exploration一开始被a迷惑了，然后发现<span class="math inline">\(E_3^2\)</span>就不满足条件（大于0，但<span class="math inline">\(E_3^2\)</span>有0元素）</p>
-<p>b的话按照题目是叫我们找规律，大概上下两元素间的比值是<span class="math inline">\(\frac{(n-1)^2}{n}\)</span></p>
-<h4 id="lab-6">lab 6</h4>
-<p>前面一半是用matlab验证一些简单的结论，没啥东西</p>
-<h4 id="lab-9">lab 9</h4>
-<p>好久没动这儿了，上课有时间就写点</p>
-<p><code>[P,D]=eig(A)</code>求矩阵A的特征值和特征向量，输出P和D满足<span class="math inline">\(P^{-1}AP = D\)</span>，即P是特征向量（<span class="math inline">\([v1 \space v2 \space v3]\)</span>），D是对应特征值（<span class="math inline">\(diag(\lambda_1,\lambda_2,\lambda_3)\)</span>）</p>
-<p>其中特征向量automatically normalised，也就是长度化成1了，所以会有一堆小数（</p>
-<p>Markov chains(马尔可夫链) 我的观察是和邻接矩阵差不太多，就是说每个元素成了概率，于是每一列的和为1所以又和之前Closed Input-Output的矩阵一样了。</p>
-<p>这样的矩阵拥有以下性质：</p>
-<p>P1. 具有特征值1</p>
-<p>P2. 当特征值为1时，具有</p>
-<h2 id="matlab-for-physics">MATLAB for physics</h2>
-<p>用小括号来截取数组中的一部分，index从1开始，最后一个可以用<code>end</code>，使用<code>end-n</code>来指代倒数第n+1个数字</p>
-<p>科学计数法用e来表示，例如<code>3e8</code>。</p>
-<p><code>log()</code>表示自然对数</p>
-<p><code>log10()</code>表示以10为底的对数</p>
-<p>在矩阵中有运算<code>.^</code>区别于单独<code>^</code>（矩阵和自己相乘）可将矩阵里的每个元素单独乘方</p>
-<p>可在函数中用数表（矩阵）作为自变量，输出结果为同形矩阵</p>
-<p>此时用<code>plot(x,y)</code>可以直接作图</p>
-<p>同时<code>plot(x,y,'.')</code>表示将每组数据呈现为点，同样地，可以将<code>'.'</code>改为<code>‘o’</code> (circles), <code>‘x’</code> (crosses), <code>‘+’</code> (plus signs), <code>‘*’</code> (asterisks), <code>‘s’</code> (squares)来进行绘图</p>
-<p>使用<code>errorbar(x, y, ybars, ’.’)</code> 可以在图上加上误差线，其中<code>x</code>,<code>y</code>,<code>ybars</code>为同维数组</p>
-<p>如果希望在同一幅图上绘制多种对应关系，可以使用<code>figure</code>（添加空白绘图窗口）和<code>hold on</code>指令，而若要取消<code>hold on</code>指令，只需键入<code>hold off</code>（<code>hold on</code>,<code>hold off</code>是状态切换指令，也就是说一旦<code>hold on</code>, 就会一直在同一幅图上添加内容，直到<code>hold off</code>）</p>
-<p>也可以使用<code>plot (x1, y1, x2, y2, ’.’)</code>的句式，其中代表数据点样式的符号跟在相应因变量后面，如上面的例子中，<code>x1</code>,<code>y1</code>应用了default样式：连线，<code>x2</code>,<code>y2</code>应用点号作为每个数据点的样式</p>
-<p>而curve fitting功能可以在APP-Curve Fitting来实现（需要下载）</p>
+    <title>博客搭建的记录</title>
+    <url>/posts/739d.html</url>
+    <content><![CDATA[<h1 id="从头说起">从头说起</h1>
+<p>前一段时间某一天我在Google上偶然看到了<a href="https://cekavis.github.io/">t老师的blog</a>，于是突发奇想：“要不我也搭一个吧？”于是就有了这Anony's Blog。</p>
+<h1 id="月3日">12月3日</h1>
+<p>实际上已经四号了来着，跟着<a href="https://zhuanlan.zhihu.com/p/102592286">知乎</a>和<a href="https://www.bilibili.com/video/BV1mU4y1j72n">Bilibili</a>两位大佬的教程开始搞。</p>
+<p>结果只完成了安装nodejs和配置npm环境两个步骤，中途疯狂报错“The operation was rejected by your operating system.” Google上找的方法都没用，后来才发现原来就是没权限，于是就解决了。 <span id="more"></span></p>
+<h1 id="月4日">12月4日</h1>
+<p>今天把Git，Hexo，Github都配置好了，也是第一次能从网上看到这个blog网页了（虽说只是Hexo默认的）。然后就开始选主题，期间一边和<a href="https://fffeiya.github.io/">FFFeiya</a>语音，一边浏览他们信奥巨巨们的blog，看到好多年久失修的，当然也有一直在维护，让我非常喜欢的，比如<a href="https://vsh-fd.github.io/">星官姐姐</a>。</p>
+<h1 id="月5日">12月5日</h1>
+<p>最后还是决定用最淳朴的next模板，把标题菜单设置好，稍微添加了一些内容（比如现在这篇），然后就没了，剩下的明天再做了。</p>
+<p>今日脑瘫：设置搜索的时候没找到主题配置文件里搜索的位置，上千行的配置文件上上下下读了两遍，眼睛都花了才记起来有搜索功能可以用。</p>
+<h1 id="月6日">12月6日</h1>
+<p>想摸鱼了呜呜呜。先休息一会儿做点规划吧。今天打算把菜单栏优化一下，可以预见的一定会碰壁。</p>
+<p>结果先加了个live2d，点名批评Live2d Viewer，上来就把我电脑搞死机了。原本想着把<a href="https://www.bilibili.com/video/BV1wV411B7N4">可莉的l2d</a>搬进来的，结果试了半天搞不定只好作罢orz。于是只是加了这么一位看板娘，如果以后学会加l2d的方法的话再改吧。</p>
+<p>好耶今天的活算是做完了吧，改造了一下菜单栏，顶上就可以直接访问三个分类了。网上完全没找到类似的教程只能自己摸，最后发现主题配置文件的菜单栏里menu一块这样写就可以直接跳转专门的类别啦。 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">life:</span> <span class="string">/categories/生活馆/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-route</span></span><br><span class="line">  <span class="attr">thoughts:</span> <span class="string">/categories/空想家/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-lightbulb</span></span><br><span class="line">  <span class="attr">notes:</span> <span class="string">/categories/自习室/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-book</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br></pre></td></tr></table></figure> 然后把home和categories给删了也是，home直接点击anony's blog图标就行，categories被三个子栏目代替了，这样至少我觉得很不错。然后图标是<a href="https://fontawesome.com/v5.15/icons?d=gallery&amp;p=2">Font Awesome</a>找的。</p>
+<p>打算最后再弄一下l2d看看，其他工作就明天再来吧。</p>
+<p>结果是l2d没弄，把评论系统搞上去了，总体就是Valine注册一下，然后找到主题配置里的comments-Valine就好了，很方便。</p>
+<p>好了好了该摸了。</p>
+<p>好吧又加了一个表情支持，测试一下<span class="github-emoji" data-alias="persevere" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f623.png?v8">😣</span></p>
+<p>好诶<span class="github-emoji" data-alias="tada" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png?v8">🎉</span><span class="github-emoji" data-alias="tada" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png?v8">🎉</span><span class="github-emoji" data-alias="tada" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png?v8">🎉</span>。Mark一下<a href="https://www.webfx.com/tools/emoji-cheat-sheet/">Emoji Cheat Sheet</a>。</p>
+<p><a href="https://anonyzzz.github.io/404">404页面</a>完成，稍微玩了一下，说实话看排版会很怪，不过我也不知道该怎么改，算了。</p>
+<p>今天算是把博客基本上大体轮廓都搭完了吧，后面就是些缝缝补补，美化的工作了。挺好。</p>
+<p>加上了头像和网页最下方心心的动画，中途出了bug，本地是好的，传到网上显示没有改动，又重新做了一遍就好了。</p>
+<h1 id="月7日">12月7日</h1>
+<p>改了一个名字“Anony的角落”，也没什么新意，主要是想了一晚上也没想出一个好点的中文昵称。</p>
+<p>然后加了一些东西，社交链接，RSS，建站统计，字数，阅读时间统计，阅读进度提示条……</p>
+<p>然后就是紧张刺激的修bug环节，在第一次上传之后出现了俩bug,一个是原本应该出现在右上角的github banner出现在了左上角，这是我在本地测试从来没碰到过的，我想着我也没有改什么东西，就很奇怪。另一个bug是“Hello World”文章的字数统计和时间统计显示“本文字数： |阅读时长≈NaN:aN”，网页最底下同样，这个问题倒是在本地测试也出现的问题，当时想着反正这统计也只是估算，如果发上去还是不行就把功能删了。然后我先在本地重新测了一遍，再Hexo clean,重新把文件全部传上去，刷新了半天发现banner还是在左上角，心想凉了，干脆把它一起也删了，结果回头瞥见“Hello World”的字数统计反而是好了，当时我人是懵的，在那里花式点击github banner，然后又把页面往下拉，发现代码块的复制也错位了，然后我点了一下，结果莫名其妙的它们就都回去了。于是网站就这么莫名其妙的恢复正常了……后来想来，也许是博客没加载清楚？</p>
+<p>然后好好编辑了一下footer，把powered移到了最底下，顺便加了一个换行，在footer.swig里面加上 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure> 就能换一行。</p>
+<p>好啦差不多就这样，基本上已经定型了，摸了摸了。</p>
+<h1 id="月8日">12月8日</h1>
+<p>试图加入多语言切换，由于技术问题和准备问题，出来一个没卵用还有bug的功能orz。</p>
+<p>实在多看了几眼决定还是把底部的字数统计给删了，有点杂。</p>
+<p>选了好久的背景图最后发现还是黑白的好看，那还是干净一些吧。</p>
+<p>在sidebar增加了网易云播放器，但不知道为什么单首歌没问题，放歌单我就加载不出来，也不是版权问题，就很奇怪。好吧是Letter Song的锅，删了就好了，但它在浏览器正常放没问题，一进外链就炸我也不懂了。好的繁华唱遍也是一样的问题，然后最奇怪的是流年如歌，它在浏览器里播放错误，但外链是好的，人已经傻掉，不过反正弄好了就行，歌单大概会不定期更新吧。</p>
+<p>感觉也想不到什么可以加的了，之后想到了再更新啦。</p>
+<p>哦对忘记添加公式输入支持了，测试一下： <span class="math display">\[ \sum_{i=1}^{n}i^2=\frac{n(n+1)(2n+1)}{6}. \]</span> 好诶成功了，过程有够惊险的，一开始就是启用了mathjax，然后发现本地测试疯狂报错，于是查了一下发现要装hexo-renderer-pandoc，装好了结果还是显示不出，回到配置文件才发现还有这么几句： <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">math:</span></span><br><span class="line">  <span class="comment"># Default (true) will load mathjax / katex script on demand.</span></span><br><span class="line">  <span class="comment"># That is it only render those page which has `mathjax: true` in Front-matter.</span></span><br><span class="line">  <span class="comment"># If you set it to false, it will load mathjax / katex srcipt EVERY PAGE.</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure> 加了mathjax: true之后就能用了。最后又在插入LaTeX的语法上挣扎了一下，所幸是成功了。</p>
+<p>最后测试一下图片吧。<img src="../images/favicon.jpg" alt="这是头像" /> 好耶。</p>
 ]]></content>
       <categories>
-        <category>自习室</category>
+        <category>生活馆</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>MATLAB</tag>
+        <tag>日记</tag>
+        <tag>Hexo</tag>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Happy New Year！</title>
+    <url>/posts/defb.html</url>
+    <content><![CDATA[<h1 id="新年快乐">新年快乐！</h1>
+<h2 id="加油吖">2022加油吖！</h2>
+]]></content>
+      <categories>
+        <category>生活馆</category>
+      </categories>
+      <tags>
+        <tag>2022</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>记墨大2022 O-week</title>
+    <url>/posts/e657.html</url>
+    <content><![CDATA[<p>​ 好啦，不知道为什么Typora出了点bug，在more前面打字会变成奇怪的东西，不管了，大不了剪切上去。这算是我建这个blog以来第一篇文章（流水账）吧，主要是放假也确实没什么好写的，开学之后大概更的会多一点（如果有空的话）。</p>
+<span id="more"></span>
+<p>2月21日</p>
+<p>​ 今天实际上跟我没什么关系，差不多就是待在家里，继续摸摸鱼。学校有一个欢迎视频，没兴趣，就不看了。大概主要还是星期三星期四去学校看看有什么好玩的吧。</p>
+<p>2月22日</p>
+<p>​ 2022.2.22 正月廿二星期二纪念</p>
+<p>​ 今天参加了俩线上getting started的活动，差不多也都是之前就知道的反复炒冷饭罢了（明天subject expo也差不多大概）。唯一还不错的点是作息稍微正常了些orz。看明天啦。</p>
+<p>2月23日</p>
+<p>​ 大概今天的关键词就是挤和热吧，到学校十点二十几分，结果Uri跑到the Spot去回来晚了些，然后在学校稍微走了走才发现Glyn Davis门口已经排了巨长的队，大概welcome presentation开始已经差不多11：20了（原本说是11：00）……</p>
+<p>​ 然后结束后就是出去Subject Expo以及吃午饭，实际上差不多就是自由活动了，和Uri去找Engineering B，问Subject Expo这边的一个工作人员，结果他说他也不知道，就很蠢……后来是问了Union House的人他告诉我们在哪。去逛了逛校园，走了点小路，妄想走捷径结果绕了远路也是够sb……</p>
+<p>​ 回来吃午饭，吃的Pasta，挺不错。然后……就没有然后了。</p>
+<p>​ 基本上学校里人都挤在露天，外面很热，室内有空调就舒服。而且室内也没多少人就很不错。</p>
+<p>2月24日</p>
+<p>​ 本来看着昨天那么热决定少穿一点，结果看天气预报说要下雨人傻了……不过好在最后并没有下雨，只是天气阴阴的也不热，就比昨天好。今天主要就是个Peer Mentor Group，两个mentor都是华人（一个是上海来的，还有一个大概是本地华人）都挺不错的。认识了Daniel，从北京来的，才刚到墨尔本。在MCC里面人挤的要死，到处都是排队，去领了衣服，吃了点冰激凌（salted caramel味的，比想象中要咸一点orz），然后就溜了。跟Daniel逛了逛校园，然后没了……</p>
+<p>​ 比想象中要无聊一些，不过大概也就是这样吧……</p>
+<p>​ 下个星期就开学了，加油吧……</p>
+]]></content>
+      <categories>
+        <category>生活馆</category>
+      </categories>
+      <tags>
+        <tag>日记</tag>
+        <tag>O-week</tag>
+        <tag>流水账</tag>
       </tags>
   </entry>
   <entry>
@@ -436,7 +409,7 @@
 <p><strong>combination</strong>：组合</p>
 <p>需要<code>from itertools import combinations</code></p>
 <p><code>combinations(iterable, r)</code>返回iterator包含长度为r的组合（tuple）iterable可以包含重复的元素，在计算时会被当做不同元素</p>
-<p><strong>product()</strong>求积，类似求两个集合的积，实际操作和nested for loop几乎一样</p>
+<p><strong>product()</strong>求积，类似求笛卡尔积，实际操作和nested for loop几乎一样</p>
 <p>需要<code>from itertools import product</code></p>
 <p>给function设置参数时在名字前加上*，说明可以接受多个该参数，例如</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(*objects, sep=<span class="string">&#x27; &#x27;</span>, end=<span class="string">&#x27;\n&#x27;</span>, file=sys.stdout, flush=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
@@ -451,6 +424,124 @@
       <tags>
         <tag>笔记</tag>
         <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Notes for MATLAB</title>
+    <url>/posts/ea72.html</url>
+    <content><![CDATA[<p>看上去MATLAB也要记些东西……</p>
+<p><em>斜体</em>表示出现的内容是课程提供的function</p>
+<span id="more"></span>
+<h2 id="矩阵">矩阵</h2>
+<h4 id="lab2">lab2</h4>
+<p>最基础的<code>A=[a b;c d]</code></p>
+<p>空格也可以用<code>,</code>，暂时没找出区别</p>
+<p><code>A'</code>用于求转置（transpose）</p>
+<p><code>.*</code>把矩阵内元素对应相乘，或者说<strong>行矩阵<code>.*</code>列矩阵</strong>可以构造一个类似乘法表的东西</p>
+<p><code>A+constant</code> 可以在A的每一个元素的基础上加上一个常数</p>
+<p><code>A(m,n)=a</code>可以把矩阵第m行n列的数改成a</p>
+<p>单独<code>:</code>可以代替全列，例如<code>v=B(:,2)</code>会将v定义为B第二列的列向量</p>
+<p>此外，<code>:</code>可以指代数列，句式为<code>a:s:b</code>，其中a为初项，s为步长，b为末项（更准确的说是最后一项不超过b），s可被省略，默认是1</p>
+<p><code>eye(n)</code>用以构造n阶单位矩阵（Identity matrix）</p>
+<p><code>diag(v)</code>用以构造以v为对角线的对角形矩阵</p>
+<p><code>ones(n,m)</code>构造n行m列的元素全是1的矩阵</p>
+<p><code>zeros(n,m)</code>构造n行m列元素全是0的矩阵</p>
+<p>分块矩阵亦可用<code>M=[A B;C D]</code>的形式来获得</p>
+<p>习题：</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">A=[<span class="number">4</span> <span class="number">8</span> <span class="number">8</span> <span class="number">11</span> <span class="number">1</span>]</span><br><span class="line">B=[<span class="built_in">diag</span>(A) <span class="number">7</span>*<span class="built_in">ones</span>(<span class="number">5</span>,<span class="number">7</span>);<span class="number">12</span>*<span class="built_in">ones</span>(<span class="number">7</span>,<span class="number">5</span>) <span class="number">7</span><span class="number">-6</span>*<span class="built_in">eye</span>(<span class="number">7</span>)]</span><br><span class="line">B(<span class="number">1</span>,<span class="number">4</span>)=<span class="number">6</span></span><br></pre></td></tr></table></figure>
+<p>优化(64)：</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">A=<span class="built_in">ones</span>(<span class="number">5</span>,<span class="number">7</span>)</span><br><span class="line">Q=[<span class="built_in">diag</span>([<span class="number">4</span> <span class="number">8</span> <span class="number">8</span> <span class="number">11</span> <span class="number">1</span>]) <span class="number">7</span>*A;<span class="number">12</span>*A&#x27; <span class="number">7</span><span class="number">-6</span>*<span class="built_in">eye</span>(<span class="number">7</span>)]</span><br><span class="line">Q(<span class="number">1</span>,<span class="number">4</span>)=<span class="number">6</span></span><br></pre></td></tr></table></figure>
+<h4 id="lab3">lab3</h4>
+<p><code>R=rref(A)</code>直接求A的reduced row echelon form</p>
+<p>我这里matlab默认是输出为小数形式，使用<code>format (style)</code>来修改输出格式，format处可以填<code>short</code>（默认，小数点后四位）, <code>long</code>（小数点后15位）, <code>shortE/longE</code>（科学计数法）, <code>shortG/longG</code>（科学计数法/普通小数，取决于哪种更紧凑）, <code>shortEng/longEng</code>（Engineering notation: 类似科学计数法，但是指数必定为三的倍数）, <code>+</code>（只显示+/-，0则不显示）, <code>bank</code>（货币格式，小数点后二位）, <code>hex</code>（十六进制表达？）, <code>rational</code>（分数，可以缩写rat，但是输出的分数并不是精确值，而是估计）等，以及显示格式<code>compact</code>和<code>loose</code>（默认），<code>fmt=format</code>查看当前设置，<code>format default</code>返回初始设置。</p>
+<p><code>rat(a)</code>可以输出分数形式（估计值），算法是利用</p>
+<p><span class="math display">\[\frac{N}{D}=D_1+\frac{1}{D_2+\frac{1}{...+\frac{1}{D_k}}}\]</span></p>
+<p><a href="https://au.mathworks.com/help/matlab/ref/format.html">reference</a></p>
+<p>上面似乎有点长（主要不是worksheet上的，自己查来的</p>
+<p><code>det()</code>和<code>inv()</code>分别求矩阵的逆和行列式</p>
+<p>然后做exercise 2的时候发现点问题，下面这个矩阵行列式为零，不可逆，但是拿det和inv计算出来行列式是-1/1050839913053116<span class="github-emoji" data-alias="laughing" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8">😆</span></p>
+<p><span class="math display">\[\begin{bmatrix} 1&amp;2&amp;3\\ 4&amp;5&amp;6\\ 7&amp;8&amp;9\\ \end{bmatrix}\]</span></p>
+<p>而且他求不可逆矩阵出来结果是</p>
+<p><span class="math display">\[\begin{bmatrix} 1/0&amp;1/0&amp;1/0\\ 1/0&amp;1/0&amp;1/0\\ 1/0&amp;1/0&amp;1/0\\ \end{bmatrix}\]</span></p>
+<p>提示是：</p>
+<blockquote>
+<p>警告: 矩阵为奇异工作精度。</p>
+</blockquote>
+<p>format设置为<code>rational</code>时，答案可能给出<code>*</code>代表非常小的数字，可能是一些奇怪的误差，类似上面矩阵给出的结果</p>
+<p><em>然后是几个写好的函数：<code>[B,E] = rowswap(A,i,j)</code>，<code>[B,E] = rowmul(A,c,i)</code>，<code>[B,E] = rowadd(A,c,i,j)</code>其中B是完成行变换的输出矩阵，E是行变换对应的基本矩阵，A是输入矩阵，c是倍数，i，j是操作的行数（把i行加到j行上）</em></p>
+<p><code>size(A)</code>用来查询矩阵A的大小，输出结果记作<code>[dim1, dim2, ...]</code>，可以用<code>size(A,n)</code>用来输出矩阵A第n维度的大小（例如1是行，2是列）</p>
+<p>然后所以习题里面的<code>size(A,1)</code>要改成<code>size(A,2)</code>之前都没发现orz</p>
+<h4 id="lab4">lab4</h4>
+<p><code>det()</code>求行列式（上节课就有了）</p>
+<p><code>dot()</code>求dot product</p>
+<p><code>cross()</code>求cross product</p>
+<p><em><code>pgram1(B)</code>绘制由两行向量组成的平行四边形（应该只能做二维的，输入一定要是2*2的矩阵）</em></p>
+<p><em><code>pgram2(B,C)</code>绘制两个平行四边形</em></p>
+<p><code>Hold on</code>，<code>Hold off</code>可以切换是否在一个figure窗口中绘制多个图</p>
+<p><code>Figure(n)</code>可以新建第n个Figure窗口</p>
+<p>Home- Clear workspace 可以清除所有变量</p>
+<p><code>syms</code>需要安装Symbolic Maths Toolbox</p>
+<p><code>syms</code>是类似声明变量（符号）的一个指令，内容……非常多，挑了一部分记 <a href="https://au.mathworks.com/help/symbolic/syms.html?searchHighlight=syms&amp;s_tid=srchtitle_syms_1">这里是官方网站的链接</a></p>
+<p><code>syms</code>可以用来声明普通符号，矩阵（用方括号声明大小，例如<code>syms a [1 4]</code>），函数（带小括号及自变量）</p>
+<p>声明符号的最后可以指定这个符号的取值范围，例如<code>real</code>,<code>integer</code>,<code>positive</code>,<code>rational</code>,<code>matrix</code>等</p>
+<p><code>assumptions</code>可以用来查询目前已声明的变量及他们的取值</p>
+<p><code>assume([x y z],'clear')</code>可以用来清除已声明的变量</p>
+<p><code>abs()</code>计算绝对值</p>
+<p><code>sqrt()</code>计算平方根</p>
+<p><code>simplify()</code>化简带符号的表达式</p>
+<p>MATLAB似乎没有专门指令求向量长度，所以要用<code>sqrt(dot(x,x))</code>来求向量x的长度</p>
+<p>然后如果没有上节课提供的函数，自己做row operation可以直接类似这样：<code>A(row1,:)=A(row1,:)+k*A(row2,:)</code></p>
+<h4 id="lab5">lab5</h4>
+<p><strong>Closed Input-Output (Leontief) Model</strong></p>
+<p>构建矩阵E，行和列分别表示不同的产品，列表示原材料，行表示作为产品，<span class="math inline">\(e_{i,j}\)</span>表示生产i产品需求j材料的比例</p>
+<p>由于需求不可能是负值，所以矩阵中所有元素都大于等于0，即<span class="math inline">\(e_{i,j}\ge 0\)</span> for <span class="math inline">\(1\le i, j\le k\)</span></p>
+<p>由于研究的是closed model，无商品进出口，每年使用的总比例一定为1，即每列的和为1，也即<span class="math inline">\(\sum_{i=1}^{k}e_{i,j}=1\)</span> for <span class="math inline">\(1\le j\le k\)</span></p>
+<p><code>sum()</code>求和，输入向量（数组？）求所有元素的和，输入矩阵则求每一列的和，输出为行向量，基于此<code>sum(sum(A))</code>用以求A矩阵中所有元素之和</p>
+<p><code>max()</code>求最大值，输入为向量时输出最大值，输入为矩阵则输出每列的最大值的行向量，<code>max(max(A))</code>求矩阵A中的最大元素</p>
+<p><code>min()</code>求最小值，同理略</p>
+<p><code>isequal(A,B)</code>判断A，B（可以是数字，矩阵，表达式）是否相等，True则输出1，False输出0。</p>
+<p>注意Matlab有精度误差，例如<code>isequal(1,0.99999999999999999)</code>会返回1</p>
+<p><code>==</code>也可以用于比较大小，但是如果等号两边是矩阵，它会返回一个矩阵，分别比较每个元素的大小</p>
+<p><code>~=</code>不等于，<code>and (&amp;)</code> 与，<code>or (|)</code>或</p>
+<p><code>%</code>后面跟注释</p>
+<p><strong>if condition</strong>:</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> &lt;condition&gt;</span><br><span class="line">	&lt;statement&gt;</span><br><span class="line"><span class="keyword">elseif</span> &lt;condition&gt;</span><br><span class="line">	&lt;statement&gt;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	&lt;statement&gt;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p><strong>函数声明</strong></p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> &lt;<span class="title">output</span><span class="params">(输出，若要多个输出则用[]包括所有输出项)</span>&gt; = &lt;<span class="title">function_name</span>&gt;<span class="params">(&lt;input(同理)</span>&gt;)</span></span><br><span class="line">	&lt;statement(不同表达式之间用分号区分)&gt; </span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>Exercise 3：</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">B</span>=<span class="title">mysolve</span><span class="params">(E)</span></span></span><br><span class="line">[m,n]=<span class="built_in">size</span>(E);</span><br><span class="line"><span class="keyword">if</span> m~=n</span><br><span class="line">    <span class="string">&#x27;E is not square.&#x27;</span></span><br><span class="line"><span class="keyword">elseif</span> <span class="built_in">min</span>(<span class="built_in">min</span>(E))&lt;<span class="number">0</span></span><br><span class="line">    <span class="string">&#x27;Not all the entries are greater or equal to 0&#x27;</span></span><br><span class="line"><span class="keyword">elseif</span> <span class="built_in">min</span>(sum(E))==<span class="number">1</span> &amp; <span class="built_in">max</span>(sum(E))==<span class="number">1</span></span><br><span class="line">    B = rref(E-<span class="built_in">eye</span>(n))</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="string">&#x27;The sum of each column is not 1&#x27;</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>Exploration一开始被a迷惑了，然后发现<span class="math inline">\(E_3^2\)</span>就不满足条件（大于0，但<span class="math inline">\(E_3^2\)</span>有0元素）</p>
+<p>b的话按照题目是叫我们找规律，大概上下两元素间的比值是<span class="math inline">\(\frac{(n-1)^2}{n}\)</span></p>
+<h4 id="lab-6">lab 6</h4>
+<p>前面一半是用matlab验证一些简单的结论，没啥东西</p>
+<h4 id="lab-9">lab 9</h4>
+<p>好久没动这儿了，上课有时间就写点</p>
+<p><code>[P,D]=eig(A)</code>求矩阵A的特征值和特征向量，输出P和D满足<span class="math inline">\(P^{-1}AP = D\)</span>，即P是特征向量（<span class="math inline">\([v1 \space v2 \space v3]\)</span>），D是对应特征值（<span class="math inline">\(diag(\lambda_1,\lambda_2,\lambda_3)\)</span>）</p>
+<p>其中特征向量automatically normalised，也就是长度化成1了，所以会有一堆小数（</p>
+<p>Markov chains(马尔可夫链) 我的观察是和邻接矩阵差不太多，就是说每个元素成了概率，于是每一列的和为1所以又和之前Closed Input-Output的矩阵一样了。</p>
+<p>这样的矩阵拥有以下性质：</p>
+<p>P1. 具有特征值1</p>
+<p>P2. 当特征值为1时，具有</p>
+<h2 id="matlab-for-physics">MATLAB for physics</h2>
+<p>用小括号来截取数组中的一部分，index从1开始，最后一个可以用<code>end</code>，使用<code>end-n</code>来指代倒数第n+1个数字</p>
+<p>科学计数法用e来表示，例如<code>3e8</code>。</p>
+<p><code>log()</code>表示自然对数</p>
+<p><code>log10()</code>表示以10为底的对数</p>
+<p>在矩阵中有运算<code>.^</code>区别于单独<code>^</code>（矩阵和自己相乘）可将矩阵里的每个元素单独乘方</p>
+<p>可在函数中用数表（矩阵）作为自变量，输出结果为同形矩阵</p>
+<p>此时用<code>plot(x,y)</code>可以直接作图</p>
+<p>同时<code>plot(x,y,'.')</code>表示将每组数据呈现为点，同样地，可以将<code>'.'</code>改为<code>‘o’</code> (circles), <code>‘x’</code> (crosses), <code>‘+’</code> (plus signs), <code>‘*’</code> (asterisks), <code>‘s’</code> (squares)来进行绘图</p>
+<p>使用<code>errorbar(x, y, ybars, ’.’)</code> 可以在图上加上误差线，其中<code>x</code>,<code>y</code>,<code>ybars</code>为同维数组</p>
+<p>如果希望在同一幅图上绘制多种对应关系，可以使用<code>figure</code>（添加空白绘图窗口）和<code>hold on</code>指令，而若要取消<code>hold on</code>指令，只需键入<code>hold off</code>（<code>hold on</code>,<code>hold off</code>是状态切换指令，也就是说一旦<code>hold on</code>, 就会一直在同一幅图上添加内容，直到<code>hold off</code>）</p>
+<p>也可以使用<code>plot (x1, y1, x2, y2, ’.’)</code>的句式，其中代表数据点样式的符号跟在相应因变量后面，如上面的例子中，<code>x1</code>,<code>y1</code>应用了default样式：连线，<code>x2</code>,<code>y2</code>应用点号作为每个数据点的样式</p>
+<p>而curve fitting功能可以在APP-Curve Fitting来实现（需要下载）</p>
+]]></content>
+      <categories>
+        <category>自习室</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>MATLAB</tag>
       </tags>
   </entry>
   <entry>
@@ -597,103 +688,15 @@
 \]</span> ​ Obtain an orthonormal basis for the span of ${1,x,x} $ using the Gram-Schmidt process.</p>
 <p>​ 然后今天tutorial只有四题，于是成功地在3点还没到的时候就把题目都给做完了，挺好。</p>
 <p>​ 我服了图书馆坐我后面这桌两个人好tm吵啊<span class="github-emoji" data-alias="anger" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a2.png?v8">💢</span>……</p>
+<p>5月10日</p>
+<p>​ 早上物理实验，一开始讲的时候头有点晕，然后就回到座位上休息，不过似乎也没有讲什么内容，实验比想象中要好不少，最后出来的结果很准确，内容是测激光（红绿）的波长，和测一根细丝的直径，整体还算不错。</p>
+<p>​ 然后吃完饭到MUMS room原本打算把science的assignment做了，结果就直接睡了两小时orz，然后起来看看essay……%#@&amp;%%#@￥&amp;#……</p>
 ]]></content>
       <categories>
         <category>生活馆</category>
       </categories>
       <tags>
         <tag>-- 日记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>记墨大2022 O-week</title>
-    <url>/posts/e657.html</url>
-    <content><![CDATA[<p>​ 好啦，不知道为什么Typora出了点bug，在more前面打字会变成奇怪的东西，不管了，大不了剪切上去。这算是我建这个blog以来第一篇文章（流水账）吧，主要是放假也确实没什么好写的，开学之后大概更的会多一点（如果有空的话）。</p>
-<span id="more"></span>
-<p>2月21日</p>
-<p>​ 今天实际上跟我没什么关系，差不多就是待在家里，继续摸摸鱼。学校有一个欢迎视频，没兴趣，就不看了。大概主要还是星期三星期四去学校看看有什么好玩的吧。</p>
-<p>2月22日</p>
-<p>​ 2022.2.22 正月廿二星期二纪念</p>
-<p>​ 今天参加了俩线上getting started的活动，差不多也都是之前就知道的反复炒冷饭罢了（明天subject expo也差不多大概）。唯一还不错的点是作息稍微正常了些orz。看明天啦。</p>
-<p>2月23日</p>
-<p>​ 大概今天的关键词就是挤和热吧，到学校十点二十几分，结果Uri跑到the Spot去回来晚了些，然后在学校稍微走了走才发现Glyn Davis门口已经排了巨长的队，大概welcome presentation开始已经差不多11：20了（原本说是11：00）……</p>
-<p>​ 然后结束后就是出去Subject Expo以及吃午饭，实际上差不多就是自由活动了，和Uri去找Engineering B，问Subject Expo这边的一个工作人员，结果他说他也不知道，就很蠢……后来是问了Union House的人他告诉我们在哪。去逛了逛校园，走了点小路，妄想走捷径结果绕了远路也是够sb……</p>
-<p>​ 回来吃午饭，吃的Pasta，挺不错。然后……就没有然后了。</p>
-<p>​ 基本上学校里人都挤在露天，外面很热，室内有空调就舒服。而且室内也没多少人就很不错。</p>
-<p>2月24日</p>
-<p>​ 本来看着昨天那么热决定少穿一点，结果看天气预报说要下雨人傻了……不过好在最后并没有下雨，只是天气阴阴的也不热，就比昨天好。今天主要就是个Peer Mentor Group，两个mentor都是华人（一个是上海来的，还有一个大概是本地华人）都挺不错的。认识了Daniel，从北京来的，才刚到墨尔本。在MCC里面人挤的要死，到处都是排队，去领了衣服，吃了点冰激凌（salted caramel味的，比想象中要咸一点orz），然后就溜了。跟Daniel逛了逛校园，然后没了……</p>
-<p>​ 比想象中要无聊一些，不过大概也就是这样吧……</p>
-<p>​ 下个星期就开学了，加油吧……</p>
-]]></content>
-      <categories>
-        <category>生活馆</category>
-      </categories>
-      <tags>
-        <tag>日记</tag>
-        <tag>O-week</tag>
-        <tag>流水账</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Happy New Year！</title>
-    <url>/posts/defb.html</url>
-    <content><![CDATA[<h1 id="新年快乐">新年快乐！</h1>
-<h2 id="加油吖">2022加油吖！</h2>
-]]></content>
-      <categories>
-        <category>生活馆</category>
-      </categories>
-      <tags>
-        <tag>2022</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客搭建的记录</title>
-    <url>/posts/739d.html</url>
-    <content><![CDATA[<h1 id="从头说起">从头说起</h1>
-<p>前一段时间某一天我在Google上偶然看到了<a href="https://cekavis.github.io/">t老师的blog</a>，于是突发奇想：“要不我也搭一个吧？”于是就有了这Anony's Blog。</p>
-<h1 id="月3日">12月3日</h1>
-<p>实际上已经四号了来着，跟着<a href="https://zhuanlan.zhihu.com/p/102592286">知乎</a>和<a href="https://www.bilibili.com/video/BV1mU4y1j72n">Bilibili</a>两位大佬的教程开始搞。</p>
-<p>结果只完成了安装nodejs和配置npm环境两个步骤，中途疯狂报错“The operation was rejected by your operating system.” Google上找的方法都没用，后来才发现原来就是没权限，于是就解决了。 <span id="more"></span></p>
-<h1 id="月4日">12月4日</h1>
-<p>今天把Git，Hexo，Github都配置好了，也是第一次能从网上看到这个blog网页了（虽说只是Hexo默认的）。然后就开始选主题，期间一边和<a href="https://fffeiya.github.io/">FFFeiya</a>语音，一边浏览他们信奥巨巨们的blog，看到好多年久失修的，当然也有一直在维护，让我非常喜欢的，比如<a href="https://vsh-fd.github.io/">星官姐姐</a>。</p>
-<h1 id="月5日">12月5日</h1>
-<p>最后还是决定用最淳朴的next模板，把标题菜单设置好，稍微添加了一些内容（比如现在这篇），然后就没了，剩下的明天再做了。</p>
-<p>今日脑瘫：设置搜索的时候没找到主题配置文件里搜索的位置，上千行的配置文件上上下下读了两遍，眼睛都花了才记起来有搜索功能可以用。</p>
-<h1 id="月6日">12月6日</h1>
-<p>想摸鱼了呜呜呜。先休息一会儿做点规划吧。今天打算把菜单栏优化一下，可以预见的一定会碰壁。</p>
-<p>结果先加了个live2d，点名批评Live2d Viewer，上来就把我电脑搞死机了。原本想着把<a href="https://www.bilibili.com/video/BV1wV411B7N4">可莉的l2d</a>搬进来的，结果试了半天搞不定只好作罢orz。于是只是加了这么一位看板娘，如果以后学会加l2d的方法的话再改吧。</p>
-<p>好耶今天的活算是做完了吧，改造了一下菜单栏，顶上就可以直接访问三个分类了。网上完全没找到类似的教程只能自己摸，最后发现主题配置文件的菜单栏里menu一块这样写就可以直接跳转专门的类别啦。 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">life:</span> <span class="string">/categories/生活馆/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-route</span></span><br><span class="line">  <span class="attr">thoughts:</span> <span class="string">/categories/空想家/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-lightbulb</span></span><br><span class="line">  <span class="attr">notes:</span> <span class="string">/categories/自习室/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-book</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br></pre></td></tr></table></figure> 然后把home和categories给删了也是，home直接点击anony's blog图标就行，categories被三个子栏目代替了，这样至少我觉得很不错。然后图标是<a href="https://fontawesome.com/v5.15/icons?d=gallery&amp;p=2">Font Awesome</a>找的。</p>
-<p>打算最后再弄一下l2d看看，其他工作就明天再来吧。</p>
-<p>结果是l2d没弄，把评论系统搞上去了，总体就是Valine注册一下，然后找到主题配置里的comments-Valine就好了，很方便。</p>
-<p>好了好了该摸了。</p>
-<p>好吧又加了一个表情支持，测试一下<span class="github-emoji" data-alias="persevere" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f623.png?v8">😣</span></p>
-<p>好诶<span class="github-emoji" data-alias="tada" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png?v8">🎉</span><span class="github-emoji" data-alias="tada" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png?v8">🎉</span><span class="github-emoji" data-alias="tada" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png?v8">🎉</span>。Mark一下<a href="https://www.webfx.com/tools/emoji-cheat-sheet/">Emoji Cheat Sheet</a>。</p>
-<p><a href="https://anonyzzz.github.io/404">404页面</a>完成，稍微玩了一下，说实话看排版会很怪，不过我也不知道该怎么改，算了。</p>
-<p>今天算是把博客基本上大体轮廓都搭完了吧，后面就是些缝缝补补，美化的工作了。挺好。</p>
-<p>加上了头像和网页最下方心心的动画，中途出了bug，本地是好的，传到网上显示没有改动，又重新做了一遍就好了。</p>
-<h1 id="月7日">12月7日</h1>
-<p>改了一个名字“Anony的角落”，也没什么新意，主要是想了一晚上也没想出一个好点的中文昵称。</p>
-<p>然后加了一些东西，社交链接，RSS，建站统计，字数，阅读时间统计，阅读进度提示条……</p>
-<p>然后就是紧张刺激的修bug环节，在第一次上传之后出现了俩bug,一个是原本应该出现在右上角的github banner出现在了左上角，这是我在本地测试从来没碰到过的，我想着我也没有改什么东西，就很奇怪。另一个bug是“Hello World”文章的字数统计和时间统计显示“本文字数： |阅读时长≈NaN:aN”，网页最底下同样，这个问题倒是在本地测试也出现的问题，当时想着反正这统计也只是估算，如果发上去还是不行就把功能删了。然后我先在本地重新测了一遍，再Hexo clean,重新把文件全部传上去，刷新了半天发现banner还是在左上角，心想凉了，干脆把它一起也删了，结果回头瞥见“Hello World”的字数统计反而是好了，当时我人是懵的，在那里花式点击github banner，然后又把页面往下拉，发现代码块的复制也错位了，然后我点了一下，结果莫名其妙的它们就都回去了。于是网站就这么莫名其妙的恢复正常了……后来想来，也许是博客没加载清楚？</p>
-<p>然后好好编辑了一下footer，把powered移到了最底下，顺便加了一个换行，在footer.swig里面加上 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure> 就能换一行。</p>
-<p>好啦差不多就这样，基本上已经定型了，摸了摸了。</p>
-<h1 id="月8日">12月8日</h1>
-<p>试图加入多语言切换，由于技术问题和准备问题，出来一个没卵用还有bug的功能orz。</p>
-<p>实在多看了几眼决定还是把底部的字数统计给删了，有点杂。</p>
-<p>选了好久的背景图最后发现还是黑白的好看，那还是干净一些吧。</p>
-<p>在sidebar增加了网易云播放器，但不知道为什么单首歌没问题，放歌单我就加载不出来，也不是版权问题，就很奇怪。好吧是Letter Song的锅，删了就好了，但它在浏览器正常放没问题，一进外链就炸我也不懂了。好的繁华唱遍也是一样的问题，然后最奇怪的是流年如歌，它在浏览器里播放错误，但外链是好的，人已经傻掉，不过反正弄好了就行，歌单大概会不定期更新吧。</p>
-<p>感觉也想不到什么可以加的了，之后想到了再更新啦。</p>
-<p>哦对忘记添加公式输入支持了，测试一下： <span class="math display">\[ \sum_{i=1}^{n}i^2=\frac{n(n+1)(2n+1)}{6}. \]</span> 好诶成功了，过程有够惊险的，一开始就是启用了mathjax，然后发现本地测试疯狂报错，于是查了一下发现要装hexo-renderer-pandoc，装好了结果还是显示不出，回到配置文件才发现还有这么几句： <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">math:</span></span><br><span class="line">  <span class="comment"># Default (true) will load mathjax / katex script on demand.</span></span><br><span class="line">  <span class="comment"># That is it only render those page which has `mathjax: true` in Front-matter.</span></span><br><span class="line">  <span class="comment"># If you set it to false, it will load mathjax / katex srcipt EVERY PAGE.</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure> 加了mathjax: true之后就能用了。最后又在插入LaTeX的语法上挣扎了一下，所幸是成功了。</p>
-<p>最后测试一下图片吧。<img src="../images/favicon.jpg" alt="这是头像" /> 好耶。</p>
-]]></content>
-      <categories>
-        <category>生活馆</category>
-      </categories>
-      <tags>
-        <tag>日记</tag>
-        <tag>Hexo</tag>
-        <tag>Blog</tag>
       </tags>
   </entry>
 </search>
