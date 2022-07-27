@@ -6,7 +6,7 @@
   <link href="https://anonyzzz.github.io/atom.xml" rel="self"/>
   
   <link href="https://anonyzzz.github.io/"/>
-  <updated>2022-05-06T12:15:02.883Z</updated>
+  <updated>2022-07-27T08:08:00.130Z</updated>
   <id>https://anonyzzz.github.io/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Elements of data processing</title>
+    <link href="https://anonyzzz.github.io/posts/18e.html"/>
+    <id>https://anonyzzz.github.io/posts/18e.html</id>
+    <published>2022-07-27T05:51:58.000Z</published>
+    <updated>2022-07-27T08:08:00.130Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Elements of data processing&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="自习室" scheme="https://anonyzzz.github.io/categories/%E8%87%AA%E4%B9%A0%E5%AE%A4/"/>
+    
+    
+    <category term="笔记" scheme="https://anonyzzz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="python" scheme="https://anonyzzz.github.io/tags/python/"/>
+    
+    <category term="DS" scheme="https://anonyzzz.github.io/tags/DS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>FoA笔记</title>
+    <link href="https://anonyzzz.github.io/posts/105b.html"/>
+    <id>https://anonyzzz.github.io/posts/105b.html</id>
+    <published>2022-07-15T17:59:02.000Z</published>
+    <updated>2022-07-27T14:34:05.802Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;FoA的笔记，用的C&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="自习室" scheme="https://anonyzzz.github.io/categories/%E8%87%AA%E4%B9%A0%E5%AE%A4/"/>
+    
+    
+    <category term="笔记" scheme="https://anonyzzz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="C" scheme="https://anonyzzz.github.io/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>Notes for MATLAB</title>
@@ -43,12 +87,13 @@
     <link href="https://anonyzzz.github.io/posts/e912.html"/>
     <id>https://anonyzzz.github.io/posts/e912.html</id>
     <published>2022-03-07T00:00:35.000Z</published>
-    <updated>2022-05-09T14:42:26.282Z</updated>
+    <updated>2022-07-26T07:48:43.727Z</updated>
     
     
-    <summary type="html">&lt;p&gt;Foundation of computing的一些笔记&lt;/p&gt;
-&lt;p&gt;有点多，慢慢更，应该还是挺详细了，整合到最后再做。&lt;/p&gt;
-&lt;p&gt;以及前三张worksheet内容不太多，暂时先放着，后面有空再补。&lt;/p&gt;
+    <summary type="html">&lt;p&gt;Foundation of computing的一些笔记，也就是python的笔记，class什么的应该没学……&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;有点多，慢慢更，应该还是挺详细了，整合到最后再做。&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;以及前三张worksheet内容不太多，暂时先放着，后面有空再补。&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;不补了不补了懒得补orz&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://www.pythontutor.com/visualize.html#mode=edit&quot;&gt;pythontutor&lt;/a&gt;&lt;/p&gt;</summary>
     
     
@@ -67,7 +112,7 @@
     <link href="https://anonyzzz.github.io/posts/5eb1.html"/>
     <id>https://anonyzzz.github.io/posts/5eb1.html</id>
     <published>2022-03-02T04:53:26.000Z</published>
-    <updated>2022-05-10T09:02:37.894Z</updated>
+    <updated>2022-07-27T14:30:11.886Z</updated>
     
     
     <summary type="html">&lt;p&gt;一些短篇故事的连载，不定期更新，前提是有空+有故事。&lt;/p&gt;</summary>
