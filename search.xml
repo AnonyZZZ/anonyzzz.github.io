@@ -41,6 +41,7 @@
     <url>/posts/18e.html</url>
     <content><![CDATA[<p>Elements of data processing</p>
 <span id="more"></span>
+<h2 id="theory">Theory：</h2>
 <p><strong>data types:</strong></p>
 <figure>
 <img src="Eodp-1.png" alt="image1" /><figcaption aria-hidden="true">image1</figcaption>
@@ -85,11 +86,53 @@
 <ul>
 <li>&gt; 3*IQR below Q1 or above Q3</li>
 </ul></li>
-<li><p>histograms</p></li>
-<li><p>bar charts</p></li>
-<li><p>scatter plots</p></li>
-<li><p>heatmap</p></li>
-<li><p>parallel coordinate plots</p></li>
+<li><p>histograms</p>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728143256873.png" alt="image-20220728143256873" /><figcaption aria-hidden="true">image-20220728143256873</figcaption>
+</figure>
+<p>bars touches each other</p>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728143624604.png" alt="image-20220728143624604" /><figcaption aria-hidden="true">image-20220728143624604</figcaption>
+</figure>
+<p>symmetric, left/right skewed, unimodal, bimodal, multimodal...</p>
+<p>problem: choose an appropriate bin size for histogram</p>
+<p>用于numerical data</p></li>
+<li><p>bar charts</p>
+<p>用于categorical data: not continuous所以bar不贴在一起</p>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728144617965.png" alt="image-20220728144617965" /><figcaption aria-hidden="true">image-20220728144617965</figcaption>
+</figure>
+<p>histogram vs bar charts：</p>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728144758385.png" alt="image-20220728144758385" /><figcaption aria-hidden="true">image-20220728144758385</figcaption>
+</figure></li>
+<li><p>scatter plots</p>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728145535740.png" alt="image-20220728145535740" /><figcaption aria-hidden="true">image-20220728145535740</figcaption>
+</figure>
+<p>x,y坐标都是numerical</p>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728145726438.png" alt="image-20220728145726438" /><figcaption aria-hidden="true">image-20220728145726438</figcaption>
+</figure>
+<p>变种（用于显示第三项特征）：bubble plot（点的大小）/ enhanced scatter plot（颜色）</p>
+<p>当数据多时，会出现overplotting，也就是点全重叠在一起，看不清，可以reduce dot size, sampling(用小的样本量), jitter or use other plots</p></li>
+<li><p>heatmap</p>
+<p>normalise the data first</p>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728150702515.png" alt="image-20220728150702515" /><figcaption aria-hidden="true">image-20220728150702515</figcaption>
+</figure>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728150832485.png" alt="image-20220728150832485" /><figcaption aria-hidden="true">image-20220728150832485</figcaption>
+</figure></li>
+<li><p>parallel coordinate plots</p>
+<p>high-dimensional data</p>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728150932776.png" alt="image-20220728150932776" /><figcaption aria-hidden="true">image-20220728150932776</figcaption>
+</figure>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728151208096.png" alt="image-20220728151208096" /><figcaption aria-hidden="true">image-20220728151208096</figcaption>
+</figure>
+<p>注意scaling，ordering也很重要，好的ordering可以让数据更加清晰</p></li>
 </ol>
 <details>
 <summary>
@@ -105,7 +148,11 @@ Click to expand!
 </ul>
 </details></li>
 </ol>
-<h2 id="panda">Panda</h2>
+<h2 id="coding">Coding</h2>
+<h3 id="matplotlib">matplotlib</h3>
+<p><code>import matplotlib.pyplot as plt</code></p>
+<p><code>plt.plot(x,y)</code>画图，有点像matlab（不是有点，就是一样）<code>plot(y)</code>，会自动生成x坐标</p>
+<h3 id="panda">panda</h3>
 <p><code>import panda as pd</code></p>
 <p><strong>series:</strong></p>
 <figure>
@@ -119,6 +166,256 @@ Click to expand!
 </ul>
 <p>Examples of <code>series</code> methods: - <code>series.mean()</code> method (computes the average) - <code>series.sum()</code> method (computes the grand total sum)</p>
 <p><code>pd.concat([LIST OF SERIES], axis='rows')</code>合并两个series</p>
+<p><code>series.loc[]</code>用于slicing，括号里可以是index，也可以是针对数值的表达式</p>
+<p><code>.iloc[]</code>针对indices来slicing</p>
+<p><code>pd.read_csv</code>可以读取csv file</p>
+<p><code>&lt;csv_file&gt;.head(10)</code>画表格，这head(10)我也不知道是啥意思，但输出了个表格</p>
+<h2 id="week2">Week2</h2>
+<p>pre-processing</p>
+<p><strong>measuring data quality</strong></p>
+<ul>
+<li>Accuracy: right or wrong</li>
+<li>Completeness: Not recorded, unavailable (missing completely at random (unrelated to other variables)/ at random (relates to other variables)/ not at random (based on the variable itself))</li>
+<li>Consistency: discrepancies in representation (naming representations, date formats, outliers, etc.)</li>
+<li>Timeliness: Updated in a timely way</li>
+<li>Believability: Can I trust the data</li>
+<li>Interpretability: How easy can it be understand</li>
+</ul>
+<p>deal with incomplete data: 1. sklearn 2. multivariate strategies</p>
+<p>missing at random: relate to some other data</p>
+<p>completely at random: not related to anything</p>
+<p>not at random: relate to the data itself</p>
+<p>precision=<span class="math inline">\(\frac{TP}{TP+FP}\)</span></p>
+<p>recall=<span class="math inline">\(\frac{TP}{TP+FN}\)</span></p>
+<p>Accuracy=<span class="math inline">\(\frac{TP+TN}{TP+TN+FP+FN}\)</span></p>
+<p>pearson correlation:</p>
+<p><span class="math inline">\(r_{xy}=\frac {\sum _{i=1}^{n}(x_{i}-{\bar {x}})(y_{i}-{\bar {y}})}{\sqrt {\sum _{i=1}^{n}(x_{i}-{\bar {x}})^2}\sqrt {\sum _{i=1}^{n}(y_{i}-{\bar {y}})^2}}\)</span></p>
+<p><span class="math inline">\(\frac{\text{Cov}(x,y)}{\sigma_x\sigma_y}\)</span>, Cov(x,y)=E(x-xbar)(y-ybar) covariance</p>
+<p>linear relationship ONLY and continuous prefered</p>
+<p><code>np.arange(13)+0.5 == array([ 0.5,  1.5,  2.5,  3.5,  4.5,  5.5,  6.5,  7.5,  8.5,  9.5, 10.5, 11.5, 12.5])</code></p>
+<p>Jaccard similarity</p>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20221103061733246.png" alt="image-20221103061733246" /><figcaption aria-hidden="true">image-20221103061733246</figcaption>
+</figure>
+<p>Sørensen-Dice similarity</p>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20221103061752030.png" alt="image-20221103061752030" /><figcaption aria-hidden="true">image-20221103061752030</figcaption>
+</figure>
+<p>Cosine similarity</p>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20221103062019171.png" alt="image-20221103062019171" /><figcaption aria-hidden="true">image-20221103062019171</figcaption>
+</figure>
+<p><u> <strong>Entropy </strong></u></p>
+<p>For example: - An unbiased coin flip (50% Heads, 50% Tails) will have an entropy of 1. - A biased coin flip (100% Heads, 0% Tails) will have an entropy of 0.</p>
+<p><span class="math inline">\(H(X) = -\sum P(X=x_i)\log_2(P(X=x_i))\)</span></p>
+<p><u><strong>Conditional Entropy</strong></u></p>
+<p><span class="math inline">\(H(Y|X) = \sum_{x_i \in X} P(X=x_i) H(Y|X=x_i)\)</span></p>
+<p>where <span class="math inline">\(H(Y|X=x)\)</span> means calculating the entropy of the distribution <span class="math inline">\(P(Y|X=x)\)</span>:</p>
+<p><span class="math display">\[H(Y|X=x) = -\sum_{y_j \in Y} P(Y=y_j|X=x)\log_2(P(Y=y_j|X=x)).\]</span></p>
+<p><u><strong>Mutual Information</strong></u>(shannon version)</p>
+<p><span class="math inline">\(\text{MI}(X, Y) = H(X) – H(X | Y) = H(Y) - H(Y | X)\)</span></p>
+<p>normalized Mutual Information: (between 0 and 1)</p>
+<p><span class="math inline">\(\text{NMI}(X, Y) = \frac{\text{MI}(X,Y)}{min(H(X),H(Y))}\)</span></p>
+<p>if <span class="math inline">\(MI=0\)</span>: X and Y are independent</p>
+<p><u><strong>Chi-squared value</strong></u></p>
+<p><span class="math inline">\(\chi^2=\sum\frac{(O_i-E_i)^2}{E_i}\)</span></p>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20221103060344448.png" alt="something looks like this" /><figcaption aria-hidden="true">something looks like this</figcaption>
+</figure>
+<p>subset accuracy &amp; average accuracy</p>
+<p><u><strong>correlation</strong></u></p>
+<p>+/-, how strong, linear/non-linear</p>
+<p><strong>The Pearson correlation coefficient</strong>, also referred to as Pearson's r, is a statistic that measures linear correlation between two variables X and Y.</p>
+<p>ratio data and interval data and nomial data: 例子分别是房子大小（0点绝对，可以比大小，可以找出倍数关系etc），房子房间数（0点模糊，所以比较倍数关系够呛，另一个例子可以是温度（摄氏度）），房子门牌号（单纯的给个名字而已）</p>
+<p><strong>The coefficient of determination</strong> is the portion of the total variation in the dependent variable that is explained by variation in the independent variable.</p>
+<p><strong>causation</strong>: regression is not causal, correlation doesn't mean causation.</p>
+<p><u><strong>visualization techniques</strong></u></p>
+<p>line plots</p>
+<p>boxplots</p>
+<p>histograms</p>
+<p>bar charts</p>
+<p>scatter plots (scatter plot matrix)</p>
+<p>heatmap</p>
+<p>parallel coordinate plots</p>
+<p><strong>JSON and XML</strong>: semi-structured format</p>
+<p>- json</p>
+<p>-- part structured data -- values from article metadata;</p>
+<p>-- part non-structured -- text throughout article</p>
+<p>- xml</p>
+<p>-- metadata requires structure allowed by xml format;</p>
+<p>--</p>
+<p>JSON vs CSV: JSON is more expressive than CSV as it allows nesting, objects and arrays cannot be represented in a single line in a CSV file</p>
+<p><u><strong>Regex</strong></u></p>
+<table>
+<thead>
+<tr class="header">
+<th>.</th>
+<th>除换行符（/n）外所有字符</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>^</td>
+<td>字符串开头/在[]中表示除后面出现的这些</td>
+</tr>
+<tr class="even">
+<td>$</td>
+<td>字符串结尾</td>
+</tr>
+<tr class="odd">
+<td>*</td>
+<td>出现任意次数=<code>&#123;0,&#125;</code></td>
+</tr>
+<tr class="even">
+<td>+</td>
+<td>出现至少一次=<code>&#123;1,&#125;</code></td>
+</tr>
+<tr class="odd">
+<td>|</td>
+<td>或，和括号（）一起用</td>
+</tr>
+<tr class="even">
+<td>[]</td>
+<td>匹配字符集合，例如 <code>[abcd]  [a-zA-Z]</code></td>
+</tr>
+<tr class="odd">
+<td>()</td>
+<td>capturing group，捕获分组，\1这样表示重复第一个capturing group</td>
+</tr>
+<tr class="even">
+<td>/s</td>
+<td>所有空白符，包括=<code>[\f\n\r\t\v]</code></td>
+</tr>
+<tr class="odd">
+<td>/S</td>
+<td>所有非空白符=<code>[^\f\n\r\t\v]</code></td>
+</tr>
+<tr class="even">
+<td>/w</td>
+<td>所有字母，数字，下划线</td>
+</tr>
+<tr class="odd">
+<td>？</td>
+<td>出现0次或1次=<code>&#123;0,1&#125;</code>，或放在*，+后表示非贪婪</td>
+</tr>
+<tr class="even">
+<td>\</td>
+<td>下一个字符标记为正常字符</td>
+</tr>
+<tr class="odd">
+<td>{}</td>
+<td>限定符，限定次数可以用<code>&#123;n&#125;</code>出现n次，也可以<code>&#123;m,n&#125;</code>表示区间</td>
+</tr>
+<tr class="even">
+<td> 单词边界（空格和字母中间）</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>非单词边界</td>
+</tr>
+<tr class="even">
+<td> 数字</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>?:</td>
+<td>不捕获</td>
+</tr>
+<tr class="even">
+<td>?=</td>
+<td>匹配字符串后面的内容如<code>exp1(?=exp2)</code>表示exp1后面要是exp2，但exp2不属于这个表达式</td>
+</tr>
+<tr class="odd">
+<td>?&lt;=</td>
+<td>匹配字符串前面的内容</td>
+</tr>
+<tr class="even">
+<td>?!</td>
+<td>字符串后面不是</td>
+</tr>
+<tr class="odd">
+<td>?&lt;!</td>
+<td>字符串前面不是</td>
+</tr>
+</tbody>
+</table>
+<p><strong>text processing</strong>:</p>
+<p>remove punc</p>
+<p>casefolding</p>
+<p>tokenisation</p>
+<p>remove stopword</p>
+<p>lemmatisation, stemming</p>
+<p>TF-IDF and BoW: (representation model) convert unstructured text to a feature representation</p>
+<p><strong>machine learning</strong>:</p>
+<p><strong>kfold</strong>: we split the data into n parts (folds), one fold istesting, the rest training, we round-robin the testing fold, eventually we average results.</p>
+<p><strong>supervised vs unsupervised</strong>: Supervised = we have labelled data, unsupervised = we do not have labels.</p>
+<p><strong>unsupervised:</strong> PCA visualisation, feature selections</p>
+<p><strong>clustering</strong></p>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20221103064015604.png" alt="image-20221103064015604" /><figcaption aria-hidden="true">image-20221103064015604</figcaption>
+</figure>
+<p><strong>k-anonymous</strong>: 已知信息组合，最小的set的大小</p>
+<p><strong>I-diversity</strong>: 每种信息组合，sensitive数据的种类数目的最小值</p>
+<p><strong>global sensitivity</strong>: 就是每个个体能占的最多数量</p>
+<p><strong>recommender system</strong>:</p>
+<p>1.填补空缺：用xx-base中xx的平均值，如果xx对应的值缺失，可以忽略</p>
+<p><span class="math inline">\(\text{sim}(i_i, i_j)=\frac{1}{1+d(i_i,i_j)}\)</span></p>
+<p>然后就是算加权平均值</p>
+<p><strong>Dictionary attack</strong></p>
+<p><strong>Zook’s ’10 simple rules for responsible big data research</strong></p>
+<ol type="1">
+<li><p><strong>Acknowledge that data are people and can do harm</strong></p>
+<p>– All data are people until proven otherwise</p>
+<ul>
+<li>Social media</li>
+<li>Heart rates from Youtube videos</li>
+<li>Ocean measurements that change property risk profiles</li>
+</ul></li>
+<li><p><strong>Recognize that privacy is more than a binary value</strong></p>
+<p>– Privacy is contextual and situational</p>
+<p>– Single Instagram photo versus entire history of social media posts</p>
+<p>– Privacy preferences differ across individuals and societies</p></li>
+<li><p><strong>Guard against the reidentification of your data</strong></p>
+<p>– Metadata associated with photos</p>
+<p>– Reverse image search – connect dating and professional profiles</p>
+<p>– Difficult to recognize the vulnerable points a-priori!</p>
+<ul>
+<li>Battery usage on a phone – can reveal a person’s location</li>
+</ul></li>
+<li><p><strong>Practice ethical data sharing</strong></p>
+<p>– Seeking consent from participants to share data</p></li>
+<li><p><strong>Consider the strengths and limitations of your data; big does not automatically mean better</strong></p>
+<p>– Document the provenance and evolution of your data. Do not overstate clarity; acknowledge messiness and multiple meanings.</p>
+<ul>
+<li>is a Facebook post or an Instagram photo best interpreted as an approval/disapproval of a phenomenon, a simple observation, or an effort to improve status within a friend network?</li>
+</ul></li>
+<li><p><strong>Debate the tough, ethical choices/issues</strong></p>
+<p>– importance of debating the issues within groups of peers</p>
+<ul>
+<li><p>Examples mentioned earlier</p>
+<p>– Facebook emotional contagion</p>
+<p>– Exposing teen girl’s pregnancy</p></li>
+<li><p>More recently, Google Duplex</p>
+<p>– https://www.youtube.com/watch?v=D5VN56jQMWM</p></li>
+</ul></li>
+<li><p><strong>Develop a code of conduct for your organization, research community, or industry</strong></p>
+<p>– Are we abiding by the terms of service or users’ expectations?</p>
+<p>– Does the general public consider our research “creepy”?</p></li>
+<li><p><strong>Design your data and systems for auditability</strong></p>
+<p>– Plan for and welcome audits of your big data practices.</p>
+<p>– Systems of auditability clarify how different datasets (and the subsequent analysis) differ from each other, aiding understanding and creating better research</p>
+<ul>
+<li>“For example, many types of social media and other trace data are unstructured, and answers to even basic questions such as network links depend on the steps taken to collect and collate data.”</li>
+</ul></li>
+<li><p><strong>Engage with the broader consequences of data and analysis practices</strong></p>
+<p>– Recognize that doing big data research has societal-wide effects</p></li>
+<li><p><strong>Know when to break these rules</strong></p>
+<p>– Natural disaster</p>
+<p>– Public health emergency</p>
+<p>– Hostile enemy</p>
+<p>– …</p></li>
+</ol>
 ]]></content>
       <categories>
         <category>自习室</category>
@@ -134,6 +431,9 @@ Click to expand!
     <url>/posts/105b.html</url>
     <content><![CDATA[<p>FoA的笔记，用的C</p>
 <span id="more"></span>
+<p>一些命令行：</p>
+<p><code>cd</code> 改路径，<code>cd ..</code>回上一级，<code>ls</code>或<code>pwd</code>显示当前路径下的文件</p>
+<p><code>gcc -Wall -o &lt;.exe&gt; &lt;.c&gt;</code>编译</p>
 <p>先是lecture2最后留的题目</p>
 <figure>
 <img src="FoA-1.png" alt="题目" /><figcaption aria-hidden="true">题目</figcaption>
@@ -151,6 +451,12 @@ Click to expand!
 <p>if 语句</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(&lt;expression&gt;)&#123;</span><br><span class="line">	&lt;something&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><code>exit(EXIT_FAILURE)</code> exit是stdlib.h里的函数</p>
+<p>用法例如：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="built_in">scanf</span>(balabala) == <span class="number">0</span>)&#123; <span class="comment">//isdigit(), isascii(), islower(), isupper() from ctype.h</span></span><br><span class="line">	<span class="built_in">exit</span>(EXIT_FAILURE);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>字符用<code>''</code>，字符串用<code>""</code></p>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220824020144008.png" alt="image-20220824020144008" /><figcaption aria-hidden="true">image-20220824020144008</figcaption>
+</figure>
 ]]></content>
       <categories>
         <category>自习室</category>
@@ -866,6 +1172,48 @@ Click to expand!
 <p>没课，下午把这星期的FoA的lecture全看完了，讲得很不错，很上头，于是就停不下来了</p>
 <p>7月27日</p>
 <p>早上睡过头了orz，于是旷了今天唯一的一节AM lecture（才发现好像这学期只剩AM是in-person了，哭哭），后来听了recording，新的代课老师，一个女的，讲的贼烂，各种低级错误（到最后犯错了下面都懒得纠正了）无语了……</p>
+<p>7月28日</p>
+<p>早上AM换回了星期一的Christian Haesemeyer就还好，下午eodp有workshop，在一个昏暗的小房间里，内容倒还算丰富，没讲完，exercise的内容好多都不讲需要自己查，不过也还好吧。</p>
+<p>7月29日</p>
+<p>早上一早物理课，Uri，Dougal他们都没来不知道咋回事，AM2 lecture又是星期三的女老师来上，就很憋屈，到现在四个lecture才讲完原本3个多一点的内容……中午给Emily送去了她的hoodie，然后就在mums room摸了一下午。</p>
+<p>8月1日</p>
+<p>居然八月了orz，早上AM workshop和Ollie还有另外一个人一组，挺顺利，就是说我属实不太严谨……然后物理PSC一个教室坐满了人……然后跟Luca一起，还挺不错的:happy:。晚上吃完饭结果在火车站里碰到Uri，然后上车的时候突然跑过来一只Noah，也是很巧了。</p>
+<p>8月2日</p>
+<p>没课于是在家摸了一天，风好大，现在晚上外面真的哗哗哗的，和去年那大风有得一拼。然后“佩洛西访台”的事算是闹得沸沸扬扬……</p>
+<p>8月3日</p>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220803134458358.png" alt="image-20220803134458358" /><figcaption aria-hidden="true">image-20220803134458358</figcaption>
+</figure>
+<p>乐了，物理系刚发明出了时光机把大伙儿给传送回2019了，物理lms突然多出来2019的recording就挺离谱。</p>
+<p>然后晚上有competition catchup，属于是很爽，关于在peter hall待到晚上10点这件事（然后回去发现bus replace train直接裂开）。也是这回catchup做了一些组织工作，然后就是到处逛，别的人都走完了自己一题没做，哦Bon居然会中文惊了。不过人走完之后跟Jeff和Dougal留了很久，虽然说一题没做出，也还是很不错的体验。</p>
+<p>8月10日</p>
+<p>下午跟Dougal做SMO用的Sign，之前用的都很敷衍，于是就决定好好设计，还是挺认真的……然后事情就变得不妙了起来，然后我们的help desk的sign就变成了各种各样的meme，笑死了。然后我们一直搞到晚上8点多，后面大部分时间还是挺认真的（就是说我算是挺划水的吧，操作都是Dougal在做，我光忙着想meme了……</p>
+<p>8月11日</p>
+<p>早上AM lecture发生了戏剧性的一幕，因为Jan这星期刚回来，第一次上周四的课，结果把课表给搞错了，原本12点的课他以为是1点，于是我们在lecture theatre等了半小时，后来Luca他们去找老师，才把老师给请来，好在后面这个theatre也没人用，我们还可以拖堂（（（（</p>
+<p>8月12日</p>
+<p>网上有Games Night Yay！一开始先是跟Dougal，Jeff一行人，玩Love letters，有八个人，就是说规则更复杂了，参与感也低了，大概还是3~4个人最合适吧。然后吃pizza，这回我要了三块pizza（（（然后吃完跟Jaeho一起玩一个叫做Keystone（希望没记错）的新游戏，类似炉石，万智这种。结束后几个人决定去下chess，开始是两个人，然后玩厌了，四个人凑了玩四人的chess，属于是巨好玩，到后来玩成了政治外交游戏，博弈比双人的精彩多了，乐。</p>
+<p>8月15日</p>
+<p>早上在地铁上突然背后传来跺脚的声音，转过头去结果发现后面的后面的一个人倒在过道中间疯狂抽搐。然后地铁停在Richmond（不得不说这工作人员来得属实是有点慢），等了一段时间广播叫我们换车。</p>
+<p>物理上周的assignment没做完，原本想着下午去做一下，结果踏进MUMS room，Bon，Andres，Annabell在那里玩Jenga，问我要不要加入，（当然是加入。于是就嗨了一个下午，中途Jaeho也来了，原本说刚上Foc的lecture很困，然后在大家的怂恿之下也加入了。然后玩Jenga玩得无聊了就开始枕头大战，大概就是把MUMS room里面可以扔的抱枕玩偶全部拿出来互相扔，一时间房间里一片狼藉，正好我也好久没活动身体了hhh</p>
+<p>8月22日</p>
+<p>AM assignment做到早上5点，到学校感觉人都不是自己的了，果断放弃物理assignment。结果发现Dougal睡得比我还少，Bon还没写完。于是三个人在MUMS room，我打算晚交物理作业就睡觉，Dougal和Bon都在那里写作业。属于是很会安排时间了笑死……</p>
+<p>8月27日</p>
+<p>Games night跟Dougal，Jeff，Jason一块，玩了Azur，一个space主题的卡牌游戏，和一个火车的游戏，也是都挺好玩，就是说晚上bus replace train在Camberwell等了n久，回到家已经11:30左右了……</p>
+<p>9月5日</p>
+<p>不知不觉又好久没写了，懒了属于是。早上AM tutorial非常迅速，做了巨多的题。然后下午去参加了PSS的trivia night，跟Aidan，Samantha他们一组，问题属于是大多数都不会，不过吃的倒还可以（不是免费的！！！），猜对了400米世界纪录保持者的名字，还是比较高兴。</p>
+<p>9月6日</p>
+<p>星期二照常没课于是就在那里码cheat sheet，说实话没上到的部分我也不太明白怎么取舍，于是就码了大半页反常积分的定义<span class="github-emoji" data-alias="dizzy_face" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f635.png?v8">😵</span>最后出来8页的cheat sheet，好在是内容还算完整。</p>
+<p>9月7日</p>
+<p>中午买完披萨和Bon回MUMS room吃，然后看到有没下完的chess局，于是就开始接着下……然后最后实验课时间到了还没吃完。于是到实验室楼下先站着吃完，结果莫名其妙Dougal出现了，他说他有MST所以就今天来做实验，起初他甚至还不知道我也上实验课……实验做的浮力定律，开始有个小插曲就是我们的密度计是坏的orz，然后实验内容我们很快就做完了，大概50分钟，然后report也是在时间内写完了，很不错。晚上Competition Catch up做出了两题之后就卡住了。然后今天来了一个比较活跃的同学，然后Quang就极力劝说她去竞选president，就是说我是没理解……</p>
+<p>9月8日</p>
+<p>今天是“R U OK Day”，south lawn还有活动，free BBQ，跟Dougal，Bon过去结果队伍排得老长，而且还说要送完了，于是只能每个人拿了一片面包溜了……后来跟Dougal去Carlton Grill吃，然后下午Workshop就迟到了……Eodp workshop结束去Peter Hall参加AGM，结果就是……也不知道咋回事，结果没选上，就相当崩崩崩崩崩不住……也罢，就当是节约时间了………………<span class="github-emoji" data-alias="sweat" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f613.png?v8">😓</span></p>
+<p>然后是一大段空白，简单来讲就是咸了，出于各种原因，下面的都是后来印象比较深的几件事。。。希望明年能多写一点吧。。。</p>
+<p>9月21日</p>
+<p>早上AM lecture Dougal没来，然后和Bon吃完午饭路过Maths Assists刚好看到Alex在里面于是就一块玩儿，Bon找了一道IMO的题目（就当时Terry没做出来所以有名的那道题），然后我刚好记得之前似乎有看到过解答，然后就思考了一点顺利的做出来了。然后我才知道Bon要去Cambridge了，下个星期四就走，今天大概是最后一次见她了，也是蛮难受的，不过大概人生本来就是分分合合，聚少离多的吧，晚上CMC她也来了，甚至认真的在做题目，不过她要走的事似乎并没有告诉Dougal（他CMC倒是来了，我们一块去买的吃的所以也没什么机会吧），她也跟我说别告诉任何人，也不知道Dougal后来有没有去问，我就记得中午她问了我好几次Dougal去哪了，我只能说大概在赶assignment。</p>
+<p>10月11日</p>
+<p>UMO day，显然他们准备没做足，就很乱，倒是帮手挺多于是我就坐在边上看戏……不过瘾就直接坐到Alex他们组中间，看他们做，也是挺好玩<span class="github-emoji" data-alias="laughing" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8">😆</span>，结果最后结束他们才知道第二的队（QS School）作弊了……也是无语……</p>
+<p>10月15日</p>
+<p>Simon Marais! 整体还是挺不错的（不过题目简单所以可能emmm），我们是到David Caro里找了个房间，然后对门还有一组，也是有点好玩，上午我就是很后悔……第一题写了五页的证明，浪费了好多时间，不然第四题还可以动一动，特别这回简单估计不少人都能做完……中午吃的桥香园还在那碰到Edison他们，也是聊了聊。下午题目有点sb……第一题我题意理解错了，然后就带着Dougal跑偏了orz，第二题是纯计算，就很蠢，第三题还挺好玩，就是我最后五分钟才找到正确答案，只是匆匆忙忙写了一个策略……</p>
 ]]></content>
       <categories>
         <category>生活馆</category>
