@@ -6,7 +6,7 @@
   <link href="https://anonyzzz.github.io/atom.xml" rel="self"/>
   
   <link href="https://anonyzzz.github.io/"/>
-  <updated>2022-11-05T19:19:53.607Z</updated>
+  <updated>2022-11-18T21:04:45.083Z</updated>
   <id>https://anonyzzz.github.io/</id>
   
   <author>
@@ -17,14 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>2022年的回国之路</title>
+    <link href="https://anonyzzz.github.io/posts/8464.html"/>
+    <id>https://anonyzzz.github.io/posts/8464.html</id>
+    <published>2022-11-17T19:28:17.000Z</published>
+    <updated>2022-11-18T21:04:45.083Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在墨尔本呆了两年零九个月后，总算有机会回国啦，可喜可贺可喜可贺&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="生活馆" scheme="https://anonyzzz.github.io/categories/%E7%94%9F%E6%B4%BB%E9%A6%86/"/>
+    
+    <category term="空想家" scheme="https://anonyzzz.github.io/categories/%E7%A9%BA%E6%83%B3%E5%AE%B6/"/>
+    
+    
+    <category term="日记" scheme="https://anonyzzz.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+    <category term="流水账" scheme="https://anonyzzz.github.io/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Elements of data processing</title>
     <link href="https://anonyzzz.github.io/posts/18e.html"/>
     <id>https://anonyzzz.github.io/posts/18e.html</id>
     <published>2022-07-27T05:51:58.000Z</published>
-    <updated>2022-11-05T19:19:53.607Z</updated>
+    <updated>2022-11-05T19:37:12.594Z</updated>
     
     
-    <summary type="html">&lt;p&gt;Elements of data processing&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;Elements of data processing&lt;/p&gt;
+&lt;p&gt;纯纯期末为了复习补的，好事是考试针对性强，缺点是大概挺难看懂的……&lt;/p&gt;
+&lt;p&gt;然后图片有点难搞，我得先想个办法能让传图片方便一点再修，饼有点多不急……&lt;/p&gt;</summary>
     
     
     
@@ -44,10 +69,12 @@
     <link href="https://anonyzzz.github.io/posts/105b.html"/>
     <id>https://anonyzzz.github.io/posts/105b.html</id>
     <published>2022-07-15T17:59:02.000Z</published>
-    <updated>2022-08-23T17:00:05.426Z</updated>
+    <updated>2022-11-05T19:38:55.457Z</updated>
     
     
-    <summary type="html">&lt;p&gt;FoA的笔记，用的C&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;FoA的笔记，用的C&lt;/p&gt;
+&lt;p&gt;说实话还是有打算把这坑给补了，毕竟foa内容还挺好的（虽说大部分都很基础）&lt;/p&gt;
+&lt;p&gt;但得抽空……&lt;/p&gt;</summary>
     
     
     
@@ -65,11 +92,12 @@
     <link href="https://anonyzzz.github.io/posts/ea72.html"/>
     <id>https://anonyzzz.github.io/posts/ea72.html</id>
     <published>2022-03-07T06:33:03.000Z</published>
-    <updated>2022-05-06T12:15:02.883Z</updated>
+    <updated>2022-11-18T20:42:57.726Z</updated>
     
     
     <summary type="html">&lt;p&gt;看上去MATLAB也要记些东西……&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;斜体&lt;/em&gt;表示出现的内容是课程提供的function&lt;/p&gt;</summary>
+&lt;p&gt;&lt;em&gt;斜体&lt;/em&gt;表示出现的内容是课程提供的function&lt;/p&gt;
+&lt;p&gt;哦实际上也只记了一部分内容，因为AM1 computer lab还是更加偏向于linear algebra的应用一些所以实际上matlab的内容不太多……&lt;/p&gt;</summary>
     
     
     
