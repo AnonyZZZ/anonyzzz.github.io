@@ -6,7 +6,7 @@
   <link href="https://anonyzzz.github.io/atom.xml" rel="self"/>
   
   <link href="https://anonyzzz.github.io/"/>
-  <updated>2022-11-18T21:04:45.083Z</updated>
+  <updated>2022-11-20T19:15:19.968Z</updated>
   <id>https://anonyzzz.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://anonyzzz.github.io/posts/8464.html"/>
     <id>https://anonyzzz.github.io/posts/8464.html</id>
     <published>2022-11-17T19:28:17.000Z</published>
-    <updated>2022-11-18T21:04:45.083Z</updated>
+    <updated>2022-11-20T19:15:19.968Z</updated>
     
     
     <summary type="html">&lt;p&gt;在墨尔本呆了两年零九个月后，总算有机会回国啦，可喜可贺可喜可贺&lt;/p&gt;</summary>
@@ -44,12 +44,12 @@
     <link href="https://anonyzzz.github.io/posts/18e.html"/>
     <id>https://anonyzzz.github.io/posts/18e.html</id>
     <published>2022-07-27T05:51:58.000Z</published>
-    <updated>2022-11-05T19:37:12.594Z</updated>
+    <updated>2022-11-20T19:20:35.564Z</updated>
     
     
     <summary type="html">&lt;p&gt;Elements of data processing&lt;/p&gt;
 &lt;p&gt;纯纯期末为了复习补的，好事是考试针对性强，缺点是大概挺难看懂的……&lt;/p&gt;
-&lt;p&gt;然后图片有点难搞，我得先想个办法能让传图片方便一点再修，饼有点多不急……&lt;/p&gt;</summary>
+&lt;p&gt;然后图片有点难搞，我得先想个办法能让传图片方便一点再修，大概知道怎么修了？找个时间弄一弄，不过typora显示不出来我有点急……&lt;/p&gt;</summary>
     
     
     
@@ -69,7 +69,7 @@
     <link href="https://anonyzzz.github.io/posts/105b.html"/>
     <id>https://anonyzzz.github.io/posts/105b.html</id>
     <published>2022-07-15T17:59:02.000Z</published>
-    <updated>2022-11-05T19:38:55.457Z</updated>
+    <updated>2022-11-18T22:55:09.821Z</updated>
     
     
     <summary type="html">&lt;p&gt;FoA的笔记，用的C&lt;/p&gt;
@@ -84,6 +84,8 @@
     <category term="笔记" scheme="https://anonyzzz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
     <category term="C" scheme="https://anonyzzz.github.io/tags/C/"/>
+    
+    <category term="算法" scheme="https://anonyzzz.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   

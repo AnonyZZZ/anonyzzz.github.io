@@ -37,94 +37,646 @@
       </tags>
   </entry>
   <entry>
-    <title>博客搭建的记录</title>
-    <url>/posts/739d.html</url>
-    <content><![CDATA[<h1 id="从头说起">从头说起</h1>
-<p>前一段时间某一天我在Google上偶然看到了<a href="https://cekavis.github.io/">t老师的blog</a>，于是突发奇想：“要不我也搭一个吧？”于是就有了这Anony's Blog。</p>
-<h1 id="月3日">12月3日</h1>
-<p>实际上已经四号了来着，跟着<a href="https://zhuanlan.zhihu.com/p/102592286">知乎</a>和<a href="https://www.bilibili.com/video/BV1mU4y1j72n">Bilibili</a>两位大佬的教程开始搞。</p>
-<p>结果只完成了安装nodejs和配置npm环境两个步骤，中途疯狂报错“The operation was rejected by your operating system.” Google上找的方法都没用，后来才发现原来就是没权限，于是就解决了。 <span id="more"></span></p>
-<h1 id="月4日">12月4日</h1>
-<p>今天把Git，Hexo，Github都配置好了，也是第一次能从网上看到这个blog网页了（虽说只是Hexo默认的）。然后就开始选主题，期间一边和<a href="https://fffeiya.github.io/">FFFeiya</a>语音，一边浏览他们信奥巨巨们的blog，看到好多年久失修的，当然也有一直在维护，让我非常喜欢的，比如<a href="https://vsh-fd.github.io/">星官姐姐</a>。</p>
-<h1 id="月5日">12月5日</h1>
-<p>最后还是决定用最淳朴的next模板，把标题菜单设置好，稍微添加了一些内容（比如现在这篇），然后就没了，剩下的明天再做了。</p>
-<p>今日脑瘫：设置搜索的时候没找到主题配置文件里搜索的位置，上千行的配置文件上上下下读了两遍，眼睛都花了才记起来有搜索功能可以用。</p>
-<h1 id="月6日">12月6日</h1>
-<p>想摸鱼了呜呜呜。先休息一会儿做点规划吧。今天打算把菜单栏优化一下，可以预见的一定会碰壁。</p>
-<p>结果先加了个live2d，点名批评Live2d Viewer，上来就把我电脑搞死机了。原本想着把<a href="https://www.bilibili.com/video/BV1wV411B7N4">可莉的l2d</a>搬进来的，结果试了半天搞不定只好作罢orz。于是只是加了这么一位看板娘，如果以后学会加l2d的方法的话再改吧。</p>
-<p>好耶今天的活算是做完了吧，改造了一下菜单栏，顶上就可以直接访问三个分类了。网上完全没找到类似的教程只能自己摸，最后发现主题配置文件的菜单栏里menu一块这样写就可以直接跳转专门的类别啦。 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">life:</span> <span class="string">/categories/生活馆/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-route</span></span><br><span class="line">  <span class="attr">thoughts:</span> <span class="string">/categories/空想家/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-lightbulb</span></span><br><span class="line">  <span class="attr">notes:</span> <span class="string">/categories/自习室/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-book</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br></pre></td></tr></table></figure> 然后把home和categories给删了也是，home直接点击anony's blog图标就行，categories被三个子栏目代替了，这样至少我觉得很不错。然后图标是<a href="https://fontawesome.com/v5.15/icons?d=gallery&amp;p=2">Font Awesome</a>找的。</p>
-<p>打算最后再弄一下l2d看看，其他工作就明天再来吧。</p>
-<p>结果是l2d没弄，把评论系统搞上去了，总体就是Valine注册一下，然后找到主题配置里的comments-Valine就好了，很方便。</p>
-<p>好了好了该摸了。</p>
-<p>好吧又加了一个表情支持，测试一下<span class="github-emoji" data-alias="persevere" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f623.png?v8">😣</span></p>
-<p>好诶<span class="github-emoji" data-alias="tada" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png?v8">🎉</span><span class="github-emoji" data-alias="tada" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png?v8">🎉</span><span class="github-emoji" data-alias="tada" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png?v8">🎉</span>。Mark一下<a href="https://www.webfx.com/tools/emoji-cheat-sheet/">Emoji Cheat Sheet</a>。</p>
-<p><a href="https://anonyzzz.github.io/404">404页面</a>完成，稍微玩了一下，说实话看排版会很怪，不过我也不知道该怎么改，算了。</p>
-<p>今天算是把博客基本上大体轮廓都搭完了吧，后面就是些缝缝补补，美化的工作了。挺好。</p>
-<p>加上了头像和网页最下方心心的动画，中途出了bug，本地是好的，传到网上显示没有改动，又重新做了一遍就好了。</p>
-<h1 id="月7日">12月7日</h1>
-<p>改了一个名字“Anony的角落”，也没什么新意，主要是想了一晚上也没想出一个好点的中文昵称。</p>
-<p>然后加了一些东西，社交链接，RSS，建站统计，字数，阅读时间统计，阅读进度提示条……</p>
-<p>然后就是紧张刺激的修bug环节，在第一次上传之后出现了俩bug,一个是原本应该出现在右上角的github banner出现在了左上角，这是我在本地测试从来没碰到过的，我想着我也没有改什么东西，就很奇怪。另一个bug是“Hello World”文章的字数统计和时间统计显示“本文字数： |阅读时长≈NaN:aN”，网页最底下同样，这个问题倒是在本地测试也出现的问题，当时想着反正这统计也只是估算，如果发上去还是不行就把功能删了。然后我先在本地重新测了一遍，再Hexo clean,重新把文件全部传上去，刷新了半天发现banner还是在左上角，心想凉了，干脆把它一起也删了，结果回头瞥见“Hello World”的字数统计反而是好了，当时我人是懵的，在那里花式点击github banner，然后又把页面往下拉，发现代码块的复制也错位了，然后我点了一下，结果莫名其妙的它们就都回去了。于是网站就这么莫名其妙的恢复正常了……后来想来，也许是博客没加载清楚？</p>
-<p>然后好好编辑了一下footer，把powered移到了最底下，顺便加了一个换行，在footer.swig里面加上 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure> 就能换一行。</p>
-<p>好啦差不多就这样，基本上已经定型了，摸了摸了。</p>
-<h1 id="月8日">12月8日</h1>
-<p>试图加入多语言切换，由于技术问题和准备问题，出来一个没卵用还有bug的功能orz。</p>
-<p>实在多看了几眼决定还是把底部的字数统计给删了，有点杂。</p>
-<p>选了好久的背景图最后发现还是黑白的好看，那还是干净一些吧。</p>
-<p>在sidebar增加了网易云播放器，但不知道为什么单首歌没问题，放歌单我就加载不出来，也不是版权问题，就很奇怪。好吧是Letter Song的锅，删了就好了，但它在浏览器正常放没问题，一进外链就炸我也不懂了。好的繁华唱遍也是一样的问题，然后最奇怪的是流年如歌，它在浏览器里播放错误，但外链是好的，人已经傻掉，不过反正弄好了就行，歌单大概会不定期更新吧。</p>
-<p>感觉也想不到什么可以加的了，之后想到了再更新啦。</p>
-<p>哦对忘记添加公式输入支持了，测试一下： <span class="math display">\[ \sum_{i=1}^{n}i^2=\frac{n(n+1)(2n+1)}{6}. \]</span> 好诶成功了，过程有够惊险的，一开始就是启用了mathjax，然后发现本地测试疯狂报错，于是查了一下发现要装hexo-renderer-pandoc，装好了结果还是显示不出，回到配置文件才发现还有这么几句： <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">math:</span></span><br><span class="line">  <span class="comment"># Default (true) will load mathjax / katex script on demand.</span></span><br><span class="line">  <span class="comment"># That is it only render those page which has `mathjax: true` in Front-matter.</span></span><br><span class="line">  <span class="comment"># If you set it to false, it will load mathjax / katex srcipt EVERY PAGE.</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure> 加了mathjax: true之后就能用了。最后又在插入LaTeX的语法上挣扎了一下，所幸是成功了。</p>
-<p>最后测试一下图片吧。<img src="../images/favicon.jpg" alt="这是头像" /> 好耶。</p>
-]]></content>
-      <categories>
-        <category>生活馆</category>
-      </categories>
-      <tags>
-        <tag>日记</tag>
-        <tag>Hexo</tag>
-        <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Happy New Year！</title>
-    <url>/posts/defb.html</url>
-    <content><![CDATA[<h1 id="新年快乐">新年快乐！</h1>
-<h2 id="加油吖">2022加油吖！</h2>
-]]></content>
-      <categories>
-        <category>生活馆</category>
-      </categories>
-      <tags>
-        <tag>2022</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>记墨大2022 O-week</title>
-    <url>/posts/e657.html</url>
-    <content><![CDATA[<p>​ 好啦，不知道为什么Typora出了点bug，在more前面打字会变成奇怪的东西，不管了，大不了剪切上去。这算是我建这个blog以来第一篇文章（流水账）吧，主要是放假也确实没什么好写的，开学之后大概更的会多一点（如果有空的话）。</p>
+    <title>2022年的回国之路</title>
+    <url>/posts/8464.html</url>
+    <content><![CDATA[<p>在墨尔本呆了两年零九个月后，总算有机会回国啦，可喜可贺可喜可贺</p>
 <span id="more"></span>
-<p>2月21日</p>
-<p>​ 今天实际上跟我没什么关系，差不多就是待在家里，继续摸摸鱼。学校有一个欢迎视频，没兴趣，就不看了。大概主要还是星期三星期四去学校看看有什么好玩的吧。</p>
-<p>2月22日</p>
-<p>​ 2022.2.22 正月廿二星期二纪念</p>
-<p>​ 今天参加了俩线上getting started的活动，差不多也都是之前就知道的反复炒冷饭罢了（明天subject expo也差不多大概）。唯一还不错的点是作息稍微正常了些orz。看明天啦。</p>
-<p>2月23日</p>
-<p>​ 大概今天的关键词就是挤和热吧，到学校十点二十几分，结果Uri跑到the Spot去回来晚了些，然后在学校稍微走了走才发现Glyn Davis门口已经排了巨长的队，大概welcome presentation开始已经差不多11：20了（原本说是11：00）……</p>
-<p>​ 然后结束后就是出去Subject Expo以及吃午饭，实际上差不多就是自由活动了，和Uri去找Engineering B，问Subject Expo这边的一个工作人员，结果他说他也不知道，就很蠢……后来是问了Union House的人他告诉我们在哪。去逛了逛校园，走了点小路，妄想走捷径结果绕了远路也是够sb……</p>
-<p>​ 回来吃午饭，吃的Pasta，挺不错。然后……就没有然后了。</p>
-<p>​ 基本上学校里人都挤在露天，外面很热，室内有空调就舒服。而且室内也没多少人就很不错。</p>
-<p>2月24日</p>
-<p>​ 本来看着昨天那么热决定少穿一点，结果看天气预报说要下雨人傻了……不过好在最后并没有下雨，只是天气阴阴的也不热，就比昨天好。今天主要就是个Peer Mentor Group，两个mentor都是华人（一个是上海来的，还有一个大概是本地华人）都挺不错的。认识了Daniel，从北京来的，才刚到墨尔本。在MCC里面人挤的要死，到处都是排队，去领了衣服，吃了点冰激凌（salted caramel味的，比想象中要咸一点orz），然后就溜了。跟Daniel逛了逛校园，然后没了……</p>
-<p>​ 比想象中要无聊一些，不过大概也就是这样吧……</p>
-<p>​ 下个星期就开学了，加油吧……</p>
+<p>11月15日</p>
+<p>飞机，去香港，前一天晚上没怎么睡，挺惊讶居然在飞机上没睡着觉，飞机餐还挺不错，虽说可能有点少。然后到香港检疫通道把一路上的厕所都隔绝在外，没得厕所上属于是很让人心累了……实际上比起普通出关也只是多了测核酸一道坎，然后就是直接去隔离酒店。房间好小orz，将将放得下两张床和一个厕所……然后酒店有给晚饭，咸鱼和菜梗，好难吃……</p>
+<p>11月16日</p>
+<p>起来结果才知道我妈居然阳了，有点绷不太住，然后我也就是在房间里呆了一天，可以说是啥都没干吧。下午原了好久……好消息是今天饭可比昨天好太多了，可能只是因为昨天太晚了吧……</p>
+<p>11月17日</p>
+<p>下午去社区做了个核酸，然后估计是要好久才有结果……国内手机还收不到它检测的短信……可以说是很烦了……然后酒店周围挺破旧的没啥好逛于是就回房间了，和群友玩了一晚上的o和a，我属实是太菜了……然后似乎也没别的，希望明天顺利，晚安。</p>
+<p>11月18日</p>
+<p>好累啊啊啊啊啊啊……不过算是回到杭州了，还不错。早上十点半从酒店出发，到机场，在香港机场最大的印象就是说队伍好长啊……先是核酸的队伍，毛估估100m+的队（核酸桶的鼻子，好像是我第一次），再是值机的队伍也绕了一大圈（关键它值机只开了三个柜台，就很慢）。哦还有中间核酸到值机的时间也贼长，我也只能绕着机场走走，没啥别的好做……然后就是飞杭州了，飞机上空乘人员都穿着厚厚的防护服（上面有些画画还挺好玩，然后就是演示的时候疯狂的跟乘客说不要拍照），起飞的时候灯关了会儿，于是就打算睡睡，好不容易熬到飞机平稳了打算把小桌板放下来趴一下，前面那个人就把靠背往后仰，直接撞我头上，趴也没得趴了……后来很快他们把灯打开说是提供吃的，实际上只有塞在前面袋子里的一点面包啥的，后来是直接带下飞机了，落地之后先是因为密接拉过去问了点问题，然后就放走了，出关之后上大巴，一路被拉到临平边上，春蚕高新悦府，先是每个人发了体温计，做了点登记，然后就拿行李上楼，每个人都是单独的房间，不让出来，房间倒挺宽敞（厕所有点小）有电视有网络，晚饭也挺不错，不过毕竟每个人每天280rmb，这待遇不好一些说不过去……然后就是每天5：30开始核酸就很sb……我们到房间都快12点了。</p>
+<p>说实话我原以为有好多可以写的，不过一下子就想得起来这些了就这样吧……希望这几天可以好好休息一下（不是说好的休息然后就是熬夜等核酸，核酸完再睡是吧……说实话作息最好调正常些，虽说不清楚从何入手）关键是现在好困……但是就一个多小时又要核酸，睡也睡不好就好好好好烦内……</p>
+<p>哦对了昨天晚上整理东西发现现在日记改博客之后最麻烦的一点是不清楚怎么保留实物了，我还是应该带本本子至少夹一下那些票票的，还是挺有纪念价值的。</p>
+<p>我猜后面几天应该没啥好记的，打算录个视频，也不知道到最后会不会鸽……</p>
+<p>11月19日</p>
+<p>我绷不住了，7点了，还没核酸，我想睡觉啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊……5点半的时候听到边上有门铃响的声音，然后开门啥事都没发生……然后后来就没声了………………………………………………然后7点40来的早饭，然后很快就来测核酸了，虽然但是还是属实有点晚……早饭很不错，满足了我对早餐的所有幻想，感觉这是我这辈子吃过的最丰盛的早饭了，然后就去睡了，不过没怎么睡着，就是睡睡醒醒……中间还收了俩电话，说我开门没戴口罩，问题是我一直躺床上都没起来过……真是奇奇怪怪。</p>
+<p>午饭晚饭感觉就不怎么样……不好吃。</p>
+<p>晚上边上疯狂放烟花，看看还不错。洗了个澡，也是挺烦的，就是说换洗衣物浴巾啥的都不够，昨天把浴巾洗了还干不了，于是就很迷……大概这隔离是不能洗东西了……哦对也没洗衣液还是用沐浴露洗的就……</p>
+<p>11月20日</p>
+<p>今天天气还算不错。</p>
+<p>逛了一下午的淘宝orz，买了点正常衣服然后买了两套cos服。晚上跟七个人o，还挺好玩，然后看了看世界杯以及和feiya连麦到深夜。</p>
+<p>我想洗澡，感觉我好脏啊……然而内裤浴巾完全还没要干的意思……</p>
 ]]></content>
       <categories>
         <category>生活馆</category>
+        <category>空想家</category>
       </categories>
       <tags>
         <tag>日记</tag>
-        <tag>O-week</tag>
         <tag>流水账</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Elements of data processing</title>
+    <url>/posts/18e.html</url>
+    <content><![CDATA[<p>Elements of data processing</p>
+<p>纯纯期末为了复习补的，好事是考试针对性强，缺点是大概挺难看懂的……</p>
+<p>然后图片有点难搞，我得先想个办法能让传图片方便一点再修，大概知道怎么修了？找个时间弄一弄，不过typora显示不出来我有点急……</p>
+<span id="more"></span>
+<h2 id="theory">Theory：</h2>
+<p><strong>data types:</strong></p>
+<figure>
+<img src="..\images\Eodp-1.png" alt="image1" /><figcaption aria-hidden="true">image1</figcaption>
+</figure>
+<p><strong>Summarising:</strong></p>
+<ol type="1">
+<li>mathematical summary</li>
+<li>visual summary</li>
+</ol>
+<p>descriptive statistics:</p>
+<ul>
+<li>Count (frequency)</li>
+<li>min, max, range</li>
+<li>quartiles, percentiles</li>
+<li>mean, median, mode</li>
+<li>Variance, standard deviation</li>
+</ul>
+<p><strong>visualisation:</strong></p>
+<p>efficient and effective</p>
+<ol type="1">
+<li><p>line plots</p>
+<figure>
+<img src="..\images\Eodp-2.png" alt="image2" /><figcaption aria-hidden="true">image2</figcaption>
+</figure></li>
+<li><p>boxplots</p>
+<figure>
+<img src="..\images\Eodp\Eodp-3.png" alt="image3" /><figcaption aria-hidden="true">image3</figcaption>
+</figure>
+<p>Q1: 25% point below median</p>
+<p>Q3: 25% point above median</p>
+<p>IQR (Interquartile range) = Q3-Q1</p>
+<p><strong>Upper/Lower limits:</strong></p>
+<p>Q3+1.5*IQR or Q1-1.5*IQR</p>
+<p><strong>Whiskers (inner fence)</strong></p>
+<p>if the Highest/lowest data points are within 1.5* IQR range, it's called upper/lower inner fence</p>
+<p><strong>outliers:</strong></p>
+<p>suspected outlier (use circle to indicate)</p>
+<ul>
+<li>&gt; 1.5*IQR below Q1 or above Q3</li>
+</ul>
+<p>outliers (use black dot)</p>
+<ul>
+<li>&gt; 3*IQR below Q1 or above Q3</li>
+</ul></li>
+<li><p>histograms</p>
+<figure>
+<img src="..\images\Eodp\Eodp-4.png" alt="image-4" /><figcaption aria-hidden="true">image-4</figcaption>
+</figure>
+<p>bars touches each other</p>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728143624604.png" alt="image-20220728143624604" /><figcaption aria-hidden="true">image-20220728143624604</figcaption>
+</figure>
+<p>symmetric, left/right skewed, unimodal, bimodal, multimodal...</p>
+<p>problem: choose an appropriate bin size for histogram</p>
+<p>用于numerical data</p></li>
+<li><p>bar charts</p>
+<p>用于categorical data: not continuous所以bar不贴在一起</p>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728144617965.png" alt="image-20220728144617965" /><figcaption aria-hidden="true">image-20220728144617965</figcaption>
+</figure>
+<p>histogram vs bar charts：</p>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728144758385.png" alt="image-20220728144758385" /><figcaption aria-hidden="true">image-20220728144758385</figcaption>
+</figure></li>
+<li><p>scatter plots</p>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728145535740.png" alt="image-20220728145535740" /><figcaption aria-hidden="true">image-20220728145535740</figcaption>
+</figure>
+<p>x,y坐标都是numerical</p>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728145726438.png" alt="image-20220728145726438" /><figcaption aria-hidden="true">image-20220728145726438</figcaption>
+</figure>
+<p>变种（用于显示第三项特征）：bubble plot（点的大小）/ enhanced scatter plot（颜色）</p>
+<p>当数据多时，会出现overplotting，也就是点全重叠在一起，看不清，可以reduce dot size, sampling(用小的样本量), jitter or use other plots</p></li>
+<li><p>heatmap</p>
+<p>normalise the data first</p>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728150702515.png" alt="image-20220728150702515" /><figcaption aria-hidden="true">image-20220728150702515</figcaption>
+</figure>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728150832485.png" alt="image-20220728150832485" /><figcaption aria-hidden="true">image-20220728150832485</figcaption>
+</figure></li>
+<li><p>parallel coordinate plots</p>
+<p>high-dimensional data</p>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728150932776.png" alt="image-20220728150932776" /><figcaption aria-hidden="true">image-20220728150932776</figcaption>
+</figure>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728151208096.png" alt="image-20220728151208096" /><figcaption aria-hidden="true">image-20220728151208096</figcaption>
+</figure>
+<p>注意scaling，ordering也很重要，好的ordering可以让数据更加清晰</p></li>
+</ol>
+<details>
+<summary>
+Click to expand!
+</summary>
+<h2 id="heading">Heading</h2>
+<ol type="1">
+<li>A numbered</li>
+<li>list
+<ul>
+<li>With some</li>
+<li>Sub bullets</li>
+</ul>
+</details></li>
+</ol>
+<h2 id="coding">Coding</h2>
+<h3 id="matplotlib">matplotlib</h3>
+<p><code>import matplotlib.pyplot as plt</code></p>
+<p><code>plt.plot(x,y)</code>画图，有点像matlab（不是有点，就是一样）<code>plot(y)</code>，会自动生成x坐标</p>
+<h3 id="panda">panda</h3>
+<p><code>import panda as pd</code></p>
+<p><strong>series:</strong></p>
+<figure>
+<img src="eodpseries.png" alt="series" /><figcaption aria-hidden="true">series</figcaption>
+</figure>
+<p>可以用列表/字典创建<code>&lt;something&gt; = pd.Series(&lt;list/dict&gt;)</code></p>
+<p>Examples of <code>series</code> attributes:</p>
+<ul>
+<li><code>series.index</code> attribute (returns the index field like <code>dict.keys()</code>) 可以用列表来赋值</li>
+<li><code>series.values</code> attribute (returns the values like <code>dict.values()</code>)</li>
+</ul>
+<p>Examples of <code>series</code> methods: - <code>series.mean()</code> method (computes the average) - <code>series.sum()</code> method (computes the grand total sum)</p>
+<p><code>pd.concat([LIST OF SERIES], axis='rows')</code>合并两个series</p>
+<p><code>series.loc[]</code>用于slicing，括号里可以是index，也可以是针对数值的表达式</p>
+<p><code>.iloc[]</code>针对indices来slicing</p>
+<p><code>pd.read_csv</code>可以读取csv file</p>
+<p><code>&lt;csv_file&gt;.head(10)</code>画表格，这head(10)我也不知道是啥意思，但输出了个表格</p>
+<h2 id="week2">Week2</h2>
+<p>pre-processing</p>
+<p><strong>measuring data quality</strong></p>
+<ul>
+<li>Accuracy: right or wrong</li>
+<li>Completeness: Not recorded, unavailable (missing completely at random (unrelated to other variables)/ at random (relates to other variables)/ not at random (based on the variable itself))</li>
+<li>Consistency: discrepancies in representation (naming representations, date formats, outliers, etc.)</li>
+<li>Timeliness: Updated in a timely way</li>
+<li>Believability: Can I trust the data</li>
+<li>Interpretability: How easy can it be understand</li>
+</ul>
+<p>deal with incomplete data: 1. sklearn 2. multivariate strategies</p>
+<p>missing at random: relate to some other data</p>
+<p>completely at random: not related to anything</p>
+<p>not at random: relate to the data itself</p>
+<p>precision=<span class="math inline">\(\frac{TP}{TP+FP}\)</span></p>
+<p>recall=<span class="math inline">\(\frac{TP}{TP+FN}\)</span></p>
+<p>Accuracy=<span class="math inline">\(\frac{TP+TN}{TP+TN+FP+FN}\)</span></p>
+<p>pearson correlation:</p>
+<p><span class="math inline">\(r_{xy}=\frac {\sum _{i=1}^{n}(x_{i}-{\bar {x}})(y_{i}-{\bar {y}})}{\sqrt {\sum _{i=1}^{n}(x_{i}-{\bar {x}})^2}\sqrt {\sum _{i=1}^{n}(y_{i}-{\bar {y}})^2}}\)</span></p>
+<p><span class="math inline">\(\frac{\text{Cov}(x,y)}{\sigma_x\sigma_y}\)</span>, Cov(x,y)=E(x-xbar)(y-ybar) covariance</p>
+<p>linear relationship ONLY and continuous prefered</p>
+<p><code>np.arange(13)+0.5 == array([ 0.5,  1.5,  2.5,  3.5,  4.5,  5.5,  6.5,  7.5,  8.5,  9.5, 10.5, 11.5, 12.5])</code></p>
+<p>Jaccard similarity</p>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20221103061733246.png" alt="image-20221103061733246" /><figcaption aria-hidden="true">image-20221103061733246</figcaption>
+</figure>
+<p>Sørensen-Dice similarity</p>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20221103061752030.png" alt="image-20221103061752030" /><figcaption aria-hidden="true">image-20221103061752030</figcaption>
+</figure>
+<p>Cosine similarity</p>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20221103062019171.png" alt="image-20221103062019171" /><figcaption aria-hidden="true">image-20221103062019171</figcaption>
+</figure>
+<p><u> <strong>Entropy </strong></u></p>
+<p>For example: - An unbiased coin flip (50% Heads, 50% Tails) will have an entropy of 1. - A biased coin flip (100% Heads, 0% Tails) will have an entropy of 0.</p>
+<p><span class="math inline">\(H(X) = -\sum P(X=x_i)\log_2(P(X=x_i))\)</span></p>
+<p><u><strong>Conditional Entropy</strong></u></p>
+<p><span class="math inline">\(H(Y|X) = \sum_{x_i \in X} P(X=x_i) H(Y|X=x_i)\)</span></p>
+<p>where <span class="math inline">\(H(Y|X=x)\)</span> means calculating the entropy of the distribution <span class="math inline">\(P(Y|X=x)\)</span>:</p>
+<p><span class="math display">\[H(Y|X=x) = -\sum_{y_j \in Y} P(Y=y_j|X=x)\log_2(P(Y=y_j|X=x)).\]</span></p>
+<p><u><strong>Mutual Information</strong></u>(shannon version)</p>
+<p><span class="math inline">\(\text{MI}(X, Y) = H(X) – H(X | Y) = H(Y) - H(Y | X)\)</span></p>
+<p>normalized Mutual Information: (between 0 and 1)</p>
+<p><span class="math inline">\(\text{NMI}(X, Y) = \frac{\text{MI}(X,Y)}{min(H(X),H(Y))}\)</span></p>
+<p>if <span class="math inline">\(MI=0\)</span>: X and Y are independent</p>
+<p><u><strong>Chi-squared value</strong></u></p>
+<p><span class="math inline">\(\chi^2=\sum\frac{(O_i-E_i)^2}{E_i}\)</span></p>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20221103060344448.png" alt="something looks like this" /><figcaption aria-hidden="true">something looks like this</figcaption>
+</figure>
+<p>subset accuracy &amp; average accuracy</p>
+<p><u><strong>correlation</strong></u></p>
+<p>+/-, how strong, linear/non-linear</p>
+<p><strong>The Pearson correlation coefficient</strong>, also referred to as Pearson's r, is a statistic that measures linear correlation between two variables X and Y.</p>
+<p>ratio data and interval data and nomial data: 例子分别是房子大小（0点绝对，可以比大小，可以找出倍数关系etc），房子房间数（0点模糊，所以比较倍数关系够呛，另一个例子可以是温度（摄氏度）），房子门牌号（单纯的给个名字而已）</p>
+<p><strong>The coefficient of determination</strong> is the portion of the total variation in the dependent variable that is explained by variation in the independent variable.</p>
+<p><strong>causation</strong>: regression is not causal, correlation doesn't mean causation.</p>
+<p><u><strong>visualization techniques</strong></u></p>
+<p>line plots</p>
+<p>boxplots</p>
+<p>histograms</p>
+<p>bar charts</p>
+<p>scatter plots (scatter plot matrix)</p>
+<p>heatmap</p>
+<p>parallel coordinate plots</p>
+<p><strong>JSON and XML</strong>: semi-structured format</p>
+<p>- json</p>
+<p>-- part structured data -- values from article metadata;</p>
+<p>-- part non-structured -- text throughout article</p>
+<p>- xml</p>
+<p>-- metadata requires structure allowed by xml format;</p>
+<p>--</p>
+<p>JSON vs CSV: JSON is more expressive than CSV as it allows nesting, objects and arrays cannot be represented in a single line in a CSV file</p>
+<p><u><strong>Regex</strong></u></p>
+<table>
+<thead>
+<tr class="header">
+<th>.</th>
+<th>除换行符（/n）外所有字符</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>^</td>
+<td>字符串开头/在[]中表示除后面出现的这些</td>
+</tr>
+<tr class="even">
+<td>$</td>
+<td>字符串结尾</td>
+</tr>
+<tr class="odd">
+<td>*</td>
+<td>出现任意次数=<code>&#123;0,&#125;</code></td>
+</tr>
+<tr class="even">
+<td>+</td>
+<td>出现至少一次=<code>&#123;1,&#125;</code></td>
+</tr>
+<tr class="odd">
+<td>|</td>
+<td>或，和括号（）一起用</td>
+</tr>
+<tr class="even">
+<td>[]</td>
+<td>匹配字符集合，例如 <code>[abcd]  [a-zA-Z]</code></td>
+</tr>
+<tr class="odd">
+<td>()</td>
+<td>capturing group，捕获分组，\1这样表示重复第一个capturing group</td>
+</tr>
+<tr class="even">
+<td>/s</td>
+<td>所有空白符，包括=<code>[\f\n\r\t\v]</code></td>
+</tr>
+<tr class="odd">
+<td>/S</td>
+<td>所有非空白符=<code>[^\f\n\r\t\v]</code></td>
+</tr>
+<tr class="even">
+<td>/w</td>
+<td>所有字母，数字，下划线</td>
+</tr>
+<tr class="odd">
+<td>？</td>
+<td>出现0次或1次=<code>&#123;0,1&#125;</code>，或放在*，+后表示非贪婪</td>
+</tr>
+<tr class="even">
+<td>\</td>
+<td>下一个字符标记为正常字符</td>
+</tr>
+<tr class="odd">
+<td>{}</td>
+<td>限定符，限定次数可以用<code>&#123;n&#125;</code>出现n次，也可以<code>&#123;m,n&#125;</code>表示区间</td>
+</tr>
+<tr class="even">
+<td> 单词边界（空格和字母中间）</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>非单词边界</td>
+</tr>
+<tr class="even">
+<td> 数字</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>?:</td>
+<td>不捕获</td>
+</tr>
+<tr class="even">
+<td>?=</td>
+<td>匹配字符串后面的内容如<code>exp1(?=exp2)</code>表示exp1后面要是exp2，但exp2不属于这个表达式</td>
+</tr>
+<tr class="odd">
+<td>?&lt;=</td>
+<td>匹配字符串前面的内容</td>
+</tr>
+<tr class="even">
+<td>?!</td>
+<td>字符串后面不是</td>
+</tr>
+<tr class="odd">
+<td>?&lt;!</td>
+<td>字符串前面不是</td>
+</tr>
+</tbody>
+</table>
+<p><strong>text processing</strong>:</p>
+<p>remove punc</p>
+<p>casefolding</p>
+<p>tokenisation</p>
+<p>remove stopword</p>
+<p>lemmatisation, stemming</p>
+<p>TF-IDF and BoW: (representation model) convert unstructured text to a feature representation</p>
+<p><strong>machine learning</strong>:</p>
+<p><strong>kfold</strong>: we split the data into n parts (folds), one fold istesting, the rest training, we round-robin the testing fold, eventually we average results.</p>
+<p><strong>supervised vs unsupervised</strong>: Supervised = we have labelled data, unsupervised = we do not have labels.</p>
+<p><strong>unsupervised:</strong> PCA visualisation, feature selections</p>
+<p><strong>clustering</strong></p>
+<figure>
+<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20221103064015604.png" alt="image-20221103064015604" /><figcaption aria-hidden="true">image-20221103064015604</figcaption>
+</figure>
+<p><strong>k-anonymous</strong>: 已知信息组合，最小的set的大小</p>
+<p><strong>I-diversity</strong>: 每种信息组合，sensitive数据的种类数目的最小值</p>
+<p><strong>global sensitivity</strong>: 就是每个个体能占的最多数量</p>
+<p><strong>recommender system</strong>:</p>
+<p>1.填补空缺：用xx-base中xx的平均值，如果xx对应的值缺失，可以忽略</p>
+<p><span class="math inline">\(\text{sim}(i_i, i_j)=\frac{1}{1+d(i_i,i_j)}\)</span></p>
+<p>然后就是算加权平均值</p>
+<p><strong>Dictionary attack</strong></p>
+<p><strong>Zook’s ’10 simple rules for responsible big data research</strong></p>
+<ol type="1">
+<li><p><strong>Acknowledge that data are people and can do harm</strong></p>
+<p>– All data are people until proven otherwise</p>
+<ul>
+<li>Social media</li>
+<li>Heart rates from Youtube videos</li>
+<li>Ocean measurements that change property risk profiles</li>
+</ul></li>
+<li><p><strong>Recognize that privacy is more than a binary value</strong></p>
+<p>– Privacy is contextual and situational</p>
+<p>– Single Instagram photo versus entire history of social media posts</p>
+<p>– Privacy preferences differ across individuals and societies</p></li>
+<li><p><strong>Guard against the reidentification of your data</strong></p>
+<p>– Metadata associated with photos</p>
+<p>– Reverse image search – connect dating and professional profiles</p>
+<p>– Difficult to recognize the vulnerable points a-priori!</p>
+<ul>
+<li>Battery usage on a phone – can reveal a person’s location</li>
+</ul></li>
+<li><p><strong>Practice ethical data sharing</strong></p>
+<p>– Seeking consent from participants to share data</p></li>
+<li><p><strong>Consider the strengths and limitations of your data; big does not automatically mean better</strong></p>
+<p>– Document the provenance and evolution of your data. Do not overstate clarity; acknowledge messiness and multiple meanings.</p>
+<ul>
+<li>is a Facebook post or an Instagram photo best interpreted as an approval/disapproval of a phenomenon, a simple observation, or an effort to improve status within a friend network?</li>
+</ul></li>
+<li><p><strong>Debate the tough, ethical choices/issues</strong></p>
+<p>– importance of debating the issues within groups of peers</p>
+<ul>
+<li><p>Examples mentioned earlier</p>
+<p>– Facebook emotional contagion</p>
+<p>– Exposing teen girl’s pregnancy</p></li>
+<li><p>More recently, Google Duplex</p>
+<p>– https://www.youtube.com/watch?v=D5VN56jQMWM</p></li>
+</ul></li>
+<li><p><strong>Develop a code of conduct for your organization, research community, or industry</strong></p>
+<p>– Are we abiding by the terms of service or users’ expectations?</p>
+<p>– Does the general public consider our research “creepy”?</p></li>
+<li><p><strong>Design your data and systems for auditability</strong></p>
+<p>– Plan for and welcome audits of your big data practices.</p>
+<p>– Systems of auditability clarify how different datasets (and the subsequent analysis) differ from each other, aiding understanding and creating better research</p>
+<ul>
+<li>“For example, many types of social media and other trace data are unstructured, and answers to even basic questions such as network links depend on the steps taken to collect and collate data.”</li>
+</ul></li>
+<li><p><strong>Engage with the broader consequences of data and analysis practices</strong></p>
+<p>– Recognize that doing big data research has societal-wide effects</p></li>
+<li><p><strong>Know when to break these rules</strong></p>
+<p>– Natural disaster</p>
+<p>– Public health emergency</p>
+<p>– Hostile enemy</p>
+<p>– …</p></li>
+</ol>
+]]></content>
+      <categories>
+        <category>自习室</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>python</tag>
+        <tag>DS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>FoA笔记</title>
+    <url>/posts/105b.html</url>
+    <content><![CDATA[<p>FoA的笔记，用的C</p>
+<p>说实话还是有打算把这坑给补了，毕竟foa内容还挺好的（虽说大部分都很基础）</p>
+<p>但得抽空……</p>
+<span id="more"></span>
+<p>一些命令行：</p>
+<p><code>cd</code> 改路径，<code>cd ..</code>回上一级，<code>ls</code>或<code>pwd</code>显示当前路径下的文件</p>
+<p><code>gcc -Wall -o &lt;.exe&gt; &lt;.c&gt;</code>编译</p>
+<p>先是lecture2最后留的题目</p>
+<figure>
+<img src="FoA-1.png" alt="题目" /><figcaption aria-hidden="true">题目</figcaption>
+</figure>
+<p><code>include&lt;&gt;</code>,<code>int main()</code>什么的就不讲了</p>
+<p>四则运算符号略</p>
+<p>f stand for formatic</p>
+<p>printf()输出，printf(<format as string>, <expression>/<Var>,...)输出format string在带入后续表达式后的结果，常见format"%d"代表以十进制形式输出带符号整数，format string类似python f-string（或者这个f本来就是format的意思？）</p>
+<p>"%23.20f"，使用23字符长，小数点后20位</p>
+<p>scanf()输入，scanf(<format>, &amp;<VarName>,...)，注意&amp;符号，它返回变量所在的地址，意思就是说，把format当中读取的内容存储到变量所在的位置，例如<code>scanf("%d %d", &amp;a, &amp;b)</code><strong>别忘记加<code>&amp;</code>!!!</strong></p>
+<p>"%lf"，读double</p>
+<p>const定义常量</p>
+<p>注意int除int计算结果还是int，所以如果要准确记得把它转换成double/float</p>
+<p>说了舍入误差（rounding error），截断误差（truncation error）的几个例子</p>
+<p>if 语句</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(&lt;expression&gt;)&#123;</span><br><span class="line">	&lt;something&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>exit(EXIT_FAILURE)</code> exit是stdlib.h里的函数</p>
+<p>用法例如：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="built_in">scanf</span>(balabala) == <span class="number">0</span>)&#123; <span class="comment">//isdigit(), isascii(), islower(), isupper() from ctype.h</span></span><br><span class="line">	<span class="built_in">exit</span>(EXIT_FAILURE);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>scanf的return是它读了几个内容</p>
+<p>字符用<code>''</code>，字符串用<code>""</code></p>
+<p>Operator Precedence</p>
+<table>
+<thead>
+<tr class="header">
+<th>Operators</th>
+<th>Operator class</th>
+<th>Precedence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>++ --</td>
+<td>postincrement, postdecrement</td>
+<td>Highest</td>
+</tr>
+<tr class="even">
+<td>! -(type)</td>
+<td>unary not, unary negation, type casting</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>* / %</td>
+<td>multiplication</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>+ -</td>
+<td>addition</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>&lt; &gt; &lt;= &gt;=</td>
+<td>comparison</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>== !=</td>
+<td>equality</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>&amp;&amp;</td>
+<td>and</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>||</td>
+<td>or</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>= += *= etc</td>
+<td>assignment</td>
+<td>Lowest</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>自习室</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>C</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Notes for MATLAB</title>
+    <url>/posts/ea72.html</url>
+    <content><![CDATA[<p>看上去MATLAB也要记些东西……</p>
+<p><em>斜体</em>表示出现的内容是课程提供的function</p>
+<p>哦实际上也只记了一部分内容，因为AM1 computer lab还是更加偏向于linear algebra的应用一些所以实际上matlab的内容不太多……</p>
+<span id="more"></span>
+<h2 id="矩阵">矩阵</h2>
+<h4 id="lab2">lab2</h4>
+<p>最基础的<code>A=[a b;c d]</code></p>
+<p>空格也可以用<code>,</code>，暂时没找出区别</p>
+<p><code>A'</code>用于求转置（transpose）</p>
+<p><code>.*</code>把矩阵内元素对应相乘，或者说<strong>行矩阵<code>.*</code>列矩阵</strong>可以构造一个类似乘法表的东西</p>
+<p><code>A+constant</code> 可以在A的每一个元素的基础上加上一个常数</p>
+<p><code>A(m,n)=a</code>可以把矩阵第m行n列的数改成a</p>
+<p>单独<code>:</code>可以代替全列，例如<code>v=B(:,2)</code>会将v定义为B第二列的列向量</p>
+<p>此外，<code>:</code>可以指代数列，句式为<code>a:s:b</code>，其中a为初项，s为步长，b为末项（更准确的说是最后一项不超过b），s可被省略，默认是1</p>
+<p><code>eye(n)</code>用以构造n阶单位矩阵（Identity matrix）</p>
+<p><code>diag(v)</code>用以构造以v为对角线的对角形矩阵</p>
+<p><code>ones(n,m)</code>构造n行m列的元素全是1的矩阵</p>
+<p><code>zeros(n,m)</code>构造n行m列元素全是0的矩阵</p>
+<p>分块矩阵亦可用<code>M=[A B;C D]</code>的形式来获得</p>
+<p>习题：</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">A=[<span class="number">4</span> <span class="number">8</span> <span class="number">8</span> <span class="number">11</span> <span class="number">1</span>]</span><br><span class="line">B=[<span class="built_in">diag</span>(A) <span class="number">7</span>*<span class="built_in">ones</span>(<span class="number">5</span>,<span class="number">7</span>);<span class="number">12</span>*<span class="built_in">ones</span>(<span class="number">7</span>,<span class="number">5</span>) <span class="number">7</span><span class="number">-6</span>*<span class="built_in">eye</span>(<span class="number">7</span>)]</span><br><span class="line">B(<span class="number">1</span>,<span class="number">4</span>)=<span class="number">6</span></span><br></pre></td></tr></table></figure>
+<p>优化(64)：</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">A=<span class="built_in">ones</span>(<span class="number">5</span>,<span class="number">7</span>)</span><br><span class="line">Q=[<span class="built_in">diag</span>([<span class="number">4</span> <span class="number">8</span> <span class="number">8</span> <span class="number">11</span> <span class="number">1</span>]) <span class="number">7</span>*A;<span class="number">12</span>*A&#x27; <span class="number">7</span><span class="number">-6</span>*<span class="built_in">eye</span>(<span class="number">7</span>)]</span><br><span class="line">Q(<span class="number">1</span>,<span class="number">4</span>)=<span class="number">6</span></span><br></pre></td></tr></table></figure>
+<h4 id="lab3">lab3</h4>
+<p><code>R=rref(A)</code>直接求A的reduced row echelon form</p>
+<p>我这里matlab默认是输出为小数形式，使用<code>format (style)</code>来修改输出格式，format处可以填<code>short</code>（默认，小数点后四位）, <code>long</code>（小数点后15位）, <code>shortE/longE</code>（科学计数法）, <code>shortG/longG</code>（科学计数法/普通小数，取决于哪种更紧凑）, <code>shortEng/longEng</code>（Engineering notation: 类似科学计数法，但是指数必定为三的倍数）, <code>+</code>（只显示+/-，0则不显示）, <code>bank</code>（货币格式，小数点后二位）, <code>hex</code>（十六进制表达？）, <code>rational</code>（分数，可以缩写rat，但是输出的分数并不是精确值，而是估计）等，以及显示格式<code>compact</code>和<code>loose</code>（默认），<code>fmt=format</code>查看当前设置，<code>format default</code>返回初始设置。</p>
+<p><code>rat(a)</code>可以输出分数形式（估计值），算法是利用</p>
+<p><span class="math display">\[\frac{N}{D}=D_1+\frac{1}{D_2+\frac{1}{...+\frac{1}{D_k}}}\]</span></p>
+<p><a href="https://au.mathworks.com/help/matlab/ref/format.html">reference</a></p>
+<p>上面似乎有点长（主要不是worksheet上的，自己查来的</p>
+<p><code>det()</code>和<code>inv()</code>分别求矩阵的逆和行列式</p>
+<p>然后做exercise 2的时候发现点问题，下面这个矩阵行列式为零，不可逆，但是拿det和inv计算出来行列式是-1/1050839913053116<span class="github-emoji" data-alias="laughing" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8">😆</span></p>
+<p><span class="math display">\[\begin{bmatrix} 1&amp;2&amp;3\\ 4&amp;5&amp;6\\ 7&amp;8&amp;9\\ \end{bmatrix}\]</span></p>
+<p>而且他求不可逆矩阵出来结果是</p>
+<p><span class="math display">\[\begin{bmatrix} 1/0&amp;1/0&amp;1/0\\ 1/0&amp;1/0&amp;1/0\\ 1/0&amp;1/0&amp;1/0\\ \end{bmatrix}\]</span></p>
+<p>提示是：</p>
+<blockquote>
+<p>警告: 矩阵为奇异工作精度。</p>
+</blockquote>
+<p>format设置为<code>rational</code>时，答案可能给出<code>*</code>代表非常小的数字，可能是一些奇怪的误差，类似上面矩阵给出的结果</p>
+<p><em>然后是几个写好的函数：<code>[B,E] = rowswap(A,i,j)</code>，<code>[B,E] = rowmul(A,c,i)</code>，<code>[B,E] = rowadd(A,c,i,j)</code>其中B是完成行变换的输出矩阵，E是行变换对应的基本矩阵，A是输入矩阵，c是倍数，i，j是操作的行数（把i行加到j行上）</em></p>
+<p><code>size(A)</code>用来查询矩阵A的大小，输出结果记作<code>[dim1, dim2, ...]</code>，可以用<code>size(A,n)</code>用来输出矩阵A第n维度的大小（例如1是行，2是列）</p>
+<p>然后所以习题里面的<code>size(A,1)</code>要改成<code>size(A,2)</code>之前都没发现orz</p>
+<h4 id="lab4">lab4</h4>
+<p><code>det()</code>求行列式（上节课就有了）</p>
+<p><code>dot()</code>求dot product</p>
+<p><code>cross()</code>求cross product</p>
+<p><em><code>pgram1(B)</code>绘制由两行向量组成的平行四边形（应该只能做二维的，输入一定要是2*2的矩阵）</em></p>
+<p><em><code>pgram2(B,C)</code>绘制两个平行四边形</em></p>
+<p><code>Hold on</code>，<code>Hold off</code>可以切换是否在一个figure窗口中绘制多个图</p>
+<p><code>Figure(n)</code>可以新建第n个Figure窗口</p>
+<p>Home- Clear workspace 可以清除所有变量</p>
+<p><code>syms</code>需要安装Symbolic Maths Toolbox</p>
+<p><code>syms</code>是类似声明变量（符号）的一个指令，内容……非常多，挑了一部分记 <a href="https://au.mathworks.com/help/symbolic/syms.html?searchHighlight=syms&amp;s_tid=srchtitle_syms_1">这里是官方网站的链接</a></p>
+<p><code>syms</code>可以用来声明普通符号，矩阵（用方括号声明大小，例如<code>syms a [1 4]</code>），函数（带小括号及自变量）</p>
+<p>声明符号的最后可以指定这个符号的取值范围，例如<code>real</code>,<code>integer</code>,<code>positive</code>,<code>rational</code>,<code>matrix</code>等</p>
+<p><code>assumptions</code>可以用来查询目前已声明的变量及他们的取值</p>
+<p><code>assume([x y z],'clear')</code>可以用来清除已声明的变量</p>
+<p><code>abs()</code>计算绝对值</p>
+<p><code>sqrt()</code>计算平方根</p>
+<p><code>simplify()</code>化简带符号的表达式</p>
+<p>MATLAB似乎没有专门指令求向量长度，所以要用<code>sqrt(dot(x,x))</code>来求向量x的长度</p>
+<p>然后如果没有上节课提供的函数，自己做row operation可以直接类似这样：<code>A(row1,:)=A(row1,:)+k*A(row2,:)</code></p>
+<h4 id="lab5">lab5</h4>
+<p><strong>Closed Input-Output (Leontief) Model</strong></p>
+<p>构建矩阵E，行和列分别表示不同的产品，列表示原材料，行表示作为产品，<span class="math inline">\(e_{i,j}\)</span>表示生产i产品需求j材料的比例</p>
+<p>由于需求不可能是负值，所以矩阵中所有元素都大于等于0，即<span class="math inline">\(e_{i,j}\ge 0\)</span> for <span class="math inline">\(1\le i, j\le k\)</span></p>
+<p>由于研究的是closed model，无商品进出口，每年使用的总比例一定为1，即每列的和为1，也即<span class="math inline">\(\sum_{i=1}^{k}e_{i,j}=1\)</span> for <span class="math inline">\(1\le j\le k\)</span></p>
+<p><code>sum()</code>求和，输入向量（数组？）求所有元素的和，输入矩阵则求每一列的和，输出为行向量，基于此<code>sum(sum(A))</code>用以求A矩阵中所有元素之和</p>
+<p><code>max()</code>求最大值，输入为向量时输出最大值，输入为矩阵则输出每列的最大值的行向量，<code>max(max(A))</code>求矩阵A中的最大元素</p>
+<p><code>min()</code>求最小值，同理略</p>
+<p><code>isequal(A,B)</code>判断A，B（可以是数字，矩阵，表达式）是否相等，True则输出1，False输出0。</p>
+<p>注意Matlab有精度误差，例如<code>isequal(1,0.99999999999999999)</code>会返回1</p>
+<p><code>==</code>也可以用于比较大小，但是如果等号两边是矩阵，它会返回一个矩阵，分别比较每个元素的大小</p>
+<p><code>~=</code>不等于，<code>and (&amp;)</code> 与，<code>or (|)</code>或</p>
+<p><code>%</code>后面跟注释</p>
+<p><strong>if condition</strong>:</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> &lt;condition&gt;</span><br><span class="line">	&lt;statement&gt;</span><br><span class="line"><span class="keyword">elseif</span> &lt;condition&gt;</span><br><span class="line">	&lt;statement&gt;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	&lt;statement&gt;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p><strong>函数声明</strong></p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> &lt;<span class="title">output</span><span class="params">(输出，若要多个输出则用[]包括所有输出项)</span>&gt; = &lt;<span class="title">function_name</span>&gt;<span class="params">(&lt;input(同理)</span>&gt;)</span></span><br><span class="line">	&lt;statement(不同表达式之间用分号区分)&gt; </span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>Exercise 3：</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">B</span>=<span class="title">mysolve</span><span class="params">(E)</span></span></span><br><span class="line">[m,n]=<span class="built_in">size</span>(E);</span><br><span class="line"><span class="keyword">if</span> m~=n</span><br><span class="line">    <span class="string">&#x27;E is not square.&#x27;</span></span><br><span class="line"><span class="keyword">elseif</span> <span class="built_in">min</span>(<span class="built_in">min</span>(E))&lt;<span class="number">0</span></span><br><span class="line">    <span class="string">&#x27;Not all the entries are greater or equal to 0&#x27;</span></span><br><span class="line"><span class="keyword">elseif</span> <span class="built_in">min</span>(sum(E))==<span class="number">1</span> &amp; <span class="built_in">max</span>(sum(E))==<span class="number">1</span></span><br><span class="line">    B = rref(E-<span class="built_in">eye</span>(n))</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="string">&#x27;The sum of each column is not 1&#x27;</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>Exploration一开始被a迷惑了，然后发现<span class="math inline">\(E_3^2\)</span>就不满足条件（大于0，但<span class="math inline">\(E_3^2\)</span>有0元素）</p>
+<p>b的话按照题目是叫我们找规律，大概上下两元素间的比值是<span class="math inline">\(\frac{(n-1)^2}{n}\)</span></p>
+<h4 id="lab-6">lab 6</h4>
+<p>前面一半是用matlab验证一些简单的结论，没啥东西</p>
+<h4 id="lab-9">lab 9</h4>
+<p>好久没动这儿了，上课有时间就写点</p>
+<p><code>[P,D]=eig(A)</code>求矩阵A的特征值和特征向量，输出P和D满足<span class="math inline">\(P^{-1}AP = D\)</span>，即P是特征向量（<span class="math inline">\([v1 \space v2 \space v3]\)</span>），D是对应特征值（<span class="math inline">\(diag(\lambda_1,\lambda_2,\lambda_3)\)</span>）</p>
+<p>其中特征向量automatically normalised，也就是长度化成1了，所以会有一堆小数（</p>
+<p>Markov chains(马尔可夫链) 我的观察是和邻接矩阵差不太多，就是说每个元素成了概率，于是每一列的和为1所以又和之前Closed Input-Output的矩阵一样了。</p>
+<p>这样的矩阵拥有以下性质：</p>
+<p>P1. 具有特征值1</p>
+<p>P2. 当特征值为1时，具有</p>
+<h2 id="matlab-for-physics">MATLAB for physics</h2>
+<p>用小括号来截取数组中的一部分，index从1开始，最后一个可以用<code>end</code>，使用<code>end-n</code>来指代倒数第n+1个数字</p>
+<p>科学计数法用e来表示，例如<code>3e8</code>。</p>
+<p><code>log()</code>表示自然对数</p>
+<p><code>log10()</code>表示以10为底的对数</p>
+<p>在矩阵中有运算<code>.^</code>区别于单独<code>^</code>（矩阵和自己相乘）可将矩阵里的每个元素单独乘方</p>
+<p>可在函数中用数表（矩阵）作为自变量，输出结果为同形矩阵</p>
+<p>此时用<code>plot(x,y)</code>可以直接作图</p>
+<p>同时<code>plot(x,y,'.')</code>表示将每组数据呈现为点，同样地，可以将<code>'.'</code>改为<code>‘o’</code> (circles), <code>‘x’</code> (crosses), <code>‘+’</code> (plus signs), <code>‘*’</code> (asterisks), <code>‘s’</code> (squares)来进行绘图</p>
+<p>使用<code>errorbar(x, y, ybars, ’.’)</code> 可以在图上加上误差线，其中<code>x</code>,<code>y</code>,<code>ybars</code>为同维数组</p>
+<p>如果希望在同一幅图上绘制多种对应关系，可以使用<code>figure</code>（添加空白绘图窗口）和<code>hold on</code>指令，而若要取消<code>hold on</code>指令，只需键入<code>hold off</code>（<code>hold on</code>,<code>hold off</code>是状态切换指令，也就是说一旦<code>hold on</code>, 就会一直在同一幅图上添加内容，直到<code>hold off</code>）</p>
+<p>也可以使用<code>plot (x1, y1, x2, y2, ’.’)</code>的句式，其中代表数据点样式的符号跟在相应因变量后面，如上面的例子中，<code>x1</code>,<code>y1</code>应用了default样式：连线，<code>x2</code>,<code>y2</code>应用点号作为每个数据点的样式</p>
+<p>而curve fitting功能可以在APP-Curve Fitting来实现（需要下载）</p>
+]]></content>
+      <categories>
+        <category>自习室</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>MATLAB</tag>
       </tags>
   </entry>
   <entry>
@@ -543,125 +1095,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Notes for MATLAB</title>
-    <url>/posts/ea72.html</url>
-    <content><![CDATA[<p>看上去MATLAB也要记些东西……</p>
-<p><em>斜体</em>表示出现的内容是课程提供的function</p>
-<p>哦实际上也只记了一部分内容，因为AM1 computer lab还是更加偏向于linear algebra的应用一些所以实际上matlab的内容不太多……</p>
-<span id="more"></span>
-<h2 id="矩阵">矩阵</h2>
-<h4 id="lab2">lab2</h4>
-<p>最基础的<code>A=[a b;c d]</code></p>
-<p>空格也可以用<code>,</code>，暂时没找出区别</p>
-<p><code>A'</code>用于求转置（transpose）</p>
-<p><code>.*</code>把矩阵内元素对应相乘，或者说<strong>行矩阵<code>.*</code>列矩阵</strong>可以构造一个类似乘法表的东西</p>
-<p><code>A+constant</code> 可以在A的每一个元素的基础上加上一个常数</p>
-<p><code>A(m,n)=a</code>可以把矩阵第m行n列的数改成a</p>
-<p>单独<code>:</code>可以代替全列，例如<code>v=B(:,2)</code>会将v定义为B第二列的列向量</p>
-<p>此外，<code>:</code>可以指代数列，句式为<code>a:s:b</code>，其中a为初项，s为步长，b为末项（更准确的说是最后一项不超过b），s可被省略，默认是1</p>
-<p><code>eye(n)</code>用以构造n阶单位矩阵（Identity matrix）</p>
-<p><code>diag(v)</code>用以构造以v为对角线的对角形矩阵</p>
-<p><code>ones(n,m)</code>构造n行m列的元素全是1的矩阵</p>
-<p><code>zeros(n,m)</code>构造n行m列元素全是0的矩阵</p>
-<p>分块矩阵亦可用<code>M=[A B;C D]</code>的形式来获得</p>
-<p>习题：</p>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">A=[<span class="number">4</span> <span class="number">8</span> <span class="number">8</span> <span class="number">11</span> <span class="number">1</span>]</span><br><span class="line">B=[<span class="built_in">diag</span>(A) <span class="number">7</span>*<span class="built_in">ones</span>(<span class="number">5</span>,<span class="number">7</span>);<span class="number">12</span>*<span class="built_in">ones</span>(<span class="number">7</span>,<span class="number">5</span>) <span class="number">7</span><span class="number">-6</span>*<span class="built_in">eye</span>(<span class="number">7</span>)]</span><br><span class="line">B(<span class="number">1</span>,<span class="number">4</span>)=<span class="number">6</span></span><br></pre></td></tr></table></figure>
-<p>优化(64)：</p>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">A=<span class="built_in">ones</span>(<span class="number">5</span>,<span class="number">7</span>)</span><br><span class="line">Q=[<span class="built_in">diag</span>([<span class="number">4</span> <span class="number">8</span> <span class="number">8</span> <span class="number">11</span> <span class="number">1</span>]) <span class="number">7</span>*A;<span class="number">12</span>*A&#x27; <span class="number">7</span><span class="number">-6</span>*<span class="built_in">eye</span>(<span class="number">7</span>)]</span><br><span class="line">Q(<span class="number">1</span>,<span class="number">4</span>)=<span class="number">6</span></span><br></pre></td></tr></table></figure>
-<h4 id="lab3">lab3</h4>
-<p><code>R=rref(A)</code>直接求A的reduced row echelon form</p>
-<p>我这里matlab默认是输出为小数形式，使用<code>format (style)</code>来修改输出格式，format处可以填<code>short</code>（默认，小数点后四位）, <code>long</code>（小数点后15位）, <code>shortE/longE</code>（科学计数法）, <code>shortG/longG</code>（科学计数法/普通小数，取决于哪种更紧凑）, <code>shortEng/longEng</code>（Engineering notation: 类似科学计数法，但是指数必定为三的倍数）, <code>+</code>（只显示+/-，0则不显示）, <code>bank</code>（货币格式，小数点后二位）, <code>hex</code>（十六进制表达？）, <code>rational</code>（分数，可以缩写rat，但是输出的分数并不是精确值，而是估计）等，以及显示格式<code>compact</code>和<code>loose</code>（默认），<code>fmt=format</code>查看当前设置，<code>format default</code>返回初始设置。</p>
-<p><code>rat(a)</code>可以输出分数形式（估计值），算法是利用</p>
-<p><span class="math display">\[\frac{N}{D}=D_1+\frac{1}{D_2+\frac{1}{...+\frac{1}{D_k}}}\]</span></p>
-<p><a href="https://au.mathworks.com/help/matlab/ref/format.html">reference</a></p>
-<p>上面似乎有点长（主要不是worksheet上的，自己查来的</p>
-<p><code>det()</code>和<code>inv()</code>分别求矩阵的逆和行列式</p>
-<p>然后做exercise 2的时候发现点问题，下面这个矩阵行列式为零，不可逆，但是拿det和inv计算出来行列式是-1/1050839913053116<span class="github-emoji" data-alias="laughing" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8">😆</span></p>
-<p><span class="math display">\[\begin{bmatrix} 1&amp;2&amp;3\\ 4&amp;5&amp;6\\ 7&amp;8&amp;9\\ \end{bmatrix}\]</span></p>
-<p>而且他求不可逆矩阵出来结果是</p>
-<p><span class="math display">\[\begin{bmatrix} 1/0&amp;1/0&amp;1/0\\ 1/0&amp;1/0&amp;1/0\\ 1/0&amp;1/0&amp;1/0\\ \end{bmatrix}\]</span></p>
-<p>提示是：</p>
-<blockquote>
-<p>警告: 矩阵为奇异工作精度。</p>
-</blockquote>
-<p>format设置为<code>rational</code>时，答案可能给出<code>*</code>代表非常小的数字，可能是一些奇怪的误差，类似上面矩阵给出的结果</p>
-<p><em>然后是几个写好的函数：<code>[B,E] = rowswap(A,i,j)</code>，<code>[B,E] = rowmul(A,c,i)</code>，<code>[B,E] = rowadd(A,c,i,j)</code>其中B是完成行变换的输出矩阵，E是行变换对应的基本矩阵，A是输入矩阵，c是倍数，i，j是操作的行数（把i行加到j行上）</em></p>
-<p><code>size(A)</code>用来查询矩阵A的大小，输出结果记作<code>[dim1, dim2, ...]</code>，可以用<code>size(A,n)</code>用来输出矩阵A第n维度的大小（例如1是行，2是列）</p>
-<p>然后所以习题里面的<code>size(A,1)</code>要改成<code>size(A,2)</code>之前都没发现orz</p>
-<h4 id="lab4">lab4</h4>
-<p><code>det()</code>求行列式（上节课就有了）</p>
-<p><code>dot()</code>求dot product</p>
-<p><code>cross()</code>求cross product</p>
-<p><em><code>pgram1(B)</code>绘制由两行向量组成的平行四边形（应该只能做二维的，输入一定要是2*2的矩阵）</em></p>
-<p><em><code>pgram2(B,C)</code>绘制两个平行四边形</em></p>
-<p><code>Hold on</code>，<code>Hold off</code>可以切换是否在一个figure窗口中绘制多个图</p>
-<p><code>Figure(n)</code>可以新建第n个Figure窗口</p>
-<p>Home- Clear workspace 可以清除所有变量</p>
-<p><code>syms</code>需要安装Symbolic Maths Toolbox</p>
-<p><code>syms</code>是类似声明变量（符号）的一个指令，内容……非常多，挑了一部分记 <a href="https://au.mathworks.com/help/symbolic/syms.html?searchHighlight=syms&amp;s_tid=srchtitle_syms_1">这里是官方网站的链接</a></p>
-<p><code>syms</code>可以用来声明普通符号，矩阵（用方括号声明大小，例如<code>syms a [1 4]</code>），函数（带小括号及自变量）</p>
-<p>声明符号的最后可以指定这个符号的取值范围，例如<code>real</code>,<code>integer</code>,<code>positive</code>,<code>rational</code>,<code>matrix</code>等</p>
-<p><code>assumptions</code>可以用来查询目前已声明的变量及他们的取值</p>
-<p><code>assume([x y z],'clear')</code>可以用来清除已声明的变量</p>
-<p><code>abs()</code>计算绝对值</p>
-<p><code>sqrt()</code>计算平方根</p>
-<p><code>simplify()</code>化简带符号的表达式</p>
-<p>MATLAB似乎没有专门指令求向量长度，所以要用<code>sqrt(dot(x,x))</code>来求向量x的长度</p>
-<p>然后如果没有上节课提供的函数，自己做row operation可以直接类似这样：<code>A(row1,:)=A(row1,:)+k*A(row2,:)</code></p>
-<h4 id="lab5">lab5</h4>
-<p><strong>Closed Input-Output (Leontief) Model</strong></p>
-<p>构建矩阵E，行和列分别表示不同的产品，列表示原材料，行表示作为产品，<span class="math inline">\(e_{i,j}\)</span>表示生产i产品需求j材料的比例</p>
-<p>由于需求不可能是负值，所以矩阵中所有元素都大于等于0，即<span class="math inline">\(e_{i,j}\ge 0\)</span> for <span class="math inline">\(1\le i, j\le k\)</span></p>
-<p>由于研究的是closed model，无商品进出口，每年使用的总比例一定为1，即每列的和为1，也即<span class="math inline">\(\sum_{i=1}^{k}e_{i,j}=1\)</span> for <span class="math inline">\(1\le j\le k\)</span></p>
-<p><code>sum()</code>求和，输入向量（数组？）求所有元素的和，输入矩阵则求每一列的和，输出为行向量，基于此<code>sum(sum(A))</code>用以求A矩阵中所有元素之和</p>
-<p><code>max()</code>求最大值，输入为向量时输出最大值，输入为矩阵则输出每列的最大值的行向量，<code>max(max(A))</code>求矩阵A中的最大元素</p>
-<p><code>min()</code>求最小值，同理略</p>
-<p><code>isequal(A,B)</code>判断A，B（可以是数字，矩阵，表达式）是否相等，True则输出1，False输出0。</p>
-<p>注意Matlab有精度误差，例如<code>isequal(1,0.99999999999999999)</code>会返回1</p>
-<p><code>==</code>也可以用于比较大小，但是如果等号两边是矩阵，它会返回一个矩阵，分别比较每个元素的大小</p>
-<p><code>~=</code>不等于，<code>and (&amp;)</code> 与，<code>or (|)</code>或</p>
-<p><code>%</code>后面跟注释</p>
-<p><strong>if condition</strong>:</p>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> &lt;condition&gt;</span><br><span class="line">	&lt;statement&gt;</span><br><span class="line"><span class="keyword">elseif</span> &lt;condition&gt;</span><br><span class="line">	&lt;statement&gt;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	&lt;statement&gt;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p><strong>函数声明</strong></p>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> &lt;<span class="title">output</span><span class="params">(输出，若要多个输出则用[]包括所有输出项)</span>&gt; = &lt;<span class="title">function_name</span>&gt;<span class="params">(&lt;input(同理)</span>&gt;)</span></span><br><span class="line">	&lt;statement(不同表达式之间用分号区分)&gt; </span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>Exercise 3：</p>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">B</span>=<span class="title">mysolve</span><span class="params">(E)</span></span></span><br><span class="line">[m,n]=<span class="built_in">size</span>(E);</span><br><span class="line"><span class="keyword">if</span> m~=n</span><br><span class="line">    <span class="string">&#x27;E is not square.&#x27;</span></span><br><span class="line"><span class="keyword">elseif</span> <span class="built_in">min</span>(<span class="built_in">min</span>(E))&lt;<span class="number">0</span></span><br><span class="line">    <span class="string">&#x27;Not all the entries are greater or equal to 0&#x27;</span></span><br><span class="line"><span class="keyword">elseif</span> <span class="built_in">min</span>(sum(E))==<span class="number">1</span> &amp; <span class="built_in">max</span>(sum(E))==<span class="number">1</span></span><br><span class="line">    B = rref(E-<span class="built_in">eye</span>(n))</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="string">&#x27;The sum of each column is not 1&#x27;</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>Exploration一开始被a迷惑了，然后发现<span class="math inline">\(E_3^2\)</span>就不满足条件（大于0，但<span class="math inline">\(E_3^2\)</span>有0元素）</p>
-<p>b的话按照题目是叫我们找规律，大概上下两元素间的比值是<span class="math inline">\(\frac{(n-1)^2}{n}\)</span></p>
-<h4 id="lab-6">lab 6</h4>
-<p>前面一半是用matlab验证一些简单的结论，没啥东西</p>
-<h4 id="lab-9">lab 9</h4>
-<p>好久没动这儿了，上课有时间就写点</p>
-<p><code>[P,D]=eig(A)</code>求矩阵A的特征值和特征向量，输出P和D满足<span class="math inline">\(P^{-1}AP = D\)</span>，即P是特征向量（<span class="math inline">\([v1 \space v2 \space v3]\)</span>），D是对应特征值（<span class="math inline">\(diag(\lambda_1,\lambda_2,\lambda_3)\)</span>）</p>
-<p>其中特征向量automatically normalised，也就是长度化成1了，所以会有一堆小数（</p>
-<p>Markov chains(马尔可夫链) 我的观察是和邻接矩阵差不太多，就是说每个元素成了概率，于是每一列的和为1所以又和之前Closed Input-Output的矩阵一样了。</p>
-<p>这样的矩阵拥有以下性质：</p>
-<p>P1. 具有特征值1</p>
-<p>P2. 当特征值为1时，具有</p>
-<h2 id="matlab-for-physics">MATLAB for physics</h2>
-<p>用小括号来截取数组中的一部分，index从1开始，最后一个可以用<code>end</code>，使用<code>end-n</code>来指代倒数第n+1个数字</p>
-<p>科学计数法用e来表示，例如<code>3e8</code>。</p>
-<p><code>log()</code>表示自然对数</p>
-<p><code>log10()</code>表示以10为底的对数</p>
-<p>在矩阵中有运算<code>.^</code>区别于单独<code>^</code>（矩阵和自己相乘）可将矩阵里的每个元素单独乘方</p>
-<p>可在函数中用数表（矩阵）作为自变量，输出结果为同形矩阵</p>
-<p>此时用<code>plot(x,y)</code>可以直接作图</p>
-<p>同时<code>plot(x,y,'.')</code>表示将每组数据呈现为点，同样地，可以将<code>'.'</code>改为<code>‘o’</code> (circles), <code>‘x’</code> (crosses), <code>‘+’</code> (plus signs), <code>‘*’</code> (asterisks), <code>‘s’</code> (squares)来进行绘图</p>
-<p>使用<code>errorbar(x, y, ybars, ’.’)</code> 可以在图上加上误差线，其中<code>x</code>,<code>y</code>,<code>ybars</code>为同维数组</p>
-<p>如果希望在同一幅图上绘制多种对应关系，可以使用<code>figure</code>（添加空白绘图窗口）和<code>hold on</code>指令，而若要取消<code>hold on</code>指令，只需键入<code>hold off</code>（<code>hold on</code>,<code>hold off</code>是状态切换指令，也就是说一旦<code>hold on</code>, 就会一直在同一幅图上添加内容，直到<code>hold off</code>）</p>
-<p>也可以使用<code>plot (x1, y1, x2, y2, ’.’)</code>的句式，其中代表数据点样式的符号跟在相应因变量后面，如上面的例子中，<code>x1</code>,<code>y1</code>应用了default样式：连线，<code>x2</code>,<code>y2</code>应用点号作为每个数据点的样式</p>
-<p>而curve fitting功能可以在APP-Curve Fitting来实现（需要下载）</p>
-]]></content>
-      <categories>
-        <category>自习室</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>MATLAB</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>开学后的一些日记</title>
     <url>/posts/5eb1.html</url>
     <content><![CDATA[<p>一些短篇故事的连载，不定期更新，前提是有空+有故事。</p>
@@ -885,463 +1318,94 @@
       </tags>
   </entry>
   <entry>
-    <title>Elements of data processing</title>
-    <url>/posts/18e.html</url>
-    <content><![CDATA[<p>Elements of data processing</p>
-<p>纯纯期末为了复习补的，好事是考试针对性强，缺点是大概挺难看懂的……</p>
-<p>然后图片有点难搞，我得先想个办法能让传图片方便一点再修，饼有点多不急……</p>
+    <title>记墨大2022 O-week</title>
+    <url>/posts/e657.html</url>
+    <content><![CDATA[<p>​ 好啦，不知道为什么Typora出了点bug，在more前面打字会变成奇怪的东西，不管了，大不了剪切上去。这算是我建这个blog以来第一篇文章（流水账）吧，主要是放假也确实没什么好写的，开学之后大概更的会多一点（如果有空的话）。</p>
 <span id="more"></span>
-<h2 id="theory">Theory：</h2>
-<p><strong>data types:</strong></p>
-<figure>
-<img src="Eodp-1.png" alt="image1" /><figcaption aria-hidden="true">image1</figcaption>
-</figure>
-<p><strong>Summarising:</strong></p>
-<ol type="1">
-<li>mathematical summary</li>
-<li>visual summary</li>
-</ol>
-<p>descriptive statistics:</p>
-<ul>
-<li>Count (frequency)</li>
-<li>min, max, range</li>
-<li>quartiles, percentiles</li>
-<li>mean, median, mode</li>
-<li>Variance, standard deviation</li>
-</ul>
-<p><strong>visualisation:</strong></p>
-<p>efficient and effective</p>
-<ol type="1">
-<li><p>line plots</p>
-<figure>
-<img src="Eodp-2.png" alt="image2" /><figcaption aria-hidden="true">image2</figcaption>
-</figure></li>
-<li><p>boxplots</p>
-<figure>
-<img src="Eodp-3.png" alt="image3" /><figcaption aria-hidden="true">image3</figcaption>
-</figure>
-<p>Q1: 25% point below median</p>
-<p>Q3: 25% point above median</p>
-<p>IQR (Interquartile range) = Q3-Q1</p>
-<p><strong>Upper/Lower limits:</strong></p>
-<p>Q3+1.5*IQR or Q1-1.5*IQR</p>
-<p><strong>Whiskers (inner fence)</strong></p>
-<p>if the Highest/lowest data points are within 1.5* IQR range, it's called upper/lower inner fence</p>
-<p><strong>outliers:</strong></p>
-<p>suspected outlier (use circle to indicate)</p>
-<ul>
-<li>&gt; 1.5*IQR below Q1 or above Q3</li>
-</ul>
-<p>outliers (use black dot)</p>
-<ul>
-<li>&gt; 3*IQR below Q1 or above Q3</li>
-</ul></li>
-<li><p>histograms</p>
-<figure>
-<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728143256873.png" alt="image-20220728143256873" /><figcaption aria-hidden="true">image-20220728143256873</figcaption>
-</figure>
-<p>bars touches each other</p>
-<figure>
-<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728143624604.png" alt="image-20220728143624604" /><figcaption aria-hidden="true">image-20220728143624604</figcaption>
-</figure>
-<p>symmetric, left/right skewed, unimodal, bimodal, multimodal...</p>
-<p>problem: choose an appropriate bin size for histogram</p>
-<p>用于numerical data</p></li>
-<li><p>bar charts</p>
-<p>用于categorical data: not continuous所以bar不贴在一起</p>
-<figure>
-<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728144617965.png" alt="image-20220728144617965" /><figcaption aria-hidden="true">image-20220728144617965</figcaption>
-</figure>
-<p>histogram vs bar charts：</p>
-<figure>
-<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728144758385.png" alt="image-20220728144758385" /><figcaption aria-hidden="true">image-20220728144758385</figcaption>
-</figure></li>
-<li><p>scatter plots</p>
-<figure>
-<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728145535740.png" alt="image-20220728145535740" /><figcaption aria-hidden="true">image-20220728145535740</figcaption>
-</figure>
-<p>x,y坐标都是numerical</p>
-<figure>
-<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728145726438.png" alt="image-20220728145726438" /><figcaption aria-hidden="true">image-20220728145726438</figcaption>
-</figure>
-<p>变种（用于显示第三项特征）：bubble plot（点的大小）/ enhanced scatter plot（颜色）</p>
-<p>当数据多时，会出现overplotting，也就是点全重叠在一起，看不清，可以reduce dot size, sampling(用小的样本量), jitter or use other plots</p></li>
-<li><p>heatmap</p>
-<p>normalise the data first</p>
-<figure>
-<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728150702515.png" alt="image-20220728150702515" /><figcaption aria-hidden="true">image-20220728150702515</figcaption>
-</figure>
-<figure>
-<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728150832485.png" alt="image-20220728150832485" /><figcaption aria-hidden="true">image-20220728150832485</figcaption>
-</figure></li>
-<li><p>parallel coordinate plots</p>
-<p>high-dimensional data</p>
-<figure>
-<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728150932776.png" alt="image-20220728150932776" /><figcaption aria-hidden="true">image-20220728150932776</figcaption>
-</figure>
-<figure>
-<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220728151208096.png" alt="image-20220728151208096" /><figcaption aria-hidden="true">image-20220728151208096</figcaption>
-</figure>
-<p>注意scaling，ordering也很重要，好的ordering可以让数据更加清晰</p></li>
-</ol>
-<details>
-<summary>
-Click to expand!
-</summary>
-<h2 id="heading">Heading</h2>
-<ol type="1">
-<li>A numbered</li>
-<li>list
-<ul>
-<li>With some</li>
-<li>Sub bullets</li>
-</ul>
-</details></li>
-</ol>
-<h2 id="coding">Coding</h2>
-<h3 id="matplotlib">matplotlib</h3>
-<p><code>import matplotlib.pyplot as plt</code></p>
-<p><code>plt.plot(x,y)</code>画图，有点像matlab（不是有点，就是一样）<code>plot(y)</code>，会自动生成x坐标</p>
-<h3 id="panda">panda</h3>
-<p><code>import panda as pd</code></p>
-<p><strong>series:</strong></p>
-<figure>
-<img src="eodpseries.png" alt="series" /><figcaption aria-hidden="true">series</figcaption>
-</figure>
-<p>可以用列表/字典创建<code>&lt;something&gt; = pd.Series(&lt;list/dict&gt;)</code></p>
-<p>Examples of <code>series</code> attributes:</p>
-<ul>
-<li><code>series.index</code> attribute (returns the index field like <code>dict.keys()</code>) 可以用列表来赋值</li>
-<li><code>series.values</code> attribute (returns the values like <code>dict.values()</code>)</li>
-</ul>
-<p>Examples of <code>series</code> methods: - <code>series.mean()</code> method (computes the average) - <code>series.sum()</code> method (computes the grand total sum)</p>
-<p><code>pd.concat([LIST OF SERIES], axis='rows')</code>合并两个series</p>
-<p><code>series.loc[]</code>用于slicing，括号里可以是index，也可以是针对数值的表达式</p>
-<p><code>.iloc[]</code>针对indices来slicing</p>
-<p><code>pd.read_csv</code>可以读取csv file</p>
-<p><code>&lt;csv_file&gt;.head(10)</code>画表格，这head(10)我也不知道是啥意思，但输出了个表格</p>
-<h2 id="week2">Week2</h2>
-<p>pre-processing</p>
-<p><strong>measuring data quality</strong></p>
-<ul>
-<li>Accuracy: right or wrong</li>
-<li>Completeness: Not recorded, unavailable (missing completely at random (unrelated to other variables)/ at random (relates to other variables)/ not at random (based on the variable itself))</li>
-<li>Consistency: discrepancies in representation (naming representations, date formats, outliers, etc.)</li>
-<li>Timeliness: Updated in a timely way</li>
-<li>Believability: Can I trust the data</li>
-<li>Interpretability: How easy can it be understand</li>
-</ul>
-<p>deal with incomplete data: 1. sklearn 2. multivariate strategies</p>
-<p>missing at random: relate to some other data</p>
-<p>completely at random: not related to anything</p>
-<p>not at random: relate to the data itself</p>
-<p>precision=<span class="math inline">\(\frac{TP}{TP+FP}\)</span></p>
-<p>recall=<span class="math inline">\(\frac{TP}{TP+FN}\)</span></p>
-<p>Accuracy=<span class="math inline">\(\frac{TP+TN}{TP+TN+FP+FN}\)</span></p>
-<p>pearson correlation:</p>
-<p><span class="math inline">\(r_{xy}=\frac {\sum _{i=1}^{n}(x_{i}-{\bar {x}})(y_{i}-{\bar {y}})}{\sqrt {\sum _{i=1}^{n}(x_{i}-{\bar {x}})^2}\sqrt {\sum _{i=1}^{n}(y_{i}-{\bar {y}})^2}}\)</span></p>
-<p><span class="math inline">\(\frac{\text{Cov}(x,y)}{\sigma_x\sigma_y}\)</span>, Cov(x,y)=E(x-xbar)(y-ybar) covariance</p>
-<p>linear relationship ONLY and continuous prefered</p>
-<p><code>np.arange(13)+0.5 == array([ 0.5,  1.5,  2.5,  3.5,  4.5,  5.5,  6.5,  7.5,  8.5,  9.5, 10.5, 11.5, 12.5])</code></p>
-<p>Jaccard similarity</p>
-<figure>
-<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20221103061733246.png" alt="image-20221103061733246" /><figcaption aria-hidden="true">image-20221103061733246</figcaption>
-</figure>
-<p>Sørensen-Dice similarity</p>
-<figure>
-<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20221103061752030.png" alt="image-20221103061752030" /><figcaption aria-hidden="true">image-20221103061752030</figcaption>
-</figure>
-<p>Cosine similarity</p>
-<figure>
-<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20221103062019171.png" alt="image-20221103062019171" /><figcaption aria-hidden="true">image-20221103062019171</figcaption>
-</figure>
-<p><u> <strong>Entropy </strong></u></p>
-<p>For example: - An unbiased coin flip (50% Heads, 50% Tails) will have an entropy of 1. - A biased coin flip (100% Heads, 0% Tails) will have an entropy of 0.</p>
-<p><span class="math inline">\(H(X) = -\sum P(X=x_i)\log_2(P(X=x_i))\)</span></p>
-<p><u><strong>Conditional Entropy</strong></u></p>
-<p><span class="math inline">\(H(Y|X) = \sum_{x_i \in X} P(X=x_i) H(Y|X=x_i)\)</span></p>
-<p>where <span class="math inline">\(H(Y|X=x)\)</span> means calculating the entropy of the distribution <span class="math inline">\(P(Y|X=x)\)</span>:</p>
-<p><span class="math display">\[H(Y|X=x) = -\sum_{y_j \in Y} P(Y=y_j|X=x)\log_2(P(Y=y_j|X=x)).\]</span></p>
-<p><u><strong>Mutual Information</strong></u>(shannon version)</p>
-<p><span class="math inline">\(\text{MI}(X, Y) = H(X) – H(X | Y) = H(Y) - H(Y | X)\)</span></p>
-<p>normalized Mutual Information: (between 0 and 1)</p>
-<p><span class="math inline">\(\text{NMI}(X, Y) = \frac{\text{MI}(X,Y)}{min(H(X),H(Y))}\)</span></p>
-<p>if <span class="math inline">\(MI=0\)</span>: X and Y are independent</p>
-<p><u><strong>Chi-squared value</strong></u></p>
-<p><span class="math inline">\(\chi^2=\sum\frac{(O_i-E_i)^2}{E_i}\)</span></p>
-<figure>
-<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20221103060344448.png" alt="something looks like this" /><figcaption aria-hidden="true">something looks like this</figcaption>
-</figure>
-<p>subset accuracy &amp; average accuracy</p>
-<p><u><strong>correlation</strong></u></p>
-<p>+/-, how strong, linear/non-linear</p>
-<p><strong>The Pearson correlation coefficient</strong>, also referred to as Pearson's r, is a statistic that measures linear correlation between two variables X and Y.</p>
-<p>ratio data and interval data and nomial data: 例子分别是房子大小（0点绝对，可以比大小，可以找出倍数关系etc），房子房间数（0点模糊，所以比较倍数关系够呛，另一个例子可以是温度（摄氏度）），房子门牌号（单纯的给个名字而已）</p>
-<p><strong>The coefficient of determination</strong> is the portion of the total variation in the dependent variable that is explained by variation in the independent variable.</p>
-<p><strong>causation</strong>: regression is not causal, correlation doesn't mean causation.</p>
-<p><u><strong>visualization techniques</strong></u></p>
-<p>line plots</p>
-<p>boxplots</p>
-<p>histograms</p>
-<p>bar charts</p>
-<p>scatter plots (scatter plot matrix)</p>
-<p>heatmap</p>
-<p>parallel coordinate plots</p>
-<p><strong>JSON and XML</strong>: semi-structured format</p>
-<p>- json</p>
-<p>-- part structured data -- values from article metadata;</p>
-<p>-- part non-structured -- text throughout article</p>
-<p>- xml</p>
-<p>-- metadata requires structure allowed by xml format;</p>
-<p>--</p>
-<p>JSON vs CSV: JSON is more expressive than CSV as it allows nesting, objects and arrays cannot be represented in a single line in a CSV file</p>
-<p><u><strong>Regex</strong></u></p>
-<table>
-<thead>
-<tr class="header">
-<th>.</th>
-<th>除换行符（/n）外所有字符</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>^</td>
-<td>字符串开头/在[]中表示除后面出现的这些</td>
-</tr>
-<tr class="even">
-<td>$</td>
-<td>字符串结尾</td>
-</tr>
-<tr class="odd">
-<td>*</td>
-<td>出现任意次数=<code>&#123;0,&#125;</code></td>
-</tr>
-<tr class="even">
-<td>+</td>
-<td>出现至少一次=<code>&#123;1,&#125;</code></td>
-</tr>
-<tr class="odd">
-<td>|</td>
-<td>或，和括号（）一起用</td>
-</tr>
-<tr class="even">
-<td>[]</td>
-<td>匹配字符集合，例如 <code>[abcd]  [a-zA-Z]</code></td>
-</tr>
-<tr class="odd">
-<td>()</td>
-<td>capturing group，捕获分组，\1这样表示重复第一个capturing group</td>
-</tr>
-<tr class="even">
-<td>/s</td>
-<td>所有空白符，包括=<code>[\f\n\r\t\v]</code></td>
-</tr>
-<tr class="odd">
-<td>/S</td>
-<td>所有非空白符=<code>[^\f\n\r\t\v]</code></td>
-</tr>
-<tr class="even">
-<td>/w</td>
-<td>所有字母，数字，下划线</td>
-</tr>
-<tr class="odd">
-<td>？</td>
-<td>出现0次或1次=<code>&#123;0,1&#125;</code>，或放在*，+后表示非贪婪</td>
-</tr>
-<tr class="even">
-<td>\</td>
-<td>下一个字符标记为正常字符</td>
-</tr>
-<tr class="odd">
-<td>{}</td>
-<td>限定符，限定次数可以用<code>&#123;n&#125;</code>出现n次，也可以<code>&#123;m,n&#125;</code>表示区间</td>
-</tr>
-<tr class="even">
-<td> 单词边界（空格和字母中间）</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>非单词边界</td>
-</tr>
-<tr class="even">
-<td> 数字</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>?:</td>
-<td>不捕获</td>
-</tr>
-<tr class="even">
-<td>?=</td>
-<td>匹配字符串后面的内容如<code>exp1(?=exp2)</code>表示exp1后面要是exp2，但exp2不属于这个表达式</td>
-</tr>
-<tr class="odd">
-<td>?&lt;=</td>
-<td>匹配字符串前面的内容</td>
-</tr>
-<tr class="even">
-<td>?!</td>
-<td>字符串后面不是</td>
-</tr>
-<tr class="odd">
-<td>?&lt;!</td>
-<td>字符串前面不是</td>
-</tr>
-</tbody>
-</table>
-<p><strong>text processing</strong>:</p>
-<p>remove punc</p>
-<p>casefolding</p>
-<p>tokenisation</p>
-<p>remove stopword</p>
-<p>lemmatisation, stemming</p>
-<p>TF-IDF and BoW: (representation model) convert unstructured text to a feature representation</p>
-<p><strong>machine learning</strong>:</p>
-<p><strong>kfold</strong>: we split the data into n parts (folds), one fold istesting, the rest training, we round-robin the testing fold, eventually we average results.</p>
-<p><strong>supervised vs unsupervised</strong>: Supervised = we have labelled data, unsupervised = we do not have labels.</p>
-<p><strong>unsupervised:</strong> PCA visualisation, feature selections</p>
-<p><strong>clustering</strong></p>
-<figure>
-<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20221103064015604.png" alt="image-20221103064015604" /><figcaption aria-hidden="true">image-20221103064015604</figcaption>
-</figure>
-<p><strong>k-anonymous</strong>: 已知信息组合，最小的set的大小</p>
-<p><strong>I-diversity</strong>: 每种信息组合，sensitive数据的种类数目的最小值</p>
-<p><strong>global sensitivity</strong>: 就是每个个体能占的最多数量</p>
-<p><strong>recommender system</strong>:</p>
-<p>1.填补空缺：用xx-base中xx的平均值，如果xx对应的值缺失，可以忽略</p>
-<p><span class="math inline">\(\text{sim}(i_i, i_j)=\frac{1}{1+d(i_i,i_j)}\)</span></p>
-<p>然后就是算加权平均值</p>
-<p><strong>Dictionary attack</strong></p>
-<p><strong>Zook’s ’10 simple rules for responsible big data research</strong></p>
-<ol type="1">
-<li><p><strong>Acknowledge that data are people and can do harm</strong></p>
-<p>– All data are people until proven otherwise</p>
-<ul>
-<li>Social media</li>
-<li>Heart rates from Youtube videos</li>
-<li>Ocean measurements that change property risk profiles</li>
-</ul></li>
-<li><p><strong>Recognize that privacy is more than a binary value</strong></p>
-<p>– Privacy is contextual and situational</p>
-<p>– Single Instagram photo versus entire history of social media posts</p>
-<p>– Privacy preferences differ across individuals and societies</p></li>
-<li><p><strong>Guard against the reidentification of your data</strong></p>
-<p>– Metadata associated with photos</p>
-<p>– Reverse image search – connect dating and professional profiles</p>
-<p>– Difficult to recognize the vulnerable points a-priori!</p>
-<ul>
-<li>Battery usage on a phone – can reveal a person’s location</li>
-</ul></li>
-<li><p><strong>Practice ethical data sharing</strong></p>
-<p>– Seeking consent from participants to share data</p></li>
-<li><p><strong>Consider the strengths and limitations of your data; big does not automatically mean better</strong></p>
-<p>– Document the provenance and evolution of your data. Do not overstate clarity; acknowledge messiness and multiple meanings.</p>
-<ul>
-<li>is a Facebook post or an Instagram photo best interpreted as an approval/disapproval of a phenomenon, a simple observation, or an effort to improve status within a friend network?</li>
-</ul></li>
-<li><p><strong>Debate the tough, ethical choices/issues</strong></p>
-<p>– importance of debating the issues within groups of peers</p>
-<ul>
-<li><p>Examples mentioned earlier</p>
-<p>– Facebook emotional contagion</p>
-<p>– Exposing teen girl’s pregnancy</p></li>
-<li><p>More recently, Google Duplex</p>
-<p>– https://www.youtube.com/watch?v=D5VN56jQMWM</p></li>
-</ul></li>
-<li><p><strong>Develop a code of conduct for your organization, research community, or industry</strong></p>
-<p>– Are we abiding by the terms of service or users’ expectations?</p>
-<p>– Does the general public consider our research “creepy”?</p></li>
-<li><p><strong>Design your data and systems for auditability</strong></p>
-<p>– Plan for and welcome audits of your big data practices.</p>
-<p>– Systems of auditability clarify how different datasets (and the subsequent analysis) differ from each other, aiding understanding and creating better research</p>
-<ul>
-<li>“For example, many types of social media and other trace data are unstructured, and answers to even basic questions such as network links depend on the steps taken to collect and collate data.”</li>
-</ul></li>
-<li><p><strong>Engage with the broader consequences of data and analysis practices</strong></p>
-<p>– Recognize that doing big data research has societal-wide effects</p></li>
-<li><p><strong>Know when to break these rules</strong></p>
-<p>– Natural disaster</p>
-<p>– Public health emergency</p>
-<p>– Hostile enemy</p>
-<p>– …</p></li>
-</ol>
-]]></content>
-      <categories>
-        <category>自习室</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>python</tag>
-        <tag>DS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>FoA笔记</title>
-    <url>/posts/105b.html</url>
-    <content><![CDATA[<p>FoA的笔记，用的C</p>
-<p>说实话还是有打算把这坑给补了，毕竟foa内容还挺好的（虽说大部分都很基础）</p>
-<p>但得抽空……</p>
-<span id="more"></span>
-<p>一些命令行：</p>
-<p><code>cd</code> 改路径，<code>cd ..</code>回上一级，<code>ls</code>或<code>pwd</code>显示当前路径下的文件</p>
-<p><code>gcc -Wall -o &lt;.exe&gt; &lt;.c&gt;</code>编译</p>
-<p>先是lecture2最后留的题目</p>
-<figure>
-<img src="FoA-1.png" alt="题目" /><figcaption aria-hidden="true">题目</figcaption>
-</figure>
-<p><code>include&lt;&gt;</code>,<code>int main()</code>什么的就不讲了</p>
-<p>四则运算符号略</p>
-<p>f stand for formatic</p>
-<p>printf()输出，printf(<format as string>, <expression>/<Var>,...)输出format string在带入后续表达式后的结果，常见format"%d"代表以十进制形式输出带符号整数，format string类似python f-string（或者这个f本来就是format的意思？）</p>
-<p>"%23.20f"，使用23字符长，小数点后20位</p>
-<p>scanf()输入，scanf(<format>, &amp;<VarName>,...)，注意&amp;符号，它返回变量所在的地址，意思就是说，把format当中读取的内容存储到变量所在的位置，例如<code>scanf("%d %d", &amp;a, &amp;b)</code><strong>别忘记加<code>&amp;</code>!!!</strong></p>
-<p>"%lf"，读double</p>
-<p>const定义常量</p>
-<p>注意int除int计算结果还是int，所以如果要准确记得把它转换成double/float</p>
-<p>说了舍入误差（rounding error），截断误差（truncation error）的几个例子</p>
-<p>if 语句</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(&lt;expression&gt;)&#123;</span><br><span class="line">	&lt;something&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><code>exit(EXIT_FAILURE)</code> exit是stdlib.h里的函数</p>
-<p>用法例如：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="built_in">scanf</span>(balabala) == <span class="number">0</span>)&#123; <span class="comment">//isdigit(), isascii(), islower(), isupper() from ctype.h</span></span><br><span class="line">	<span class="built_in">exit</span>(EXIT_FAILURE);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>字符用<code>''</code>，字符串用<code>""</code></p>
-<figure>
-<img src="C:\Users\zhouz\AppData\Roaming\Typora\typora-user-images\image-20220824020144008.png" alt="image-20220824020144008" /><figcaption aria-hidden="true">image-20220824020144008</figcaption>
-</figure>
-]]></content>
-      <categories>
-        <category>自习室</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>C</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2022年的回国之路</title>
-    <url>/posts/8464.html</url>
-    <content><![CDATA[<p>在墨尔本呆了两年零九个月后，总算有机会回国啦，可喜可贺可喜可贺</p>
-<span id="more"></span>
-<p>11月15日</p>
-<p>飞机，去香港，前一天晚上没怎么睡，挺惊讶居然在飞机上没睡着觉，飞机餐还挺不错，虽说可能有点少。然后到香港检疫通道把一路上的厕所都隔绝在外，没得厕所上属于是很让人心累了……实际上比起普通出关也只是多了测核酸一道坎，然后就是直接去隔离酒店。房间好小orz，将将放得下两张床和一个厕所……然后酒店有给晚饭，咸鱼和菜梗，好难吃……</p>
-<p>11月16日</p>
-<p>起来结果才知道我妈居然阳了，有点绷不太住，然后我也就是在房间里呆了一天，可以说是啥都没干吧。下午原了好久……好消息是今天饭可比昨天好太多了，可能只是因为昨天太晚了吧……</p>
-<p>11月17日</p>
-<p>下午去社区做了个核酸，然后估计是要好久才有结果……国内手机还收不到它检测的短信……可以说是很烦了……然后酒店周围挺破旧的没啥好逛于是就回房间了，和群友玩了一晚上的o和a，我属实是太菜了……然后似乎也没别的，希望明天顺利，晚安。</p>
-<p>11月18日</p>
-<p>好累啊啊啊啊啊啊……不过算是回到杭州了，还不错。早上十点半从酒店出发，到机场，在香港机场最大的印象就是说队伍好长啊……先是核酸的队伍，毛估估100m+的队，再是值机的队伍也绕了一大圈（关键它值机只开了三个柜台，就很慢）。哦还有中间核酸到值机的时间也贼长，我也只能绕着机场走走，没啥别的好做……然后就是飞杭州了，飞机上空乘人员都穿着厚厚的防护服（上面有些画画还挺好玩，然后就是演示的时候疯狂的跟乘客说不要拍照），起飞的时候灯关了会儿，于是就打算睡睡，好不容易熬到飞机平稳了打算把小桌板放下来趴一下，前面那个人就把靠背往后仰，直接撞我头上，趴也没得趴了……后来很快他们把灯打开说是提供吃的，实际上只有塞在前面袋子里的一点面包啥的，后来是直接带下飞机了，落地之后先是因为密接拉过去问了点问题，然后就放走了，出关之后上大巴，一路被拉到临平边上，春蚕高新悦府，先是每个人发了体温计，做了点登记，然后就拿行李上楼，每个人都是单独的房间，不让出来，房间倒挺宽敞（厕所有点小）有电视有网络，晚饭也挺不错，不过毕竟每个人每天280rmb，这待遇不好一些说不过去……然后就是每天5：30开始核酸就很sb……我们到房间都快12点了。</p>
-<p>说实话我原以为有好多可以写的，不过一下子就想得起来这些了就这样吧……希望这几天可以好好休息一下（不是说好的休息然后就是熬夜等核酸，核酸完再睡是吧……说实话作息最好调正常些，虽说不清楚从何入手）关键是现在好困……但是就一个多小时又要核酸，睡也睡不好就好好好好烦内……</p>
-<p>哦对了昨天晚上整理东西发现现在日记改博客之后最麻烦的一点是不清楚怎么保留实物了，我还是应该带本本子至少夹一下那些票票的，还是挺有纪念价值的。</p>
-<p>我猜后面几天应该没啥好记的，打算录个视频，也不知道到最后会不会鸽……</p>
+<p>2月21日</p>
+<p>​ 今天实际上跟我没什么关系，差不多就是待在家里，继续摸摸鱼。学校有一个欢迎视频，没兴趣，就不看了。大概主要还是星期三星期四去学校看看有什么好玩的吧。</p>
+<p>2月22日</p>
+<p>​ 2022.2.22 正月廿二星期二纪念</p>
+<p>​ 今天参加了俩线上getting started的活动，差不多也都是之前就知道的反复炒冷饭罢了（明天subject expo也差不多大概）。唯一还不错的点是作息稍微正常了些orz。看明天啦。</p>
+<p>2月23日</p>
+<p>​ 大概今天的关键词就是挤和热吧，到学校十点二十几分，结果Uri跑到the Spot去回来晚了些，然后在学校稍微走了走才发现Glyn Davis门口已经排了巨长的队，大概welcome presentation开始已经差不多11：20了（原本说是11：00）……</p>
+<p>​ 然后结束后就是出去Subject Expo以及吃午饭，实际上差不多就是自由活动了，和Uri去找Engineering B，问Subject Expo这边的一个工作人员，结果他说他也不知道，就很蠢……后来是问了Union House的人他告诉我们在哪。去逛了逛校园，走了点小路，妄想走捷径结果绕了远路也是够sb……</p>
+<p>​ 回来吃午饭，吃的Pasta，挺不错。然后……就没有然后了。</p>
+<p>​ 基本上学校里人都挤在露天，外面很热，室内有空调就舒服。而且室内也没多少人就很不错。</p>
+<p>2月24日</p>
+<p>​ 本来看着昨天那么热决定少穿一点，结果看天气预报说要下雨人傻了……不过好在最后并没有下雨，只是天气阴阴的也不热，就比昨天好。今天主要就是个Peer Mentor Group，两个mentor都是华人（一个是上海来的，还有一个大概是本地华人）都挺不错的。认识了Daniel，从北京来的，才刚到墨尔本。在MCC里面人挤的要死，到处都是排队，去领了衣服，吃了点冰激凌（salted caramel味的，比想象中要咸一点orz），然后就溜了。跟Daniel逛了逛校园，然后没了……</p>
+<p>​ 比想象中要无聊一些，不过大概也就是这样吧……</p>
+<p>​ 下个星期就开学了，加油吧……</p>
 ]]></content>
       <categories>
         <category>生活馆</category>
-        <category>空想家</category>
       </categories>
       <tags>
         <tag>日记</tag>
+        <tag>O-week</tag>
         <tag>流水账</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Happy New Year！</title>
+    <url>/posts/defb.html</url>
+    <content><![CDATA[<h1 id="新年快乐">新年快乐！</h1>
+<h2 id="加油吖">2022加油吖！</h2>
+]]></content>
+      <categories>
+        <category>生活馆</category>
+      </categories>
+      <tags>
+        <tag>2022</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客搭建的记录</title>
+    <url>/posts/739d.html</url>
+    <content><![CDATA[<h1 id="从头说起">从头说起</h1>
+<p>前一段时间某一天我在Google上偶然看到了<a href="https://cekavis.github.io/">t老师的blog</a>，于是突发奇想：“要不我也搭一个吧？”于是就有了这Anony's Blog。</p>
+<h1 id="月3日">12月3日</h1>
+<p>实际上已经四号了来着，跟着<a href="https://zhuanlan.zhihu.com/p/102592286">知乎</a>和<a href="https://www.bilibili.com/video/BV1mU4y1j72n">Bilibili</a>两位大佬的教程开始搞。</p>
+<p>结果只完成了安装nodejs和配置npm环境两个步骤，中途疯狂报错“The operation was rejected by your operating system.” Google上找的方法都没用，后来才发现原来就是没权限，于是就解决了。 <span id="more"></span></p>
+<h1 id="月4日">12月4日</h1>
+<p>今天把Git，Hexo，Github都配置好了，也是第一次能从网上看到这个blog网页了（虽说只是Hexo默认的）。然后就开始选主题，期间一边和<a href="https://fffeiya.github.io/">FFFeiya</a>语音，一边浏览他们信奥巨巨们的blog，看到好多年久失修的，当然也有一直在维护，让我非常喜欢的，比如<a href="https://vsh-fd.github.io/">星官姐姐</a>。</p>
+<h1 id="月5日">12月5日</h1>
+<p>最后还是决定用最淳朴的next模板，把标题菜单设置好，稍微添加了一些内容（比如现在这篇），然后就没了，剩下的明天再做了。</p>
+<p>今日脑瘫：设置搜索的时候没找到主题配置文件里搜索的位置，上千行的配置文件上上下下读了两遍，眼睛都花了才记起来有搜索功能可以用。</p>
+<h1 id="月6日">12月6日</h1>
+<p>想摸鱼了呜呜呜。先休息一会儿做点规划吧。今天打算把菜单栏优化一下，可以预见的一定会碰壁。</p>
+<p>结果先加了个live2d，点名批评Live2d Viewer，上来就把我电脑搞死机了。原本想着把<a href="https://www.bilibili.com/video/BV1wV411B7N4">可莉的l2d</a>搬进来的，结果试了半天搞不定只好作罢orz。于是只是加了这么一位看板娘，如果以后学会加l2d的方法的话再改吧。</p>
+<p>好耶今天的活算是做完了吧，改造了一下菜单栏，顶上就可以直接访问三个分类了。网上完全没找到类似的教程只能自己摸，最后发现主题配置文件的菜单栏里menu一块这样写就可以直接跳转专门的类别啦。 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">life:</span> <span class="string">/categories/生活馆/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-route</span></span><br><span class="line">  <span class="attr">thoughts:</span> <span class="string">/categories/空想家/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-lightbulb</span></span><br><span class="line">  <span class="attr">notes:</span> <span class="string">/categories/自习室/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-book</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br></pre></td></tr></table></figure> 然后把home和categories给删了也是，home直接点击anony's blog图标就行，categories被三个子栏目代替了，这样至少我觉得很不错。然后图标是<a href="https://fontawesome.com/v5.15/icons?d=gallery&amp;p=2">Font Awesome</a>找的。</p>
+<p>打算最后再弄一下l2d看看，其他工作就明天再来吧。</p>
+<p>结果是l2d没弄，把评论系统搞上去了，总体就是Valine注册一下，然后找到主题配置里的comments-Valine就好了，很方便。</p>
+<p>好了好了该摸了。</p>
+<p>好吧又加了一个表情支持，测试一下<span class="github-emoji" data-alias="persevere" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f623.png?v8">😣</span></p>
+<p>好诶<span class="github-emoji" data-alias="tada" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png?v8">🎉</span><span class="github-emoji" data-alias="tada" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png?v8">🎉</span><span class="github-emoji" data-alias="tada" style="" data-fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png?v8">🎉</span>。Mark一下<a href="https://www.webfx.com/tools/emoji-cheat-sheet/">Emoji Cheat Sheet</a>。</p>
+<p><a href="https://anonyzzz.github.io/404">404页面</a>完成，稍微玩了一下，说实话看排版会很怪，不过我也不知道该怎么改，算了。</p>
+<p>今天算是把博客基本上大体轮廓都搭完了吧，后面就是些缝缝补补，美化的工作了。挺好。</p>
+<p>加上了头像和网页最下方心心的动画，中途出了bug，本地是好的，传到网上显示没有改动，又重新做了一遍就好了。</p>
+<h1 id="月7日">12月7日</h1>
+<p>改了一个名字“Anony的角落”，也没什么新意，主要是想了一晚上也没想出一个好点的中文昵称。</p>
+<p>然后加了一些东西，社交链接，RSS，建站统计，字数，阅读时间统计，阅读进度提示条……</p>
+<p>然后就是紧张刺激的修bug环节，在第一次上传之后出现了俩bug,一个是原本应该出现在右上角的github banner出现在了左上角，这是我在本地测试从来没碰到过的，我想着我也没有改什么东西，就很奇怪。另一个bug是“Hello World”文章的字数统计和时间统计显示“本文字数： |阅读时长≈NaN:aN”，网页最底下同样，这个问题倒是在本地测试也出现的问题，当时想着反正这统计也只是估算，如果发上去还是不行就把功能删了。然后我先在本地重新测了一遍，再Hexo clean,重新把文件全部传上去，刷新了半天发现banner还是在左上角，心想凉了，干脆把它一起也删了，结果回头瞥见“Hello World”的字数统计反而是好了，当时我人是懵的，在那里花式点击github banner，然后又把页面往下拉，发现代码块的复制也错位了，然后我点了一下，结果莫名其妙的它们就都回去了。于是网站就这么莫名其妙的恢复正常了……后来想来，也许是博客没加载清楚？</p>
+<p>然后好好编辑了一下footer，把powered移到了最底下，顺便加了一个换行，在footer.swig里面加上 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure> 就能换一行。</p>
+<p>好啦差不多就这样，基本上已经定型了，摸了摸了。</p>
+<h1 id="月8日">12月8日</h1>
+<p>试图加入多语言切换，由于技术问题和准备问题，出来一个没卵用还有bug的功能orz。</p>
+<p>实在多看了几眼决定还是把底部的字数统计给删了，有点杂。</p>
+<p>选了好久的背景图最后发现还是黑白的好看，那还是干净一些吧。</p>
+<p>在sidebar增加了网易云播放器，但不知道为什么单首歌没问题，放歌单我就加载不出来，也不是版权问题，就很奇怪。好吧是Letter Song的锅，删了就好了，但它在浏览器正常放没问题，一进外链就炸我也不懂了。好的繁华唱遍也是一样的问题，然后最奇怪的是流年如歌，它在浏览器里播放错误，但外链是好的，人已经傻掉，不过反正弄好了就行，歌单大概会不定期更新吧。</p>
+<p>感觉也想不到什么可以加的了，之后想到了再更新啦。</p>
+<p>哦对忘记添加公式输入支持了，测试一下： <span class="math display">\[ \sum_{i=1}^{n}i^2=\frac{n(n+1)(2n+1)}{6}. \]</span> 好诶成功了，过程有够惊险的，一开始就是启用了mathjax，然后发现本地测试疯狂报错，于是查了一下发现要装hexo-renderer-pandoc，装好了结果还是显示不出，回到配置文件才发现还有这么几句： <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">math:</span></span><br><span class="line">  <span class="comment"># Default (true) will load mathjax / katex script on demand.</span></span><br><span class="line">  <span class="comment"># That is it only render those page which has `mathjax: true` in Front-matter.</span></span><br><span class="line">  <span class="comment"># If you set it to false, it will load mathjax / katex srcipt EVERY PAGE.</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure> 加了mathjax: true之后就能用了。最后又在插入LaTeX的语法上挣扎了一下，所幸是成功了。</p>
+<p>最后测试一下图片吧。<img src="../images/favicon.jpg" alt="这是头像" /> 好耶。</p>
+]]></content>
+      <categories>
+        <category>生活馆</category>
+      </categories>
+      <tags>
+        <tag>日记</tag>
+        <tag>Hexo</tag>
+        <tag>Blog</tag>
       </tags>
   </entry>
 </search>
