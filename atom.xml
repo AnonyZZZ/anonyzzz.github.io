@@ -6,7 +6,7 @@
   <link href="https://anonyzzz.github.io/atom.xml" rel="self"/>
   
   <link href="https://anonyzzz.github.io/"/>
-  <updated>2023-02-27T13:40:31.919Z</updated>
+  <updated>2023-03-14T14:10:03.159Z</updated>
   <id>https://anonyzzz.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Design of Algorithms</title>
+    <link href="https://anonyzzz.github.io/posts/347d.html"/>
+    <id>https://anonyzzz.github.io/posts/347d.html</id>
+    <published>2023-02-28T04:31:22.000Z</published>
+    <updated>2023-03-14T14:10:03.159Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;DoA的笔记，一开始似乎也没什么好记的&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="自习室" scheme="https://anonyzzz.github.io/categories/%E8%87%AA%E4%B9%A0%E5%AE%A4/"/>
+    
+    
+    <category term="笔记" scheme="https://anonyzzz.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="算法" scheme="https://anonyzzz.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>一些些想分享的</title>
@@ -43,7 +64,7 @@
     <link href="https://anonyzzz.github.io/posts/60cd.html"/>
     <id>https://anonyzzz.github.io/posts/60cd.html</id>
     <published>2023-02-27T06:44:55.000Z</published>
-    <updated>2023-03-11T16:43:19.965Z</updated>
+    <updated>2023-03-16T14:15:41.883Z</updated>
     
     
     <summary type="html">这是我日记啦，别想偷看捏ε-(´∀｀; )</summary>
