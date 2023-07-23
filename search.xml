@@ -39,12 +39,40 @@
   <entry>
     <title>Design of Algorithms</title>
     <url>/posts/347d.html</url>
-    <content><![CDATA[<p>DoA的笔记，一开始似乎也没什么好记的</p>
+    <content><![CDATA[<p>DoA的笔记，一开始似乎也没什么好记的，后来也没啥好记的……有点简单。</p>
 <span id="more"></span>
 <p>linear structures：linked list (single/double), queue, stack, dictionary, array...</p>
 <p>complexity: some trivial maths.</p>
 <p>modules</p>
 <p>makefile</p>
+<p>Algorithms：</p>
+<p>DFS</p>
+<p>BFS</p>
+<p>Prim</p>
+<p>Dijkstra</p>
+<p>Topological sort</p>
+<p>Warshall</p>
+<p>Floyd</p>
+<p>Horspool</p>
+<p>Sorting：</p>
+<p>Merge</p>
+<p>Qsort： Lomuto/Hoare</p>
+<p>Heap</p>
+<p>Counting</p>
+<p>Selection</p>
+<p>insertion</p>
+<p>Radix</p>
+<p>Tim</p>
+<p>Data structures</p>
+<p>Graph (2 presentations)</p>
+<p>Queue</p>
+<p>Stack</p>
+<p>Priority Queue/Heap</p>
+<p>linked list</p>
+<p>hashtable (2 realisations)</p>
+<p>AVL tree</p>
+<p>2-3 tree</p>
+<p>BST</p>
 ]]></content>
       <categories>
         <category>自习室</category>
