@@ -73,7 +73,7 @@
 <p>6.29</p>
 <p>Nice.</p>
 <figure>
-<img src="C:\Program%20Files\Blog\source\images\pyq\230629_1.png" alt="Nice!" /><figcaption aria-hidden="true">Nice!</figcaption>
+<img src="..\images\pyq\230629_1.png" alt="Nice!" /><figcaption aria-hidden="true">Nice!</figcaption>
 </figure>
 <p>6.28</p>
 <p>UNSW-Sydney</p>
@@ -93,7 +93,7 @@
 <p>5.17</p>
 <p>Nice!</p>
 <figure>
-<img src="C:\Program%20Files\Blog\source\images\pyq\230517.png" alt="Probability Competition" /><figcaption aria-hidden="true">Probability Competition</figcaption>
+<img src="..\images\pyq\230517.png" alt="Probability Competition" /><figcaption aria-hidden="true">Probability Competition</figcaption>
 </figure>
 <p>4.23</p>
 <p>呜呼70小时通了orz，不过只是classic。</p>
